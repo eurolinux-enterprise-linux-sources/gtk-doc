@@ -1,0 +1,89 @@
+<!-- ##### SECTION Title ##### -->
+GtkdocObject
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT GtkdocObject ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL GtkdocObject::otest ##### -->
+<para>
+
+</para>
+
+@docobject: the object which received the signal.
+
+<!-- ##### ARG GtkdocObject:otest ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT GtkdocObjectClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+@test: 
+
+<!-- ##### FUNCTION gtkdoc_object_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION gtkdoc_object_set_otest ##### -->
+<para>
+
+</para>
+
+@self: 
+@value: 
+
+
+<!-- ##### FUNCTION gtkdoc_object_frobnicate ##### -->
+<para>
+
+</para>
+
+@self: 
+@n: 
+
+
+<!-- ##### MACRO GTKDOC_OBJECT_MACRO_DUMMY ##### -->
+<para>
+
+</para>
+
+@parameter_1: 
+@parameter_2: 
+
+
+<!-- ##### MACRO GTKDOC_OBJECT_MACRO_SUM ##### -->
+<para>
+
+</para>
+
+@parameter_1: 
+@parameter_2: 
+
+

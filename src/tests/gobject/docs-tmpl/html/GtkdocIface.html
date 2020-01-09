@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GtkdocIface</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="tester Reference Manual">
+<link rel="up" href="main-api.html" title="Tests">
+<link rel="prev" href="GtkdocObject.html" title="GtkdocObject">
+<link rel="next" href="object-tree.html" title="Object Hierarchy">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="intro.html" title="Introduction">
+<link rel="chapter" href="main-api.html" title="Tests">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+<link rel="index" href="api-index-0-1.html" title="Index of new API in 0.1">
+<link rel="index" href="api-index-0-5.html" title="Index of new API in 0.5">
+<link rel="glossary" href="go01.html" title="Glossary">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GtkdocObject.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="main-api.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">tester Reference Manual</th>
+<td><a accesskey="n" href="object-tree.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GtkdocIface.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#GtkdocIface.description" class="shortcut">Description</a>
+                 | 
+                <a href="#GtkdocIface.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                 | 
+                <a href="#GtkdocIface.properties" class="shortcut">Properties</a>
+                 | 
+                <a href="#GtkdocIface.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="GtkdocIface"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GtkdocIface.top_of_page"></a>GtkdocIface</span></h2>
+<p>GtkdocIface — interface for gtk-doc unit test</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GtkdocIface.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="GtkdocIface.html#GtkdocIface-struct" title="GtkdocIface">GtkdocIface</a>;
+                    <a class="link" href="GtkdocIface.html#GtkdocIfaceInterface" title="GtkdocIfaceInterface">GtkdocIfaceInterface</a>;
+<a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="GtkdocIface.html#gtkdoc-iface-configure" title="gtkdoc_iface_configure ()">gtkdoc_iface_configure</a>              (<a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"
+>gchar</a> *config);
+#define             <a class="link" href="GtkdocIface.html#GTKDOC-IFACE-MACRO-DUMMY--CAPS" title="GTKDOC_IFACE_MACRO_DUMMY()">GTKDOC_IFACE_MACRO_DUMMY</a>            (parameter_1,parameter_2)
+#define             <a class="link" href="GtkdocIface.html#GTKDOC-IFACE-MACRO-SUM--CAPS" title="GTKDOC_IFACE_MACRO_SUM()">GTKDOC_IFACE_MACRO_SUM</a>              (parameter_1,parameter_2)
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GtkdocIface.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----GtkdocIface
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GtkdocIface.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="GtkdocIface.html#GtkdocIface--itest" title='The "itest" property'>itest</a>"                    <a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GtkdocIface.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="GtkdocIface.html#GtkdocIface-itest" title='The "itest" signal'>itest</a>"                                          : Run Last / No Recursion / No Hooks
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="GtkdocIface.description"></a><h2>Description</h2>
+<p>
+This file contains non-sense code for the sole purpose of testing the docs.
+We can link to the <a class="link" href="GtkdocIface.html#GtkdocIface--itest" title='The "itest" property'><span class="type">"itest"</span></a> property and the <a class="link" href="GtkdocIface.html#GtkdocIface-itest" title='The "itest" signal'><span class="type">"itest"</span></a>
+signal.
+An instance can be configured using the <a class="link" href="GtkdocIface.html#gtkdoc-iface-configure" title="gtkdoc_iface_configure ()"><code class="function">gtkdoc_iface_configure()</code></a> function.</p>
+<p>
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="GtkdocIface.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="GtkdocIface-struct"></a><h3>GtkdocIface</h3>
+<pre class="programlisting">typedef struct _GtkdocIface GtkdocIface;</pre>
+<p>
+opaque instance of gtk-doc unit test interface</p>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GtkdocIfaceInterface"></a><h3>GtkdocIfaceInterface</h3>
+<pre class="programlisting">typedef struct {
+  GTypeInterface parent;
+
+  /* class methods */
+  void (*test)(const GtkdocIface * const self, gconstpointer const user_data);
+} GtkdocIfaceInterface;
+</pre>
+<p>
+class data of gtk-doc unit test interface</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="/usr/share/gtk-doc/html/gobject/gobject-Type-Information.html#GTypeInterface"
+>GTypeInterface</a> <em class="structfield"><code>parent</code></em>;</span></p></td>
+<td> this is a bug :/
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="structfield"><code>test</code></em> ()</span></p></td>
+<td> overideable method
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="gtkdoc-iface-configure"></a><h3>gtkdoc_iface_configure ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gtkdoc_iface_configure              (<a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"
+>gchar</a> *config);</pre>
+<p>
+Configure a new instance</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>config</code></em> :</span></p></td>
+<td> settings
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> <code class="literal">TRUE</code> for sucess or <code class="literal">FALSE</code> in case of an error
+
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 0.1</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GTKDOC-IFACE-MACRO-DUMMY--CAPS"></a><h3>GTKDOC_IFACE_MACRO_DUMMY()</h3>
+<pre class="programlisting">#define GTKDOC_IFACE_MACRO_DUMMY(parameter_1,parameter_2) /* do nothing */
+</pre>
+<p>
+This macro does nothing.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameter_1</code></em> :</span></p></td>
+<td> first arg
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameter_2</code></em> :</span></p></td>
+<td> second arg
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="GTKDOC-IFACE-MACRO-SUM--CAPS"></a><h3>GTKDOC_IFACE_MACRO_SUM()</h3>
+<pre class="programlisting">#define             GTKDOC_IFACE_MACRO_SUM(parameter_1,parameter_2)</pre>
+<p>
+This macro adds its args.
+</p>
+<p>
+Return: the sum of <em class="parameter"><code>parameter_1</code></em> and <em class="parameter"><code>parameter_2</code></em></p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameter_1</code></em> :</span></p></td>
+<td> first arg
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parameter_2</code></em> :</span></p></td>
+<td> second arg
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="GtkdocIface.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="GtkdocIface--itest"></a><h3>The <code class="literal">"itest"</code> property</h3>
+<pre class="programlisting">  "itest"                    <a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"
+>gchar</a>*                : Read / Write</pre>
+<p>dummy property for iface.</p>
+<p>Default value: "dummy"</p>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="GtkdocIface.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="GtkdocIface-itest"></a><h3>The <code class="literal">"itest"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="GtkdocIface.html" title="GtkdocIface">GtkdocIface</a> *self,
+                                                        <a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"
+>gpointer</a>     user_data)      : Run Last / No Recursion / No Hooks</pre>
+<p>
+The event has been triggered.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td> myself
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

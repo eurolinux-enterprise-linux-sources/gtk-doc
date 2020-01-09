@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
+  <bookinfo>
+    <title>tester Reference Manual</title>
+    <releaseinfo>
+      for tester [VERSION]
+      The latest version of this documentation can be found on-line at
+      <ulink role="online-location" url="http://[SERVER]/tester/index.html">http://[SERVER]/tester/</ulink>.
+    </releaseinfo>
+  </bookinfo>
+
+  <chapter id="intro">
+    <title>Introduction</title>
+    <para>
+      This document is for testing purpose only.
+      It is generated from Docbook-<acronym>XML</acronym>.
+    </para>
+  </chapter>
+
+  <chapter id="main-api">
+    <title>Tests</title>
+    <xi:include href="xml/object.xml"/>
+    <xi:include href="xml/iface.xml"/>
+  </chapter>
+
+  <chapter id="object-tree">
+    <title>Object Hierarchy</title>
+     <xi:include href="xml/tree_index.sgml" />
+  </chapter>
+
+  <!--chapter id="indices"-->
+    <index id="api-index">
+      <title>API Index</title>
+    </index>
+    <index id="deprecated-api-index" role="deprecated">
+      <title>Index of deprecated API</title>
+    </index>
+    <index id="api-index-0-1" role="0.1">
+      <title>Index of new API in 0.1</title>
+    </index>
+    <index id="api-index-0-5" role="0.5">
+      <title>Index of new API in 0.5</title>
+    </index>
+  <!--/chapter-->
+
+  <glossary>
+    <glossdiv id="glossary-X"><title>X</title>
+      <glossentry>
+        <glossterm><anchor id="glossterm-XML"/>XML</glossterm>
+        <glossdef>
+          <para>Extensible Markup Language</para>
+        </glossdef>
+      </glossentry>
+      <glossentry>
+        <glossterm><anchor id="glossterm-XSL"/>XSL</glossterm>
+        <glossdef>
+          <para>XML Stylesheet Language</para>
+        </glossdef>
+      </glossentry>
+    </glossdiv>
+  </glossary>
+</book>

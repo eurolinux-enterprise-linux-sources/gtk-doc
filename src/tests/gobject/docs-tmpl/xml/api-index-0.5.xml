@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<indexdiv>
+<indexdiv><title>O</title>
+<indexentry><primaryie linkends="gtkdoc-object-frobnicate"><link linkend="gtkdoc-object-frobnicate">gtkdoc_object_frobnicate</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtkdoc-object-set-otest"><link linkend="gtkdoc-object-set-otest">gtkdoc_object_set_otest</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

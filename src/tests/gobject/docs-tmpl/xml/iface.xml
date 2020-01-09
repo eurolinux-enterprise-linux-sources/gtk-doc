@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="GtkdocIface">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkdocIface.top_of_page">GtkdocIface</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>TESTER Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkdocIface</refname>
+<refpurpose>interface for gtk-doc unit test</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkdocIface.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="GtkdocIface-struct">GtkdocIface</link>;
+                    <link linkend="GtkdocIfaceInterface">GtkdocIfaceInterface</link>;
+<link linkend="gboolean">gboolean</link>            <link linkend="gtkdoc-iface-configure">gtkdoc_iface_configure</link>              (<link linkend="gchar">gchar</link> *config);
+#define             <link linkend="GTKDOC-IFACE-MACRO-DUMMY--CAPS">GTKDOC_IFACE_MACRO_DUMMY</link>            (parameter_1,parameter_2)
+#define             <link linkend="GTKDOC-IFACE-MACRO-SUM--CAPS">GTKDOC_IFACE_MACRO_SUM</link>              (parameter_1,parameter_2)
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkdocIface.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GInterface">GInterface</link>
+   +----GtkdocIface
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkdocIface.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkdocIface--itest">itest</link>&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkdocIface.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkdocIface-itest">itest</link>&quot;                                          : Run Last / No Recursion / No Hooks
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkdocIface.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This file contains non-sense code for the sole purpose of testing the docs.
+We can link to the <link linkend="GtkdocIface--itest"><type>"itest"</type></link> property and the <link linkend="GtkdocIface-itest"><type>"itest"</type></link>
+signal.
+An instance can be configured using the <link linkend="gtkdoc-iface-configure"><function>gtkdoc_iface_configure()</function></link> function.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GtkdocIface.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkdocIface-struct" role="struct">
+<title>GtkdocIface</title>
+<indexterm zone="GtkdocIface-struct"><primary sortas="Iface">GtkdocIface</primary></indexterm><programlisting>typedef struct _GtkdocIface GtkdocIface;</programlisting>
+<para>
+opaque instance of gtk-doc unit test interface</para>
+<para>
+</para></refsect2>
+<refsect2 id="GtkdocIfaceInterface" role="struct">
+<title>GtkdocIfaceInterface</title>
+<indexterm zone="GtkdocIfaceInterface"><primary sortas="IfaceInterface">GtkdocIfaceInterface</primary></indexterm><programlisting>typedef struct {
+  GTypeInterface parent;
+
+  /* class methods */
+  void (*test)(const GtkdocIface * const self, gconstpointer const user_data);
+} GtkdocIfaceInterface;
+</programlisting>
+<para>
+class data of gtk-doc unit test interface</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GTypeInterface">GTypeInterface</link>&#160;<structfield>parent</structfield>;</term>
+<listitem><simpara> this is a bug :/
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>test</structfield>&#160;()</term>
+<listitem><simpara> overideable method
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtkdoc-iface-configure" role="function" condition="since:0.1">
+<title>gtkdoc_iface_configure ()</title>
+<indexterm zone="gtkdoc-iface-configure" role="0.1"><primary sortas="iface_configure">gtkdoc_iface_configure</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtkdoc_iface_configure              (<link linkend="gchar">gchar</link> *config);</programlisting>
+<para>
+Configure a new instance</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>config</parameter>&#160;:</term>
+<listitem><simpara> settings
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> for sucess or <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> in case of an error
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.1</para></refsect2>
+<refsect2 id="GTKDOC-IFACE-MACRO-DUMMY--CAPS" role="macro">
+<title>GTKDOC_IFACE_MACRO_DUMMY()</title>
+<indexterm zone="GTKDOC-IFACE-MACRO-DUMMY--CAPS"><primary sortas="IFACE_MACRO_DUMMY">GTKDOC_IFACE_MACRO_DUMMY</primary></indexterm><programlisting>#define GTKDOC_IFACE_MACRO_DUMMY(parameter_1,parameter_2) /* do nothing */
+</programlisting>
+<para>
+This macro does nothing.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>parameter_1</parameter>&#160;:</term>
+<listitem><simpara> first arg
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parameter_2</parameter>&#160;:</term>
+<listitem><simpara> second arg
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GTKDOC-IFACE-MACRO-SUM--CAPS" role="macro">
+<title>GTKDOC_IFACE_MACRO_SUM()</title>
+<indexterm zone="GTKDOC-IFACE-MACRO-SUM--CAPS"><primary sortas="IFACE_MACRO_SUM">GTKDOC_IFACE_MACRO_SUM</primary></indexterm><programlisting>#define             GTKDOC_IFACE_MACRO_SUM(parameter_1,parameter_2)</programlisting>
+<para>
+This macro adds its args.
+</para>
+<para>
+Return: the sum of <parameter>parameter_1</parameter> and <parameter>parameter_2</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>parameter_1</parameter>&#160;:</term>
+<listitem><simpara> first arg
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parameter_2</parameter>&#160;:</term>
+<listitem><simpara> second arg
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkdocIface.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkdocIface--itest" role="property"><title>The <literal>&quot;itest&quot;</literal> property</title>
+<indexterm zone="GtkdocIface--itest"><primary sortas="Iface:itest">GtkdocIface:itest</primary></indexterm><programlisting>  &quot;itest&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>dummy property for iface.</para><para>Default value: "dummy"</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkdocIface.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkdocIface-itest" role="signal"><title>The <literal>&quot;itest&quot;</literal> signal</title>
+<indexterm zone="GtkdocIface-itest"><primary sortas="Iface::itest">GtkdocIface::itest</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkdocIface">GtkdocIface</link> *self,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last / No Recursion / No Hooks</programlisting>
+<para>
+The event has been triggered.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> myself
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

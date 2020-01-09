@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="tester Reference Manual" link="index.html" author="" name="tester" version="2" language="c">
+  <chapters>
+    <sub name="Tests" link="ch01.html">
+      <sub name="GtkdocTester" link="tester-GtkdocTester.html"/>
+    </sub>
+    <sub name="API Index" link="api-index.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+  </chapters>
+  <functions>
+    <keyword type="enum" name="enum Bug446648" link="tester-GtkdocTester.html#Bug446648"/>
+    <keyword type="struct" name="Bug512154" link="tester-GtkdocTester.html#Bug512154"/>
+    <keyword type="macro" name="BUG_530758" link="tester-GtkdocTester.html#BUG-530758--CAPS"/>
+    <keyword type="function" name="bug_141869_a ()" link="tester-GtkdocTester.html#bug-141869-a"/>
+    <keyword type="function" name="bug_141869_b ()" link="tester-GtkdocTester.html#bug-141869-b"/>
+    <keyword type="enum" name="enum bug_324535" link="tester-GtkdocTester.html#bug-324535"/>
+    <keyword type="function" name="bug_379466 ()" link="tester-GtkdocTester.html#bug-379466"/>
+    <keyword type="function" name="bug_380824 ()" link="tester-GtkdocTester.html#bug-380824" since="0.1"/>
+    <keyword type="function" name="bug_411739 ()" link="tester-GtkdocTester.html#bug-411739"/>
+    <keyword type="function" name="bug_419997 ()" link="tester-GtkdocTester.html#bug-419997"/>
+    <keyword type="function" name="bug_445693 ()" link="tester-GtkdocTester.html#bug-445693"/>
+    <keyword type="struct" name="struct bug_460127" link="tester-GtkdocTester.html#bug-460127"/>
+    <keyword type="function" name="bug_471014 ()" link="tester-GtkdocTester.html#bug-471014"/>
+    <keyword type="function" name="bug_477532 ()" link="tester-GtkdocTester.html#bug-477532"/>
+    <keyword type="struct" name="struct bug_501038" link="tester-GtkdocTester.html#bug-501038"/>
+    <keyword type="function" name="bug_544172 ()" link="tester-GtkdocTester.html#bug-544172"/>
+    <keyword type="function" name="bug_552602 ()" link="tester-GtkdocTester.html#bug-552602"/>
+    <keyword type="struct" name="struct bug_554833" link="tester-GtkdocTester.html#bug-554833"/>
+    <keyword type="constant" name="BUG_446648_FOO" link="tester-GtkdocTester.html#BUG-446648-FOO--CAPS"/>
+    <keyword type="constant" name="BUG_324535_A" link="tester-GtkdocTester.html#BUG-324535-A--CAPS"/>
+    <keyword type="constant" name="BUG_324535_B" link="tester-GtkdocTester.html#BUG-324535-B--CAPS"/>
+    <keyword type="constant" name="BUG_324535_C" link="tester-GtkdocTester.html#BUG-324535-C--CAPS"/>
+  </functions>
+</book>

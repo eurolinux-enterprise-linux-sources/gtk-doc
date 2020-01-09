@@ -1,0 +1,72 @@
+<!-- ##### SECTION Title ##### -->
+GtkdocIface
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT GtkdocIface ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL GtkdocIface::itest ##### -->
+<para>
+
+</para>
+
+@dociface: the object which received the signal.
+
+<!-- ##### ARG GtkdocIface:itest ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT GtkdocIfaceInterface ##### -->
+<para>
+
+</para>
+
+@parent: 
+@test: 
+
+<!-- ##### FUNCTION gtkdoc_iface_configure ##### -->
+<para>
+
+</para>
+
+@config: 
+@Returns: 
+
+
+<!-- ##### MACRO GTKDOC_IFACE_MACRO_DUMMY ##### -->
+<para>
+
+</para>
+
+@parameter_1: 
+@parameter_2: 
+
+
+<!-- ##### MACRO GTKDOC_IFACE_MACRO_SUM ##### -->
+<para>
+
+</para>
+
+@parameter_1: 
+@parameter_2: 
+
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="tester Reference Manual" link="index.html" author="" name="tester">
+  <chapters>
+    <sub name="Introduction" link="intro.html"/>
+    <sub name="Tests" link="main-api.html">
+      <sub name="GtkdocObject" link="GtkdocObject.html"/>
+      <sub name="GtkdocIface" link="GtkdocIface.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="object-tree.html"/>
+    <sub name="API Index" link="api-index.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+    <sub name="Index of new API in 0.1" link="api-index-0-1.html"/>
+    <sub name="Index of new API in 0.5" link="api-index-0-5.html"/>
+    <sub name="" link="go01.html"/>
+  </chapters>
+  <functions>
+    <function name="GtkdocObject" link="GtkdocObject.html#GtkdocObject-struct"/>
+    <function name="GtkdocObjectClass" link="GtkdocObject.html#GtkdocObjectClass"/>
+    <function name="gtkdoc_object_new ()" link="GtkdocObject.html#gtkdoc-object-new"/>
+    <function name="gtkdoc_object_set_otest ()" link="GtkdocObject.html#gtkdoc-object-set-otest"/>
+    <function name="gtkdoc_object_frobnicate ()" link="GtkdocObject.html#gtkdoc-object-frobnicate"/>
+    <function name="GTKDOC_OBJECT_MACRO_DUMMY()" link="GtkdocObject.html#GTKDOC-OBJECT-MACRO-DUMMY--CAPS"/>
+    <function name="GTKDOC_OBJECT_MACRO_SUM()" link="GtkdocObject.html#GTKDOC-OBJECT-MACRO-SUM--CAPS"/>
+    <function name="The &quot;otest&quot; property" link="GtkdocObject.html#GtkdocObject--otest"/>
+    <function name="The &quot;otest&quot; signal" link="GtkdocObject.html#GtkdocObject-otest"/>
+    <function name="GtkdocIface" link="GtkdocIface.html#GtkdocIface-struct"/>
+    <function name="GtkdocIfaceInterface" link="GtkdocIface.html#GtkdocIfaceInterface"/>
+    <function name="gtkdoc_iface_configure ()" link="GtkdocIface.html#gtkdoc-iface-configure"/>
+    <function name="GTKDOC_IFACE_MACRO_DUMMY()" link="GtkdocIface.html#GTKDOC-IFACE-MACRO-DUMMY--CAPS"/>
+    <function name="GTKDOC_IFACE_MACRO_SUM()" link="GtkdocIface.html#GTKDOC-IFACE-MACRO-SUM--CAPS"/>
+    <function name="The &quot;itest&quot; property" link="GtkdocIface.html#GtkdocIface--itest"/>
+    <function name="The &quot;itest&quot; signal" link="GtkdocIface.html#GtkdocIface-itest"/>
+  </functions>
+</book>

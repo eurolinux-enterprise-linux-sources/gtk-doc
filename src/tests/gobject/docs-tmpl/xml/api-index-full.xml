@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<indexdiv>
+<indexdiv><title>I</title>
+<indexentry><primaryie linkends="GtkdocIface-struct"><link linkend="GtkdocIface">GtkdocIface</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkdocIface-itest"><link linkend="GtkdocIface-itest">GtkdocIface::itest</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkdocIface--itest"><link linkend="GtkdocIface--itest">GtkdocIface:itest</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkdocIfaceInterface"><link linkend="GtkdocIfaceInterface">GtkdocIfaceInterface</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtkdoc-iface-configure"><link linkend="gtkdoc-iface-configure">gtkdoc_iface_configure</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTKDOC-IFACE-MACRO-DUMMY--CAPS"><link linkend="GTKDOC-IFACE-MACRO-DUMMY--CAPS">GTKDOC_IFACE_MACRO_DUMMY</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTKDOC-IFACE-MACRO-SUM--CAPS"><link linkend="GTKDOC-IFACE-MACRO-SUM--CAPS">GTKDOC_IFACE_MACRO_SUM</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>O</title>
+<indexentry><primaryie linkends="GtkdocObject-struct"><link linkend="GtkdocObject">GtkdocObject</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkdocObject-otest"><link linkend="GtkdocObject-otest">GtkdocObject::otest</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkdocObject--otest"><link linkend="GtkdocObject--otest">GtkdocObject:otest</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkdocObjectClass"><link linkend="GtkdocObjectClass">GtkdocObjectClass</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtkdoc-object-frobnicate"><link linkend="gtkdoc-object-frobnicate">gtkdoc_object_frobnicate</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTKDOC-OBJECT-MACRO-DUMMY--CAPS"><link linkend="GTKDOC-OBJECT-MACRO-DUMMY--CAPS">GTKDOC_OBJECT_MACRO_DUMMY</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTKDOC-OBJECT-MACRO-SUM--CAPS"><link linkend="GTKDOC-OBJECT-MACRO-SUM--CAPS">GTKDOC_OBJECT_MACRO_SUM</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtkdoc-object-new"><link linkend="gtkdoc-object-new">gtkdoc_object_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtkdoc-object-set-otest"><link linkend="gtkdoc-object-set-otest">gtkdoc_object_set_otest</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

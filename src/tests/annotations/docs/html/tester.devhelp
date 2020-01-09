@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="tester Reference Manual" link="index.html" author="" name="tester">
+  <chapters>
+    <sub name="Tests" link="ch01.html">
+      <sub name="GtkdocTester" link="tester-GtkdocTester.html"/>
+    </sub>
+    <sub name="API Index" link="api-index.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+    <sub name="Glossary" link="go01.html"/>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+  </chapters>
+  <functions>
+    <function name="annotation_array_length ()" link="tester-GtkdocTester.html#annotation-array-length"/>
+    <function name="annotation_nullable ()" link="tester-GtkdocTester.html#annotation-nullable"/>
+  </functions>
+</book>

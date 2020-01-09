@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="GtkdocObject">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkdocObject.top_of_page">GtkdocObject</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>TESTER Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkdocObject</refname>
+<refpurpose>class for gtk-doc unit test</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkdocObject.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="GtkdocObject-struct">GtkdocObject</link>;
+                    <link linkend="GtkdocObjectClass">GtkdocObjectClass</link>;
+<link linkend="GtkdocObject">GtkdocObject</link> *      <link linkend="gtkdoc-object-new">gtkdoc_object_new</link>                   (void);
+<link linkend="void">void</link>                <link linkend="gtkdoc-object-set-otest">gtkdoc_object_set_otest</link>             (<link linkend="GObject">GObject</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *value);
+<link linkend="void">void</link>                <link linkend="gtkdoc-object-frobnicate">gtkdoc_object_frobnicate</link>            (<link linkend="GObject">GObject</link> *self,
+                                                         <link linkend="gint">gint</link> n);
+#define             <link linkend="GTKDOC-OBJECT-MACRO-DUMMY--CAPS">GTKDOC_OBJECT_MACRO_DUMMY</link>           (parameter_1,parameter_2)
+#define             <link linkend="GTKDOC-OBJECT-MACRO-SUM--CAPS">GTKDOC_OBJECT_MACRO_SUM</link>             (parameter_1,parameter_2)
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkdocObject.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkdocObject
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkdocObject.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkdocObject--otest">otest</link>&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkdocObject.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkdocObject-otest">otest</link>&quot;                                          : Run Last / No Recursion / No Hooks
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkdocObject.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This file contains non-sense code for the sole purpose of testing the docs.
+We can link to the <link linkend="GtkdocObject--otest"><type>"otest"</type></link> property and the <link linkend="GtkdocObject-otest"><type>"otest"</type></link>
+signal.
+A new instance can be created using the <link linkend="gtkdoc-object-new"><function>gtkdoc_object_new()</function></link> function. The
+whole lifecycle usualy looks like shown in this example: <informalexample><programlisting>
+GObject *myobj;
+
+myobj = gtkdoc_object_new();
+// do somehing
+g_object_unref (myobj);
+</programlisting></informalexample>
+</para>
+<para>
+You can also change parameters:
+<informalexample>
+<programlisting><xi:include xmlns:xi="http://www.w3.org/2003/XInclude" parse="text" href="../../examples/gobject.c" /></programlisting>
+</informalexample></para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GtkdocObject.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkdocObject-struct" role="struct">
+<title>GtkdocObject</title>
+<indexterm zone="GtkdocObject-struct"><primary sortas="Object">GtkdocObject</primary></indexterm><programlisting>typedef struct _GtkdocObject GtkdocObject;</programlisting>
+<para>
+instance data of gtk-doc unit test class</para>
+<para>
+</para></refsect2>
+<refsect2 id="GtkdocObjectClass" role="struct">
+<title>GtkdocObjectClass</title>
+<indexterm zone="GtkdocObjectClass"><primary sortas="ObjectClass">GtkdocObjectClass</primary></indexterm><programlisting>typedef struct {
+  GObjectClass parent;
+
+  /* class methods */
+  void (*test)(const GtkdocObject * const self, gconstpointer const user_data);
+} GtkdocObjectClass;
+</programlisting>
+<para>
+class data of gtk-doc unit test class</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GObjectClass">GObjectClass</link>&#160;<structfield>parent</structfield>;</term>
+<listitem><simpara> this is a bug :/
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>test</structfield>&#160;()</term>
+<listitem><simpara> overideable method
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtkdoc-object-new" role="function" condition="since:0.1">
+<title>gtkdoc_object_new ()</title>
+<indexterm zone="gtkdoc-object-new" role="0.1"><primary sortas="object_new">gtkdoc_object_new</primary></indexterm><programlisting><link linkend="GtkdocObject">GtkdocObject</link> *      gtkdoc_object_new                   (void);</programlisting>
+<para>
+Create a new instance</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the instance or <link linkend="NULL--CAPS"><literal>NULL</literal></link> in case of an error
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.1</para></refsect2>
+<refsect2 id="gtkdoc-object-set-otest" role="function" condition="deprecated:Use g_object_set(obj,&quot;otest&quot;,value,NULL); instead.|since:0.5">
+<title>gtkdoc_object_set_otest ()</title>
+<indexterm zone="gtkdoc-object-set-otest" role="deprecated"><primary sortas="object_set_otest">gtkdoc_object_set_otest</primary></indexterm><indexterm zone="gtkdoc-object-set-otest" role="0.5"><primary sortas="object_set_otest">gtkdoc_object_set_otest</primary></indexterm><programlisting><link linkend="void">void</link>                gtkdoc_object_set_otest             (<link linkend="GObject">GObject</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *value);</programlisting>
+<warning><para><literal>gtkdoc_object_set_otest</literal> is deprecated and should not be used in newly-written code. Use g_object_set(obj,&quot;otest&quot;,value,NULL); instead.</para></warning>
+<para>
+Set the <link linkend="GtkdocObject--otest"><type>"otest"</type></link> property.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> the object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the new otest value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.5</para></refsect2>
+<refsect2 id="gtkdoc-object-frobnicate" role="function" condition="since:0.5">
+<title>gtkdoc_object_frobnicate ()</title>
+<indexterm zone="gtkdoc-object-frobnicate" role="0.5"><primary sortas="object_frobnicate">gtkdoc_object_frobnicate</primary></indexterm><programlisting><link linkend="void">void</link>                gtkdoc_object_frobnicate            (<link linkend="GObject">GObject</link> *self,
+                                                         <link linkend="gint">gint</link> n);</programlisting>
+<para>
+Frobnicate the content of <parameter>self</parameter> <parameter>n</parameter> times.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> the object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n</parameter>&#160;:</term>
+<listitem><simpara> number of iterations
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 0.5</para></refsect2>
+<refsect2 id="GTKDOC-OBJECT-MACRO-DUMMY--CAPS" role="macro">
+<title>GTKDOC_OBJECT_MACRO_DUMMY()</title>
+<indexterm zone="GTKDOC-OBJECT-MACRO-DUMMY--CAPS"><primary sortas="OBJECT_MACRO_DUMMY">GTKDOC_OBJECT_MACRO_DUMMY</primary></indexterm><programlisting>#define GTKDOC_OBJECT_MACRO_DUMMY(parameter_1,parameter_2) /* do nothing */
+</programlisting>
+<para>
+This macro does nothing.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>parameter_1</parameter>&#160;:</term>
+<listitem><simpara> first arg
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parameter_2</parameter>&#160;:</term>
+<listitem><simpara> second arg
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GTKDOC-OBJECT-MACRO-SUM--CAPS" role="macro">
+<title>GTKDOC_OBJECT_MACRO_SUM()</title>
+<indexterm zone="GTKDOC-OBJECT-MACRO-SUM--CAPS"><primary sortas="OBJECT_MACRO_SUM">GTKDOC_OBJECT_MACRO_SUM</primary></indexterm><programlisting>#define             GTKDOC_OBJECT_MACRO_SUM(parameter_1,parameter_2)</programlisting>
+<para>
+This macro adds its args.
+</para>
+<para>
+Return: the sum of <parameter>parameter_1</parameter> and <parameter>parameter_2</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>parameter_1</parameter>&#160;:</term>
+<listitem><simpara> first arg
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parameter_2</parameter>&#160;:</term>
+<listitem><simpara> second arg
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkdocObject.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkdocObject--otest" role="property"><title>The <literal>&quot;otest&quot;</literal> property</title>
+<indexterm zone="GtkdocObject--otest"><primary sortas="Object:otest">GtkdocObject:otest</primary></indexterm><programlisting>  &quot;otest&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>dummy property for object.</para><para>Default value: "dummy"</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkdocObject.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkdocObject-otest" role="signal"><title>The <literal>&quot;otest&quot;</literal> signal</title>
+<indexterm zone="GtkdocObject-otest"><primary sortas="Object::otest">GtkdocObject::otest</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkdocObject">GtkdocObject</link> *self,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run Last / No Recursion / No Hooks</programlisting>
+<para>
+The event has been triggered.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> myself
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

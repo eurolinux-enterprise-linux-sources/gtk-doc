@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GtkdocTester</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="tester Reference Manual">
+<link rel="up" href="ch01.html" title="Tests">
+<link rel="prev" href="ch01.html" title="Tests">
+<link rel="next" href="api-index.html" title="API Index">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Tests">
+<link rel="index" href="api-index.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">tester Reference Manual</th>
+<td><a accesskey="n" href="api-index.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#tester-GtkdocTester.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#tester-GtkdocTester.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="tester-GtkdocTester"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="tester-GtkdocTester.top_of_page"></a>GtkdocTester</span></h2>
+<p>GtkdocTester — module for gtk-doc unit test</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="tester-GtkdocTester.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="tester-GtkdocTester.html#Bug446648" title="enum Bug446648">Bug446648</a>;
+                    <a class="link" href="tester-GtkdocTester.html#Bug512154" title="Bug512154">Bug512154</a>;
+#define             <a class="link" href="tester-GtkdocTester.html#BUG-530758--CAPS" title="BUG_530758">BUG_530758</a>
+void                <a class="link" href="tester-GtkdocTester.html#bug-141869-a" title="bug_141869_a ()">bug_141869_a</a>                        (unsigned  pid);
+void                <a class="link" href="tester-GtkdocTester.html#bug-141869-b" title="bug_141869_b ()">bug_141869_b</a>                        (signed  pid);
+enum                <a class="link" href="tester-GtkdocTester.html#bug-324535" title="enum bug_324535">bug_324535</a>;
+void                <a class="link" href="tester-GtkdocTester.html#bug-379466" title="bug_379466 ()">bug_379466</a>                          (intpid );
+int                 <a class="link" href="tester-GtkdocTester.html#bug-380824" title="bug_380824 ()">bug_380824</a>                          (int arg);
+struct bug *        <a class="link" href="tester-GtkdocTester.html#bug-411739" title="bug_411739 ()">bug_411739</a>                          (void);
+void                <a class="link" href="tester-GtkdocTester.html#bug-419997" title="bug_419997 ()">bug_419997</a>                          (int const_values);
+void                <a class="link" href="tester-GtkdocTester.html#bug-445693" title="bug_445693 ()">bug_445693</a>                          (unsigned long  pid);
+struct              <a class="link" href="tester-GtkdocTester.html#bug-460127" title="struct bug_460127">bug_460127</a>;
+const <a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"
+>gchar</a> * const * <a class="link" href="tester-GtkdocTester.html#bug-471014" title="bug_471014 ()">bug_471014</a>                        (void);
+<a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint64"
+>guint64</a>             <a class="link" href="tester-GtkdocTester.html#bug-477532" title="bug_477532 ()">bug_477532</a>                          (void);
+struct              <a class="link" href="tester-GtkdocTester.html#bug-501038" title="struct bug_501038">bug_501038</a>;
+char const *        (<a class="link" href="tester-GtkdocTester.html#bug-544172" title="bug_544172 ()">*bug_544172</a>)                       (char const *self);
+const char* const * <a class="link" href="tester-GtkdocTester.html#bug-552602" title="bug_552602 ()">bug_552602</a>                          (void);
+struct              <a class="link" href="tester-GtkdocTester.html#bug-554833" title="struct bug_554833">bug_554833</a>;
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="tester-GtkdocTester.description"></a><h2>Description</h2>
+<p>
+This file contains non-sense code for the sole purpose of testing the docs.
+</p>
+<p>
+As described in http://bugzilla.gnome.org/show_bug.cgi?id=457077 it
+returns nothing.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="tester-GtkdocTester.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="Bug446648"></a><h3>enum Bug446648</h3>
+<pre class="programlisting">enum Bug446648 {
+    BUG_446648_FOO
+};
+</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=446648</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><a name="BUG-446648-FOO--CAPS"></a><span class="term"><code class="literal">BUG_446648_FOO</code></span></p></td>
+<td> field
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="Bug512154"></a><h3>Bug512154</h3>
+<pre class="programlisting">typedef struct {
+  unsigned long index;
+} Bug512154;
+</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=512154</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term">unsigned long <em class="structfield"><code>index</code></em>;</span></p></td>
+<td> field
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="BUG-530758--CAPS"></a><h3>BUG_530758</h3>
+<pre class="programlisting">#define BUG_530758 "dummy"
+</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=530758#c1
+</p>
+<p>
+<a class="ulink" href="http://bugzilla.gnome.org/show_bug.cgi?id=530758#c1" target="_top">Test</a></p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-141869-a"></a><h3>bug_141869_a ()</h3>
+<pre class="programlisting">void                bug_141869_a                        (unsigned  pid);</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=141869</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pid</code></em> :</span></p></td>
+<td> arg
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-141869-b"></a><h3>bug_141869_b ()</h3>
+<pre class="programlisting">void                bug_141869_b                        (signed  pid);</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=141869</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pid</code></em> :</span></p></td>
+<td> arg
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-324535"></a><h3>enum bug_324535</h3>
+<pre class="programlisting">typedef enum {
+  BUG_324535_A,
+#ifdef GTK_DISABLE_DEPRECATED
+  BUG_324535_B,
+#endif
+  BUG_324535_C,
+} bug_324535;
+</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=324535</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="BUG-324535-A--CAPS"></a><span class="term"><code class="literal">BUG_324535_A</code></span></p></td>
+<td> enum 1
+</td>
+</tr>
+<tr>
+<td><p><a name="BUG-324535-B--CAPS"></a><span class="term"><code class="literal">BUG_324535_B</code></span></p></td>
+<td> enum 2
+</td>
+</tr>
+<tr>
+<td><p><a name="BUG-324535-C--CAPS"></a><span class="term"><code class="literal">BUG_324535_C</code></span></p></td>
+<td> enum 3
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-379466"></a><h3>bug_379466 ()</h3>
+<pre class="programlisting">void                bug_379466                          (intpid );</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=379466</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pid</code></em> :</span></p></td>
+<td> arg
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-380824"></a><h3>bug_380824 ()</h3>
+<pre class="programlisting">int                 bug_380824                          (int arg);</pre>
+<p>
+Returns a value.
+http://bugzilla.gnome.org/show_bug.cgi?id=380824</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td> arg
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> result
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 0.1</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-411739"></a><h3>bug_411739 ()</h3>
+<pre class="programlisting">struct bug *        bug_411739                          (void);</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=411739</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> result
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-419997"></a><h3>bug_419997 ()</h3>
+<pre class="programlisting">void                bug_419997                          (int const_values);</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=419997</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pid</code></em> :</span></p></td>
+<td> arg
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-445693"></a><h3>bug_445693 ()</h3>
+<pre class="programlisting">void                bug_445693                          (unsigned long  pid);</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=445693</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pid</code></em> :</span></p></td>
+<td> arg
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-460127"></a><h3>struct bug_460127</h3>
+<pre class="programlisting">struct bug_460127 {
+  gint a;
+};
+</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=460127</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gint"
+>gint</a> <em class="structfield"><code>a</code></em>;</span></p></td>
+<td> field
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gpointer"
+>gpointer</a> <em class="structfield"><code>_reserved</code></em>[_PADDDING + 0];</span></p></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-471014"></a><h3>bug_471014 ()</h3>
+<pre class="programlisting">const <a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#gchar"
+>gchar</a> * const * bug_471014                        (void);</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=471014</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> result
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-477532"></a><h3>bug_477532 ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/glib/glib-Basic-Types.html#guint64"
+>guint64</a>             bug_477532                          (void);</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=477532</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-501038"></a><h3>struct bug_501038</h3>
+<pre class="programlisting">struct bug_501038 {
+  gint a;
+#ifdef GTK_DISABLE_DEPRECATED
+  gint b;
+#else
+  gint _b;
+#endif
+};
+</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=501038</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-544172"></a><h3>bug_544172 ()</h3>
+<pre class="programlisting">char const *        (*bug_544172)                       (char const *self);</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=544172</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td> object pointer.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> result or <code class="literal">NULL</code>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-552602"></a><h3>bug_552602 ()</h3>
+<pre class="programlisting">const char* const * bug_552602                          (void);</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=552602</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> result
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="bug-554833"></a><h3>struct bug_554833</h3>
+<pre class="programlisting">struct bug_554833 {
+  int i;
+};
+</pre>
+<p>
+http://bugzilla.gnome.org/show_bug.cgi?id=554833</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>
