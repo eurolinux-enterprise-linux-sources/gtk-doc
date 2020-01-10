@@ -1,7 +1,7 @@
 Summary: API documentation generation tool for GTK+ and GNOME
 Name: gtk-doc
 Version: 1.19
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPLv2+ and GFDL
 Group: Development/Tools
 #VCS: git:git://git.gnome.org/gtk-doc
@@ -68,6 +68,9 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/gtk-doc/html
 %{_datadir}/help/*/gtk-doc-manual/
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.19-3
+- Mass rebuild 2013-12-27
+
 * Tue Oct 29 2013 Matthias Clasen <mclasen@redhat.com> - 1.19-2
 - Fix sorting of the annotation glossary
 
