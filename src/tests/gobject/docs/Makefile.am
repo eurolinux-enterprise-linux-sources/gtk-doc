@@ -24,12 +24,11 @@ SCAN_OPTIONS=--deprecated-guards="GTKDOC_TESTER_DISABLE_DEPRECATED" \
 # Extra options to supply to gtkdoc-mkdb.
 MKDB_OPTIONS=--xml-mode
 
-# Extra options to supply to gtkdoc-mktmpl
-# e.g. MKTMPL_OPTIONS=--only-section-tmpl
-MKTMPL_OPTIONS=
-
 # Extra options to supply to gtkdoc-mkhtml
-MKHTML_OPTIONS=
+MKHTML_OPTIONS=--path=$(abs_top_srcdir)/tests/gobject/examples
+
+# Extra options to supply to gtkdoc-mkpdf
+MKPDF_OPTIONS=--path=$(abs_top_srcdir)/tests/gobject/examples
 
 # Extra options to supply to gtkdoc-fixref. Not normally needed.
 # --html-dir=$(HTML_DIR)
@@ -62,7 +61,7 @@ GTKDOC_CFLAGS = -I$(top_srcdir)/tests/gobject/src $(TEST_DEPS_CFLAGS)
 GTKDOC_LIBS = $(TEST_DEPS_LIBS) $(top_builddir)/tests/gobject/src/libtester.la
 
 # include generic part
-include $(top_srcdir)/tests/gtk-doc.notmpl.make
+include $(top_srcdir)/tests/gtk-doc.make
 
 # Other files to distribute
 # e.g. EXTRA_DIST += version.xml.in

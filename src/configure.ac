@@ -1,16 +1,14 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.63])
 
-dnl Use a simple 2-digit version number for a while, since our old example
-dnl Makefile can only cope with that, i.e. use 1.1, 1.2, 1.3 ... 9.9.
-dnl FIXME: I can't see anything failing (1.14.1), lets try to use a three digit
-dnl number for the development version
-m4_define(gtk_doc_version, 1.25)
+dnl We're using a two digit number for the releases and
+dnl a three digit number for the development version
+m4_define(gtk_doc_version, 1.28)
 
 AC_INIT([gtk-doc],[gtk_doc_version],[http://bugzilla.gnome.org/enter_bug.cgi?product=gtk-doc],[gtk-doc])
 
 AC_CONFIG_MACRO_DIR([m4])
-AC_CONFIG_SRCDIR([gtkdoc-common.pl.in])
+AC_CONFIG_SRCDIR([gtk-doc.pc.in])
 AC_CONFIG_AUX_DIR([build-aux])
 
 AM_INIT_AUTOMAKE([1.11 check-news std-options -Wno-portability tar-ustar no-dist-gzip dist-xz])
@@ -32,26 +30,9 @@ dnl Make sure we have pkg-config >= 0.19, so installing in $(datadir) is OK.
 PKG_PROG_PKG_CONFIG([0.19])
 
 dnl
-dnl Check for Perl.
-dnl
-AC_PATH_PROG([PERL], [perl])
-if test -z "$PERL"; then
-	AC_MSG_ERROR([perl not found])
-fi
-
-AC_MSG_CHECKING([if Perl version >= 5.18.0])
-if "$PERL" -e "require v5.18.0"; then
-	AC_MSG_RESULT([yes])
-else
-	AC_MSG_RESULT([no])
-	AC_MSG_ERROR([perl >= 5.18.0 is required for gtk-doc])
-fi
-
-dnl
 dnl Check for Python.
 dnl
-AM_PATH_PYTHON([2.3],,[:])
-AM_CONDITIONAL([HAVE_PYTHON], [test "$PYTHON" != :])
+AM_PATH_PYTHON([2.7])
 
 dnl
 dnl Check for xsltproc
@@ -137,7 +118,7 @@ fi
 AC_SUBST([HIGHLIGHT_OPTIONS])
 
 dnl
-dnl Set PACKAGE_DATA_DIR so we can find the script containing common routines.
+dnl Set runtime package dirs so we can find the script containing common routines.
 dnl
 dnl From Autoconf Macro Archive:
 m4_define([AC_DEFINE_DIR], [
@@ -153,6 +134,8 @@ m4_define([AC_DEFINE_DIR], [
 ])
 PACKAGE_DATA_DIR="${datadir}/${PACKAGE}/data"
 AC_DEFINE_DIR([PACKAGE_DATA_DIR], [PACKAGE_DATA_DIR])
+PYTHON_PACKAGE_DIR="${datadir}/${PACKAGE}/python"
+AC_DEFINE_DIR([PYTHON_PACKAGE_DIR], [PYTHON_PACKAGE_DIR])
 
 dnl Only use -Wall if we have gcc
 if test "x$GCC" = "xyes"; then
@@ -172,7 +155,7 @@ PKG_CHECK_MODULES(TEST_DEPS, [glib-2.0 >= 2.6.0 gobject-2.0 >= 2.6.0],
 	]
 )
 AM_CONDITIONAL(GTK_DOC_USE_LIBTOOL, test -n "$LIBTOOL" -a x$gtk_doc_use_libtool = xyes )
-dnl this enable the rule in test/Makefile.am
+dnl this enables the rule in test/Makefile.am
 AM_CONDITIONAL(BUILD_TESTS, test x$build_tests = xyes)
 AC_SUBST(glib_prefix)
 
@@ -183,13 +166,6 @@ AC_ARG_ENABLE([debug],
 	[enable runtime debugging code (default=no)]),,
 	[enable_debug="no"])
 AC_MSG_RESULT($enable_debug)
-
-if test "x$enable_debug" != "xno"; then
-	TRACE="LogTrace"
-else
-	TRACE="#"
-fi
-AC_SUBST(TRACE)
 
 dnl check what date format we can use for the makefile tracing in tests
 dnl this is mostly to detect the date command on macosx that is quite cripled
@@ -234,46 +210,47 @@ if test "x$have_yelp_tools" != "xyes"; then
 fi
 AM_CONDITIONAL([HAVE_YELP_TOOLS],[test x$have_yelp_tools = xyes])
 
+# cmake/GtkDocConfig.cmake is handled in the Makefile, not here.
 AC_CONFIG_FILES([Makefile
 gtk-doc.pc
-gtk-doc.dsl
-gtk-doc.spec
-gtk-doc.cat
-gtkdoc-common.pl
 cmake/Makefile
-cmake/GtkDocConfig.cmake
 cmake/GtkDocConfigVersion.cmake
+gtkdoc/config.py
 help/Makefile
 help/manual/Makefile
 tests/Makefile
-tests/gobject/Makefile
-tests/gobject/src/Makefile
-tests/gobject/docs/Makefile
-tests/bugs/Makefile
-tests/bugs/src/Makefile
-tests/bugs/docs/Makefile
 tests/annotations/Makefile
 tests/annotations/src/Makefile
 tests/annotations/docs/Makefile
-tests/fail/Makefile
-tests/fail/src/Makefile
-tests/fail/docs/Makefile
+tests/bugs/Makefile
+tests/bugs/src/Makefile
+tests/bugs/docs/Makefile
 tests/empty/Makefile
 tests/empty/src/Makefile
 tests/empty/docs/Makefile
+tests/fail/Makefile
+tests/fail/src/Makefile
+tests/fail/docs/Makefile
+tests/gobject/Makefile
+tests/gobject/src/Makefile
+tests/gobject/docs/Makefile
+tests/program/Makefile
+tests/program/src/Makefile
+tests/program/docs/Makefile
+tests/repro/Makefile
+tests/repro/src/Makefile
+tests/repro/docs/Makefile
 ])
 
 dnl run chmod on these after parsing them.
 AC_CONFIG_FILES([gtkdoc-check],    [chmod +x gtkdoc-check])
 AC_CONFIG_FILES([gtkdoc-depscan],  [chmod +x gtkdoc-depscan])
 AC_CONFIG_FILES([gtkdoc-fixxref],  [chmod +x gtkdoc-fixxref])
-dnl that would be nice, but would fail if perl is in a non-std path
-dnl AC_CONFIG_FILES([gtkdoc-mkdb],     [chmod +x gtkdoc-mkdb && perl -cwT gtkdoc-mkdb])
 AC_CONFIG_FILES([gtkdoc-mkdb],     [chmod +x gtkdoc-mkdb])
 AC_CONFIG_FILES([gtkdoc-mkhtml],   [chmod +x gtkdoc-mkhtml])
+AC_CONFIG_FILES([gtkdoc-mkhtml2],  [chmod +x gtkdoc-mkhtml2])
 AC_CONFIG_FILES([gtkdoc-mkman],    [chmod +x gtkdoc-mkman])
 AC_CONFIG_FILES([gtkdoc-mkpdf],    [chmod +x gtkdoc-mkpdf])
-AC_CONFIG_FILES([gtkdoc-mktmpl],   [chmod +x gtkdoc-mktmpl])
 AC_CONFIG_FILES([gtkdoc-rebase],   [chmod +x gtkdoc-rebase])
 AC_CONFIG_FILES([gtkdoc-scan],     [chmod +x gtkdoc-scan])
 AC_CONFIG_FILES([gtkdoc-scangobj], [chmod +x gtkdoc-scangobj])
@@ -285,12 +262,9 @@ AC_MSG_NOTICE([
 gtk-doc was configured with the following options:
 ==================================================])
 
-test "$PYTHON" != : \
-    && AC_MSG_NOTICE([** Python based tools enabled, using $PYTHON]) \
-    || AC_MSG_NOTICE([   Python based tools disabled])
 test -n "$DBLATEX$FOP" \
-    && AC_MSG_NOTICE([** XML PDF support enabled, using $DBLATEX$FOP]) \
-    || AC_MSG_NOTICE([   XML PDF support disabled, no dblatex or fop available])
+    && AC_MSG_NOTICE([** PDF support enabled, using $DBLATEX$FOP]) \
+    || AC_MSG_NOTICE([   PDF support disabled, no dblatex or fop available])
 test -n "$HIGHLIGHT" \
     && AC_MSG_NOTICE([** Syntax highlighting of examples enabled, using $HIGHLIGHT]) \
     || AC_MSG_NOTICE([   Syntax highlighting of examples disabled])

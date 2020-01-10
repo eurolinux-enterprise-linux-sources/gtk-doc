@@ -1,0 +1,64 @@
+From 43fac1c26c9c6bdede2d32b5243e74636bda8a98 Mon Sep 17 00:00:00 2001
+From: Adam Williamson <awilliam@redhat.com>
+Date: Thu, 10 May 2018 11:08:02 -0700
+Subject: [PATCH 2/2] Replace `match.groups(1)` with `match.group(1)`
+
+halfline ran into a crash in gtk-doc when trying to cut an
+accountsservice release, a TypeError pointing to this re.sub
+call. Looking at it, the use of `match.groups(1)` is clearly
+wrong. `match.groups()` returns a tuple consisting of *all*
+the match subgroups; the argument it takes is the value to use
+for subgroups which didn't capture anything (the default being
+None). What the code here clearly actually *wants* is not that
+tuple, but the contents of the first match subgroup only, as a
+string. To get that you do `match.group(1)`. So, let's fix that.
+
+There are two other occurrences of the same error later in the
+file, so let's fix that too. If I'm reading it correctly, those
+ones wouldn't have caused crashes, they would only cause the
+block they're in not to work properly and produce "Can't
+determine package for '(something)'" log messages even when it
+should have worked (because 'package' will be the tuple, not the
+subgroup, and will never be 'in' `OnlineMap` or `LocalMap`).
+
+Note, these have been lying around for a long time, but the one
+that causes the crash was not hit until 1.28, because of the
+regex error fixed by b77d97b. Until that regex was fixed,
+ReadDevhelp never worked on this codebase, so we never hit the
+bug in ReadIndex. The crash might have happened with some other
+codebase for which the ReadDevhelp regex *did* work, though.
+
+Signed-off-by: Adam Williamson <awilliam@redhat.com>
+---
+ gtkdoc/rebase.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/gtkdoc/rebase.py b/gtkdoc/rebase.py
+index 2a1d495..4b0266c 100755
+--- a/gtkdoc/rebase.py
++++ b/gtkdoc/rebase.py
+@@ -154,7 +154,7 @@ def ReadIndex(dir, file):
+         match = re.match(r'''^<ONLINE\s+href\s*=\s*"([^"]+)"\s*>''', line)
+         if match:
+             # Remove trailing non-directory component.
+-            onlinedir = re.sub(r'''(.*/).*''', r'\1', match.groups(1))
++            onlinedir = re.sub(r'''(.*/).*''', r'\1', match.group(1))
+     return onlinedir
+ 
+ 
+@@ -226,10 +226,10 @@ def RebaseLink(href, options):
+         else:
+             match = re.match(r'\.\./([^/]+)', href)
+             if match is not None:
+-                package = match.groups(1)
++                package = match.group(1)
+             elif options.aggressive:
+                 match = re.search(r'''([^/]+)/$''', href)
+-                package = match.groups(1)
++                package = match.group(1)
+ 
+         if package:
+             if options.online and package in OnlineMap:
+-- 
+2.17.0
+

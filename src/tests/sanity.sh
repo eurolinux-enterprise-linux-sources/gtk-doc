@@ -81,6 +81,47 @@ done
 if test $nok -gt 0 ; then failed=`expr $failed + 1`; fi
 tested=`expr $tested + 1`
 
+# check that log files have only one line (the command)
+# discard references to launchapd bugs
+nok=0
+DISCARD_PATTERN='Please fix https://bugs.launchpad.net/ubuntu/+source/gtk-doc/+bug/[0-9]* . For now run:
+gunzip .*.gz
+
+'
+for file in $dir/*/docs/gtkdoc-*.log; do
+  # skip this in verbose mode as we'll have more text
+  if test "x${V}" = "x1"; then
+    continue
+  fi
+
+  expected_lines="1"
+  # adjust for known files
+  if test $file = "$dir/fail/docs/gtkdoc-mkdb.log"; then
+    expected_lines="16"
+  fi
+  if test $file = "$dir/bugs/docs/gtkdoc-mkdb.log"; then
+    expected_lines="2"
+  fi
+  if test $file = "$dir/gobject/docs/gtkdoc-fixxref.log"; then
+    expected_lines="2"
+  fi
+  case $file in
+  *gtkdoc-fixxref.log)
+    # if there is no /usr/share/gtk-doc/html/gobject we should skip fixxref logs
+    if test ! -d "$GLIB_PREFIX/share/gtk-doc/html/gobject"; then
+      continue
+    fi
+    ;;
+  esac
+
+  lines=`grep -v -x -G -e "$DISCARD_PATTERN" $file | wc -l | cut -d' ' -f1`
+  if test $lines -gt $expected_lines; then
+    echo 1>&2 "expected no more than $expected_lines log line in $file, but got $lines"
+    nok=`expr $nok + 1`;
+  fi
+done
+if test $nok -gt 0 ; then failed=`expr $failed + 1`; fi
+tested=`expr $tested + 1`
 
 # check stability of generated xml/html
 nok=0

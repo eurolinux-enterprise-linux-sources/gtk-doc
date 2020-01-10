@@ -1,38 +1,34 @@
 %global debug_package %{nil}
 
 Name: gtk-doc
-Version: 1.25
-Release: 1%{?dist}
+Version: 1.28
+Release: 2%{?dist}
 Summary: API documentation generation tool for GTK+ and GNOME
 
 License: GPLv2+ and GFDL
 URL: http://www.gtk.org/gtk-doc
-Source: http://download.gnome.org/sources/gtk-doc/1.25/gtk-doc-%{version}.tar.xz
+Source0: http://download.gnome.org/sources/gtk-doc/1.28/gtk-doc-%{version}.tar.xz
+# Fix a crasher bug caused by mismatched variable name:
+# https://bugzilla.gnome.org/show_bug.cgi?id=796011
+Patch0: 0001-Fix-a-missed-variable-rename-in-ScanDirectory-caused.patch
+# Fix another crasher bug caused by wrong use of re groups:
+# https://bugzilla.gnome.org/show_bug.cgi?id=796012
+Patch1: 0002-Replace-match.groups-1-with-match.group-1.patch
 
+BuildRequires: dblatex
 BuildRequires: docbook-utils
-BuildRequires: jade
 BuildRequires: /usr/bin/xsltproc
 BuildRequires: docbook-style-xsl
-%if 0%{?fedora}
-BuildRequires: perl-generators
-%endif
-BuildRequires: perl-Test-Simple
 BuildRequires: python2-devel
-BuildRequires: gnome-doc-utils
+BuildRequires: python-six
 BuildRequires: gettext
 BuildRequires: source-highlight
 BuildRequires: yelp-tools
 
 # Following are not automatically installed
-Requires: docbook-utils openjade /usr/bin/xsltproc docbook-style-xsl
-# we are installing an automake macro
-Requires: automake
-# we are installing an sgml catalog
-Requires: sgml-common
+Requires: docbook-utils /usr/bin/xsltproc docbook-style-xsl
+Requires: python-six
 Requires: source-highlight
-
-Source1: filter-requires-gtk-doc.sh
-%define __perl_requires %{SOURCE1}
 
 %description
 gtk-doc is a tool for generating API reference documentation.
@@ -40,13 +36,7 @@ It is used for generating the documentation for GTK+, GLib
 and GNOME.
 
 %prep
-%setup -q
-
-%if 0%{?rhel} == 7
-# Lower unnecessarily high perl requirement
-# https://bugzilla.gnome.org/show_bug.cgi?id=773151
-sed -i -e 's/require v5\.18\.0/require v5.16.0/' configure
-%endif
+%autosetup -p1
 
 # Move this doc file to avoid name collisions
 mv doc/README doc/README.docs
@@ -58,23 +48,29 @@ make %{?_smp_mflags}
 %install
 %make_install
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/gtk-doc/html
-
 %check
-make check
+# For reasons unknown first make check fails with texlive debug spew in log
+# files. Just run it twice to work this around.
+make check || make check
 
 %files
 %license COPYING COPYING-DOCS
 %doc AUTHORS README doc/* examples
 %{_bindir}/*
-%{_datadir}/aclocal/gtk-doc.m4
+%{_datadir}/aclocal/
 %{_datadir}/gtk-doc/
-%{_datadir}/sgml/gtk-doc/
 %{_datadir}/pkgconfig/gtk-doc.pc
 %{_datadir}/help/*/gtk-doc-manual/
 %{_libdir}/cmake/
 
 %changelog
+* Thu May 10 2018 Adam Williamson <awilliam@redhat.com> - 1.28-2
+- Fix a couple of crasher bugs encountered by halfline (BGO#79601{1,2))
+
+* Sat Mar 24 2018 Kalev Lember <klember@redhat.com> - 1.28-1
+- Update to 1.28
+- Resolves: #1569971
+
 * Tue Mar 22 2016 Kalev Lember <klember@redhat.com> - 1.25-1
 - Update to 1.25
 - Resolves: #1386981

@@ -32,6 +32,9 @@
  * A new instance can be created using the gtkdoc_object_new() function. The
  * whole lifecycle usualy looks like shown in this example:
  * |[<!-- language="C" -->
+ * #include <glib.h>
+ * #include <glib-object.h>
+ *
  * GObject *myobj;
  *
  * myobj = gtkdoc_object_new();
@@ -47,7 +50,7 @@
  *
  * You can also change parameters:
  * <informalexample>
- * <programlisting language="c"><xi:include xmlns:xi="http://www.w3.org/2003/XInclude" parse="text" href="../../examples/gobject.c" /></programlisting>
+ * <programlisting role="example" language="c"><xi:include xmlns:xi="http://www.w3.org/2003/XInclude" parse="text" href="../../examples/gobject.c" /></programlisting>
  * </informalexample>
  *
  * This example serves two main purposes:
@@ -164,9 +167,6 @@
  *
  * This file contains non-sense code for the sole purpose of testing the docs.
  */
-
-#include <glib.h>
-#include <glib-object.h>
 
 #include "gobject.h"
 #include "giface.h"

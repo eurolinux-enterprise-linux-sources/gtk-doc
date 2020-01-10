@@ -74,7 +74,7 @@
       <listitem>
 	<formalpara>
 	  <title>A</title>
-	  <para>Usar na <link linkend="fdl-title-page">Título da página</link> (e nas capas, se existirem) um título distinto em relação ao do <link linkend="fdl-document">Documento</link>, e daqueles de versões anteriores (os quais devem, na existência de algum, ser listados na seção "Histórico" do Documento). Você pode usar o mesmo título de uma versão anterior se o editor original daquela versão conceder-lhe permissão.</para>
+	  <para>Usar na <link linkend="fdl-title-page">Título da página</link> (e nas capas, se existirem) um título distinto em relação ao do <link linkend="fdl-document">Documento</link>, e daqueles de versões anteriores (os quais devem, na existência de algum, ser listados na seção “Histórico” do Documento). Você pode usar o mesmo título de uma versão anterior se o editor original daquela versão conceder-lhe permissão.</para>
 	</formalpara>
       </listitem>
       
@@ -192,13 +192,7 @@
     <title>6. COLEÇÕES DE DOCUMENTOS</title>
     <para>Você pode fazer uma coleção que consiste do <link linkend="fdl-document">Documento</link> e outros documentos publicados sob esta Licença, e substituir as cópias individuais desta Licença, nos vários documentos, por uma única cópia a ser incluída na coleção, desde que você siga as regras desta Licença para cópias literais de cada documento em todos os outros aspectos.</para>
     
-    <para>
-      You may extract a single document from such a collection, and
-      distribute it individually under this License, provided you
-      insert a copy of this License into the extracted document, and
-      follow this License in all other respects regarding verbatim
-      copying of that document.
-    </para>
+    <para>Você pode extrair um único documento desta coleção, e distribuí-lo individualmente sob esta Licença, desde que você insira uma cópia desta Licença no documento extraído, e siga esta Licença em todos os outros aspectos com relação à cópia literal do documento.</para>
     </sect1>
     
   <sect1 id="fdl-section7">
@@ -234,6 +228,6 @@
       
     <para>Se você não tiver qualquer <link linkend="fdl-invariant">Sessões invariantes</link>, escreva <quote>sem Seções Invariantes</quote> ao invés de afirmar quais são invariantes. Se você não tem <link linkend="fdl-cover-texts">Textos de Capa Frontal</link>, escreva <quote>sem Textos de Capa Frontal</quote> ao invés de <quote>Textos de Capa Frontal sendo LISTADOS</quote>; O mesmo se aplica a <link linkend="fdl-cover-texts">Textos de Contracapa</link>.</para>
     
-    <para>Se seu documento contiver exemplos não-triviais de código de programação, recomendamos publicar estes exemplos paralelamente, sob a licença de software livre que você escolher, como por exemplo a <ulink type="http" url="http://www.gnu.org/copyleft/gpl.html">Licença Pública Geral GNU (GPL)</ulink> (GNU General Public License), para permitir seu uso em software livre.</para>
+    <para>Se seu documento contiver exemplos não-triviais de código de programação, recomendamos publicar estes exemplos paralelamente, sob a licença de software livre que você escolher, como, por exemplo, a <ulink type="http" url="http://www.gnu.org/copyleft/gpl.html">Licença Pública Geral GNU (GPL)</ulink>, para permitir seu uso em software livre.</para>
   </sect1>
 </appendix>

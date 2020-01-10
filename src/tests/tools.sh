@@ -7,18 +7,11 @@ tested=0
 
 echo "Running suite(s): gtk-doc-$suite";
 
-# we can use which here as we override the path in TEST_ENVIRONMENT
-
-# test perl scripts
-for file in gtkdoc-check gtkdoc-fixxref gtkdoc-mkdb gtkdoc-mktmpl gtkdoc-rebase gtkdoc-scan gtkdoc-scangobj ; do
-  /usr/bin/perl -cwT `which $file`
-  if test $? = 1 ; then failed=`expr $failed + 1`; fi
-  tested=`expr $tested + 1`
-done
+# we use 'which' here as we override the path in TEST_ENVIRONMENT
 
 
 # test shell scripts
-for file in gtkdoc-mkhtml gtkdoc-mkman gtkdoc-mkpdf gtkdocize; do
+for file in gtkdocize; do
   sh -n `which $file`
   if test $? != 0 ; then failed=`expr $failed + 1`; fi
   tested=`expr $tested + 1`
@@ -34,9 +27,14 @@ done
 
 
 # test python scripts
-/usr/bin/python -m py_compile `which gtkdoc-depscan`
-if test $? != 0 ; then failed=`expr $failed + 1`; fi
-tested=`expr $tested + 1`
+# TODO: also test the module files
+# TODO: test python 2 and 3 (python3 -mcompileall gtkdoc/*.py)
+for file in gtkdoc-check gtkdoc-depscan gtkdoc-fixxref gtkdoc-mkdb gtkdoc-mkhtml gtkdoc-mkman gtkdoc-mkpdf gtkdoc-rebase gtkdoc-scangobj; do
+    fullfile=`which $file`
+    /usr/bin/python -m py_compile $fullfile
+    if test $? != 0 ; then failed=`expr $failed + 1`; fi
+    tested=`expr $tested + 1`
+done
 
 
 # summary

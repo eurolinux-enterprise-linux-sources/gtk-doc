@@ -1,26 +1,28 @@
 ## Process this file with automake to produce Makefile.in
 
-SUBDIRS = gobject bugs annotations fail empty .
+# we need to run '.' last so that sanity processes the generated docs
+# maybe move it to a subdir?
+SUBDIRS = annotations bugs empty fail gobject program repro .
 
 if BUILD_TESTS
 
 TESTS = \
-  gtkdoc-common.t gtkdoc-fixxref.t gtkdoc-mkdb.t gtkdoc-rebase.t gtkdoc-scan.t \
-  tools.sh gobject.sh bugs.sh annotations.sh fail.sh empty.sh sanity.sh
+  check.py common.py mk_to_db.py \
+  tools.sh gobject.sh bugs.sh annotations.sh fail.sh empty.sh sanity.sh \
+  program.sh
 TESTS_ENVIRONMENT = \
 	BUILDDIR=$(abs_builddir) \
 	SRCDIR=$(abs_srcdir) \
 	ABS_TOP_BUILDDIR=$(abs_top_builddir) \
 	ABS_TOP_SRCDIR=$(abs_top_srcdir) \
 	PATH=$(abs_top_builddir):$(srcdir):$(PATH) \
-	PERL5LIB=$(abs_top_builddir):$(PERL5LIB)
-
+	PYTHONPATH=$(abs_top_builddir):$(abs_top_srcdir):$(PYTHONPATH) \
+	GLIB_PREFIX="$(glib_prefix)"
+TEST_EXTENSIONS = .py
+PY_LOG_COMPILER = $(PYTHON)
 endif
 
-EXTRA_DIST = gtkdoctest.sh tools.sh sanity.sh \
-	gobject.sh bugs.sh annotations.sh fail.sh empty.sh \
-	gtkdoc-common.t gtkdoc-fixxref.t gtkdoc-mkdb.t gtkdoc-rebase.t gtkdoc-scan.t
-
+EXTRA_DIST = gtkdoctest.sh $(TESTS)
 
 # run any given test by running make <test>.check
 %.check: %

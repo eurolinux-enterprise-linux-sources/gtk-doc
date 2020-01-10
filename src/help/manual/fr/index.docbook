@@ -46,10 +46,28 @@
 
     <revhistory>
       <revision>
-        <revnumber>1.24.1</revnumber>
-        <date>30 May 2015</date>
+         <revnumber>1.28</revnumber>
+         <date>24 Mar 2018</date>
+         <authorinitials>ss</authorinitials>
+         <revremark>bug fixes</revremark>
+      </revision>
+      <revision>
+         <revnumber>1.27</revnumber>
+         <date>07 Dec 2017</date>
+         <authorinitials>ss</authorinitials>
+         <revremark>fine tuning of the python port</revremark>
+      </revision>
+      <revision>
+         <revnumber>1.26</revnumber>
+         <date>11 Aug 2017</date>
+         <authorinitials>ss</authorinitials>
+         <revremark>port all tools from perl/bash to python</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.25</revnumber>
+        <date>21 March 2016</date>
         <authorinitials>ss</authorinitials>
-        <revremark>development version</revremark>
+        <revremark>bug fixes, test cleanups</revremark>
       </revision>
       <revision>
         <revnumber>1.24</revnumber>
@@ -202,7 +220,10 @@
 
       <para>GTK-Doc fonctionne en utilisant la documentation de fonctions placées dans le code source sous la forme de blocs de commentaires avec un formatage spécifique ou la documentation ajoutée aux fichiers prototypes que GTK-Doc utilise (notez cependant que GTK-Doc ne documente que les fonctions déclarées dans des fichiers d'en-tête ; il ne fait rien pour les fonctions statiques).</para>
 
-      <para>GTK-Doc consiste en un certain nombre de scripts Perl, chacun réalisant une étape du processus.</para>
+      <para>
+        GTK-Doc consists of a number of python scripts, each performing a different step
+        in the process.
+      </para>
 
       <para>Il y a 5 étapes principales :</para>
 
@@ -216,13 +237,6 @@
           <para><guilabel>Collecte des informations sur le code.</guilabel> <application>gtkdoc-scan</application> analyse les fichiers d'en-tête du code à la recherche des déclarations de fonctions, de macros, d'énumérations, de structures et d'unions. Il crée le fichier <filename>&lt;module&gt;-decl-list.txt</filename> contenant une liste des déclarations en les plaçant dans des sections en accord avec le fichier d'en-tête d'où elles proviennent. Lors du premier lancement, ce fichier est copié dans <filename>&lt;module&gt;-sections.txt</filename>. L'auteur peut réorganiser les sections et l'ordre des déclarations dans celui-ci, pour obtenir l'ordre final souhaité. Le deuxième fichier généré est <filename>&lt;module&gt;-decl.txt</filename>. Ce fichier contient les déclarations complètes trouvées lors de l'analyse. Si, pour une raison quelconque, on souhaite voir apparaître dans la documentation des éléments qui n'ont pas été trouvé lors de l'analyse, ou dont la déclaration doit apparaître différemment, il est possible d'ajouter des entrées dans <filename>&lt;module&gt;-overrides.txt</filename> similaires à celle de <filename>&lt;module&gt;-decl.txt</filename>.</para>
          <para><application>gtkdoc-scanobj</application> peut aussi être utilisé pour interroger de manière dynamique une bibliothèque à propos de n'importe quelle sous-classe de GtkObject qu'elle exporte. Il enregistre les informations sur la position de chaque objet dans la hiérarchie de classe et sur tous les arguments et signaux GTK fournis.</para>
          <para><application>gtkdoc-scanobj</application> ne devrait plus être utilisé. Il était nécessaire par le passé lorsque GObject était encore GtkObject dans gtk+.</para>
-        </listitem>
-
-        <listitem>
-          <para><guilabel>Génération des fichiers « prototypes ».</guilabel> <application>gtkdoc-mktmpl</application> crée un certain nombre de fichiers dans le sous-répertoire <filename class="directory">tmpl/</filename>, en utilisant les informations récoltées lors de la première étape (notez que le script peut être exécuté plusieurs fois, il est fait en sorte qu'aucune donnée ne soit jamais perdue).</para>
-          <note>
-            <para>Depuis GTK-Doc 1.9, les prototypes peuvent être évités. Nous encourageons tout le monde à conserver la documentation dans le code. <application>gtkdocize</application> prend maintenant en charge l'option <option>--flavour no-tmpl</option> qui choisit un makefile qui évite complètement l'utilisation de tmpl. Si vous n'avez jamais modifié de fichiers à la main dans tmpl, effacez le répertoire (par ex. à partir d'un système de gestion de versions).</para>
-          </note>
         </listitem>
 
         <listitem>
@@ -242,7 +256,7 @@
             document called <filename>&lt;package&gt;.pdf</filename>.
           </para>
           <para>
-            Files in <filename class="directory">xml/</filename> and 
+            Files in <filename class="directory">xml/</filename> and
             <filename class="directory">html/</filename> directories are always
             overwritten. One should never edit them directly.
           </para>
@@ -260,7 +274,9 @@
 
       <sect2 id="requirements">
         <title>Pré-requis</title>
-        <para><guilabel>Perl v5</guilabel> - les principaux scripts sont écrits en Perl.</para>
+        <para>
+          <guilabel>python 2/3</guilabel> - the main scripts are written in python.
+        </para>
         <para>
           <guilabel>xsltproc</guilabel> - the xslt processor from libxslt
           <ulink url="http://xmlsoft.org/XSLT/" type="http">xmlsoft.org/XSLT/</ulink>
@@ -268,9 +284,6 @@
         <para>
           <guilabel>docbook-xsl</guilabel> - the docbook xsl stylesheets
           <ulink url="http://sourceforge.net/projects/docbook/files/docbook-xsl/" type="http">sourceforge.net/projects/docbook/files/docbook-xsl</ulink>
-        </para>
-        <para>
-          <guilabel>Python</guilabel> - optional - for gtkdoc-depscan
         </para>
         <para>
           One of <guilabel>source-highlight</guilabel>, <guilabel>highlight</guilabel> or
@@ -363,7 +376,12 @@ AM_CONDITIONAL([ENABLE_GTK_DOC], false)
       	<para>GTK-Doc est désactivé par défaut ! N'oubliez pas de passer l'option <option>'--enable-gtk-doc'</option> lors de la prochaine exécution du script <filename>configure</filename>. Dans le cas contraire, la documentation pré-générée est installée (ce qui a du sens pour les utilisateurs mais pas pour les développeurs).</para>
       </important>
 
-      <para>De plus, il est recommandé d'avoir la ligne suivante dans votre script <filename>configure.ac</filename>. Cela permet à <application>gtkdocize</application> de copier automatiquement les définitions de macro pour <function>GTK_DOC_CHECK</function> à votre projet.</para>
+      <para>
+        Furthermore it is recommended that you have the following line inside
+        your <filename>configure.ac</filename> script.
+        This allows <application>gtkdocize</application> to automatically copy the
+        macro definition for <function>GTK_DOC_CHECK</function> to your project.
+      </para>
 
       <para>
         <example><title>Préparation pour gtkdocize</title>
@@ -383,12 +401,12 @@ AC_CONFIG_MACRO_DIR(m4)
       <title>Intégration avec automake</title>
 
       <para>
-        First copy the <filename>Makefile.am</filename> from the 
+        First copy the <filename>Makefile.am</filename> from the
         <filename class="directory">examples</filename> sub directory of the
         <ulink url="https://git.gnome.org/browse/gtk-doc/tree/examples/Makefile.am">gtkdoc-sources</ulink>
         to your project's API documentation directory (
         <filename class="directory">./docs/reference/&lt;package&gt;</filename>).
-        A local copy should be available under e.g. 
+        A local copy should be available under e.g.
         <filename>/usr/share/doc/gtk-doc-tools/examples/Makefile.am</filename>.
         If you have multiple doc-packages repeat this for each one.
       </para>
@@ -527,7 +545,7 @@ install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/libmeep/html
     <para>
       The scanner can handle the majority of C headers fine. In the case of
       receiving warnings from the scanner that look like a special case, one can
-      hint GTK-Doc to skip over them. 
+      hint GTK-Doc to skip over them.
       <example><title>GTK-Doc comment block</title>
         <programlisting><![CDATA[
 #ifndef __GTK_DOC_IGNORE__
@@ -541,7 +559,7 @@ install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/libmeep/html
       <title>Limitations</title>
       <para>
         Note, that GTK-Doc's supports
-        <code>#ifndef(__GTK_DOC_IGNORE__)</code> but not 
+        <code>#ifndef(__GTK_DOC_IGNORE__)</code> but not
         <code>#if !defined(__GTK_DOC_IGNORE__)</code> or other combinations.
       </para>
     </note>
@@ -640,7 +658,7 @@ install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/libmeep/html
       <para>
         In older GTK-Doc releases, if you need support for additional
         formatting, you would need to enable the usage of docbook
-        XML tags inside doc-comments by putting <option>--xml-mode</option> 
+        XML tags inside doc-comments by putting <option>--xml-mode</option>
         (or <option>--sgml-mode</option>) in the variable
         <symbol>MKDB_OPTIONS</symbol> inside <filename>Makefile.am</filename>.
       </para>
@@ -724,7 +742,12 @@ install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/libmeep/html
         <varlistentry>
           <term>SECTION:&lt;nom&gt;</term>
           <listitem>
-            <para>Le nom relie la section de la documentation à la partie respective dans le fichier <filename>&lt;package&gt;-sections.txt</filename>. Le nom fourni ici doit correspondre à la balise &lt;FILE&gt; du fichier <filename>&lt;package&gt;-sections.txt</filename>.</para>
+            <para>
+              The name links the section documentation to the respective part in
+              the <filename>&lt;package&gt;-sections.txt</filename> file. The
+              name given here should match the &lt;FILE&gt; tag in the
+              <filename>&lt;package&gt;-sections.txt</filename> file.
+            </para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -913,7 +936,7 @@ foo_get_bar(Foo *foo)
           Documentation blocks can contain annotation-tags. These tags will be
           rendered with tooltips describing their meaning. The tags are used by
           gobject-introspection to generate language bindings. A detailed list
-          of the supported tags can be found on 
+          of the supported tags can be found on
           <ulink url="http://live.gnome.org/GObjectIntrospection/Annotations" type="http">the wiki</ulink>.
         </para>
 
@@ -1028,8 +1051,8 @@ g_object_class_install_property (object_class, PROP_SOME_PROPERTY, ...);
  *
  * The ::foobarized signal is emitted each time someone tries to foobarize @widget.
  */
-foo_signals[FOOBARIZE] =
-  g_signal_new ("foobarize",
+foo_signals[FOOBARIZED] =
+  g_signal_new ("foobarized",
                 ...
 ]]></programlisting>
         </example>
@@ -1085,6 +1108,111 @@ typedef enum {
         </example>
 
         <para>Utilisez <code>/*&lt; private &gt;*/</code> avant les valeurs d'énumérations privées que vous voulez cacher. Utilisez <code>/*&lt; public &gt;*/</code> dans le cas contraire.</para>
+
+      </sect2>
+    </sect1>
+
+
+    <sect1 id="documenting_inline_program">
+      <title>Inline program documentation</title>
+      <para>
+         You can document programs and their commandline interface using inline
+         documentation.
+      </para>
+
+      <variablelist>
+      <title>Tags</title>
+
+      <varlistentry><term>PROGRAM</term>
+
+      <listitem>
+      <para>
+         Defines the start of a program documentation.
+      </para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>@short_description:</term>
+      <listitem>
+      <para>
+         Defines a short description of the program. (Optional)
+      </para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>@synopsis:</term>
+      <listitem>
+      <para>
+         Defines the arguments, or list of arguments that the program can take.
+         (Optional)
+      </para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>@see_also:</term>
+      <listitem>
+      <para>
+          See Also manual page section. (Optional)
+      </para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>@arg:</term>
+      <listitem>
+      <para>
+          Argument(s) passed to the program and their description. (Optional)
+      </para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>Description:</term>
+      <listitem>
+      <para>
+          A longer description of the program.
+      </para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>« Returns » :</term>
+      <listitem>
+      <para>
+          Specificy what value(s) the program returns. (Optional)
+      </para>
+      </listitem>
+      </varlistentry>
+
+      </variablelist>
+
+      <sect2>
+        <title>Example of program documentation.</title>
+        <example><title>Program documentation block</title>
+        <programlisting><![CDATA[
+/**
+ * PROGRAM:test-program
+ * @short_description: A test program
+ * @synopsis: test-program [*OPTIONS*...] --arg1 *arg* *FILE*
+ * @see_also: test(1)
+ * @--arg1 *arg*: set arg1 to *arg*
+ * @--arg2 *arg*: set arg2 to *arg*
+ * @-v, --version: Print the version number
+ * @-h, --help: Print the help message
+ *
+ * Long description of program.
+ *
+ * Returns: Zero on success, non-zero on failure
+ */
+int main(int argc, char *argv[])
+{
+	return 0;
+}
+]]></programlisting>
+        </example>
 
       </sect2>
     </sect1>
@@ -1272,17 +1400,17 @@ gtk_arrow_get_type
         In addition a few option elements are created in commented form. You can
         review these and enable them as you like.
       </para>
-      
+
       <para>
         <example><title>Optional part in the master document</title>
           <programlisting><![CDATA[
   <!-- enable this when you use gobject introspection annotations
   <xi:include href="xml/annotation-glossary.xml"><xi:fallback /></xi:include>
-  -->          
+  -->
 ]]></programlisting>
         </example>
       </para>
-      
+
       <para>
         Finally you need to add new section whenever you introduce one. The
         <link linkend="modernizing-gtk-doc-1-16">gtkdoc-check</link> tool will
@@ -1313,7 +1441,7 @@ gtk_arrow_get_type
         Blank lines are ignored and lines starting with a '#' are treated as
         comment lines.
       </para>
-      
+
       <note>
         <para>
           While the tags make the file look like xml, it is not. Please do not
@@ -1416,15 +1544,15 @@ meep_app_get_type
       <command>GTK_DOC_KEEP_INTERMEDIATE=1 make</command>.
     </para>
   </chapter>
-  
+
   <chapter id="modernizing">
     <title>Modernizing the documentation</title>
-    
+
     <para>
       GTK-Doc has been around for quite some time. In this section we list new
       features together with the version since when it is available.
     </para>
-    
+
     <sect1 id="modernizing-gtk-doc-1-9">
       <title>GTK-Doc 1.9</title>
 
@@ -1432,7 +1560,7 @@ meep_app_get_type
         When using xml instead of sgml, one can actually name the master
         document <filename>&lt;package&gt;-docs.xml</filename>.
       </para>
-      
+
       <para>
         This version supports <option>SCAN_OPTIONS=--rebuild-sections</option>
         in <filename>Makefile.am</filename>. When this is enabled, the
@@ -1440,21 +1568,21 @@ meep_app_get_type
         can be removed from the vcs. This only works nicely for projects that
         have a very regular structure (e.g. each .{c,h} pair will create new
         section). If one organize a project close to that updating a manually
-        maintained section file can be as simple as running 
+        maintained section file can be as simple as running
         <code>meld &lt;package&gt;-decl-list.txt &lt;package&gt;-sections.txt</code>.
       </para>
-      
+
       <para>
         Version 1.8 already introduced the syntax for documenting sections in
         the sources instead of the separate files under <filename class="directory">tmpl</filename>.
         This version adds options to switch the whole doc module to not use the
         extra tmpl build step at all, by using <option>--flavour no-tmpl</option>
         in <filename>configure.ac</filename>. If you don't have a <filename class="directory">tmpl</filename>
-        checked into you source control system and haven't yet switched, just
+        checked into your source control system and haven't yet switched, just
         add the flag to <filename>configure.ac</filename> and you are done.
       </para>
     </sect1>
-    
+
     <sect1 id="modernizing-gtk-doc-1-10">
       <title>GTK-Doc 1.10</title>
 
@@ -1507,7 +1635,7 @@ endif
         The makefiles shipped with this version generate an entity file at <filename>xml/gtkdocentities.ent</filename>,
         containing entities for e.g. package_name and package_version. You can
         use this e.g. in the main xml file to avoid hardcoding the version
-        number. Below is any example that shows how the entity file is included
+        number. Below is an example that shows how the entity file is included
         and how the entities are used. The entities can also be used in all
         generated files, GTK-Doc will use the same xml header in generated xml
         files.

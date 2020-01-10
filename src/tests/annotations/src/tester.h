@@ -26,10 +26,13 @@ GList *annotation_elementtype_returns (void);
 
 gboolean annotation_outparams (GList **list);
 gboolean annotation_outparams_optional (GList **list);
+gboolean annotation_outparams_not_optional (GList **list);
 gboolean annotation_outparams_nullable (GList **list);
 gboolean annotation_outparams_not_nullable (GList **list);
 gboolean annotation_outparams_optional_nullable (GList **list);
+gboolean annotation_outparams_not_optional_nullable (GList **list);
 gboolean annotation_outparams_optional_not_nullable (GList **list);
+gboolean annotation_outparams_not_optional_not_nullable (GList **list);
 
 void annotation_skip (GList *list);
 gboolean annotation_skip_return (GList *list);
@@ -37,6 +40,9 @@ gboolean annotation_skip_return (GList *list);
 void annotation_scope (GCallback *callback, gpointer user_data);
 
 void annotation_rename_to (void);
+
+void annotation_attributes_single (void);
+void annotation_attributes_single_eq (void);
 
 void stability_unstable(void);
 

@@ -1,6 +1,7 @@
 <SECTION>
 <FILE>tester</FILE>
 <TITLE>GtkDocTestIf</TITLE>
+FOO
 test
 GtkDocTestIfInterface
 GtkDocTestIf

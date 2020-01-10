@@ -115,7 +115,7 @@ const char* const * bug_552602 (void);
 
 /**
  * Bug446648:
- * @BUG_446648_FOO: field
+ * @BUG_446648_FOO: foo
  *
  * http://bugzilla.gnome.org/show_bug.cgi?id=446648
  */
@@ -506,6 +506,7 @@ void bug_741941(void *object, void *par) G_GNUC_NONNULL(1) G_GNUC_NONNULL(2);
 void bug_732689 (const gchar *spec);
 void bug_749142 (void);
 
+void bug_783420 (int in, int *out);
 
 /**
  * BUG_731417_DEPRECATED:
@@ -543,5 +544,23 @@ typedef enum
  * This should be listed in the functions section.
  */
 #define MACRO_FUNCTION(x) (x << 1)
+
+/**
+ * _:
+ * @str: a string
+ *
+ * https://bugzilla.gnome.org/show_bug.cgi?id=753052
+ */
+#define _(str) str
+
+/**
+ * BUG_791928:
+ *
+ * https://bugzilla.gnome.org/show_bug.cgi?id=791928
+ *
+ * Stability: UndefinedTestValue
+ */
+#define BUG_791928   1
+
 
 #endif // GTKDOC_TESTER_H

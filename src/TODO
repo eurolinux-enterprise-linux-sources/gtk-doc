@@ -30,13 +30,13 @@ files:
   file
 * we need to check if this works well for all kind of _types (e.g. boxed)
   https://bugzilla.gnome.org/show_bug.cgi?id=605025
-  
+
 == -section.txt ==
 https://bugzilla.gnome.org/show_bug.cgi?id=646094
 
 * using SCAN_OPTION="--rebuild-sections" can be used to use the audogenerated
   sections file
-* when scanning a header file, everything of the header and the respective .c 
+* when scanning a header file, everything of the header and the respective .c
   file will be put to one section
 * symbols can be hidden using __GTK_DOC_IGNORE__
 
@@ -67,18 +67,22 @@ https://bugzilla.gnome.org/show_bug.cgi?id=646094
 * expand urls (needds more work, see gtkdoc-mkdb : ExpandAbbreviations)
 
 
-= Testing =
-cd test/gobject
-diff -u --exclude="Makefile*" docs docs-tmpl | diffstat
-
-
 = Running =
 gtk-doc is using a makefile with several targets to get from sources to docs. It
 uses makefile variables for configuration.
-It might be easier to have a gtk-doc tool that can run the other gtk-doc tools
+It might be easier to have a gtkdoc tool that can run the other gtkdoc tools
 in the right order (ev. by importing them as modules). This could handle a few
 things nicer that the makefiles don't do well. This would also make it easy to
 run it manually or integrate into other build systems.
+
+
+= Intermediate files =
+Can we change the intermediate files into e.g. json or yaml so that we can just
+load it from python?
+
+Can we drop the decl-list.txt file (or rename to make sure this is what a
+generated section.txt would look like)
+
 
 = Issues =
 * gtkdoc-fixxref makefile targets use $HTML_DIR
@@ -92,7 +96,7 @@ run it manually or integrate into other build systems.
 * gtkdoc does not know about module versions
   * this is causing troubles when multiple library versions are installed
     (gtk+-{2,3}, gstreamer-{0.8,0.10,1.0}
-  * right now gtk-doc is xreffing against any <module>/index.sgml found
+  * right now gtk-doc is xreffing against any <module>/*.devhelp2 found
   * just using the one with a higher number won't work
 
 
@@ -134,6 +138,7 @@ libs can benefit from the extensions too.
   * we might also need to reflow some things, as gtk-doc.xsl also runs the devhelp/devhelp2 generation
     - but then the urls in the devhelp file, refer to the chunked html anyway
 
+
 = Warnings =
 Bugzilla has some requests for extra warnings. We should support a common
 commandline option(s) in all tools to enable/disable the warnings. The makefiles
@@ -159,6 +164,7 @@ more warnings:
   - 'dummy-docs' check if symbol docs are very short and repeat mainly words
     from the symbol.
   - possible xrefs (e.g. adding a # or () would make it a successful xref)
+
 
 = GIR =
 == scanning ==
@@ -454,16 +460,14 @@ grep "gst_caps_is_always_compatible" tags
   - extra xsltproc options:
     --novalid: saves ~ 0.12 sec
 
-- perl regexps
-  - not really an issue, but we can improve by compiling the regexps
-    http://stackoverflow.com/questions/550258/does-the-o-modifier-for-perl-regular-expressions-still-provide-any-benefit
-  - we use $&, $', and $` in several places (comple match, pre-match and post-match).
-    Those are slow and once they are used a single time perl prepares them for every match operation.
-    Since perl 5.10 one can use the /p flag for matches where this is needed and then use
-    ${^PREMATCH} , ${^MATCH}  and ${^POSTMATCH}
-- perl profiling
-  - http://blog.timbunce.org/2008/07/15/nytprof-v2-a-major-advance-in-perl-profilers/
-    perl -d:NYTProf gtkdoc-mkdb ...
-    nytprofhtml
-    firefox nytprof/index.html
 
+= python =
+- consider swithcing to this markdown parser
+  https://pythonhosted.org/Markdown/index.html
+- switch intermediate files to json/yaml
+  - we need to pick something, that we can easilly output from plain c (produced by gtkdoc-scangobj)
+  - decl-list.txt and .types would need to stay
+  - maybe maintain one file per sourcefile (in a subdir) to eventually be able to
+    do incremental builds
+- refactor Read{Args,Declarations,Signals}File to output into a single dictionary each:
+  Signal{Names,Objects,Returns,...}[key] -> Signals[key].{names,objects,returns,...}

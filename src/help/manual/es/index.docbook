@@ -34,7 +34,15 @@
     </legalnotice>
 
     <revhistory>
-      <revision><revnumber>1.24.1</revnumber> <date>30 de mayo de 2015</date> <authorinitials>ss</authorinitials> <revremark>versión de desarrollo</revremark></revision>
+      <revision>
+         <revnumber>1.28</revnumber>
+         <date>24 Mar 2018</date>
+         <authorinitials>ss</authorinitials>
+         <revremark>bug fixes</revremark>
+      </revision>
+      <revision><revnumber>1.27</revnumber> <date>07 de diciembre de 2017</date> <authorinitials>ss</authorinitials> <revremark>ajustes para la migración a python</revremark></revision>
+      <revision><revnumber>1.26</revnumber> <date>11 de agosto de 2017</date> <authorinitials>ss</authorinitials> <revremark>portar todas las herramientas de perl/bash a python</revremark></revision>
+      <revision><revnumber>1.25</revnumber> <date>21 de marzo de 2016</date> <authorinitials>ss</authorinitials> <revremark>correcciones de errores, limpieza</revremark></revision>
       <revision><revnumber>1.24</revnumber> <date>29 de mayo de 2015</date> <authorinitials>ss</authorinitials> <revremark>correcciones de errores</revremark></revision>
       <revision><revnumber>1.23</revnumber> <date>17 de mayo de 2015</date> <authorinitials>ss</authorinitials> <revremark>correcciones de errores</revremark></revision>
       <revision><revnumber>1.22</revnumber> <date>7 de mayo de 2015</date> <authorinitials>ss</authorinitials> <revremark>correcciones de errores, eliminadas funcionalidades obsoletas</revremark></revision>
@@ -60,7 +68,7 @@
     </othercredit>
     <copyright>
       
-        <year>2009 - 2015</year>
+        <year>2009 - 2017</year>
       
       <holder>Daniel Mustieles</holder>
     </copyright>
@@ -112,7 +120,7 @@
 
       <para>GTK-Doc funciona usando documentación de las funciones ubicadas dentro de los archivos de fuentes en bloques de comentarios especialmente formateados, o documentación añadida a los archivos de plantillas que GTK-Doc usa (aunque debe notar que GTK-Doc sólo documentará las funciones declaradas en los archivos de cabecera; no produce salida para funciones estáticas).</para>
 
-      <para>GTK-Doc consiste en un número de scripts en Perl, cada uno realiza un paso diferente en el proceso.</para>
+      <para>GTK-Doc consiste en un número de scripts en python, cada uno realiza un paso diferente en el proceso.</para>
 
       <para>Existen 5 pasos importantes en el proceso:</para>
 
@@ -126,13 +134,6 @@
           <para><guilabel>Obtener información acerca del código</guilabel>. <application>gtkdoc-scan</application> analiza los archivos de cabecera del código buscando declaraciones de funciones, macros, enumeraciones, estructuras y uniones. Crea el archivo <filename>&lt;module&gt;-decl-list.txt</filename> que contiene una lista de las declaraciones, ubicándolas en secciones de acuerdo con el archivo de cabecera en el que están. Durante la primera ejecución este archivo se copia en <filename>&lt;module&gt;-sections.txt</filename>. El autor puede reordenar las secciones y el orden de las declaraciones en ellas, para producir la salida que quiere. El segundo archivo que genera es <filename>&lt;module&gt;-decl.txt</filename>. Este archivo contiene las declaraciones completas que encontró el análisis. Si por alguna razón quisiese que algunos símbolos apareciesen en los documentos, donde el análisis no puede encontrar la declaración completa o la declaración debería aparecer de forma diferente, puede introducir entradas de forma similar a las que hay en <filename>&lt;module&gt;-decl.txt</filename> dentro de <filename>&lt;module&gt;-overrides.txt</filename>.</para>
          <para><application>gtkdoc-scangobj</application> también se puede usar para consultar dinámicamente una biblioteca sobre cualquiera de las subclases GObject que exporta. Guarda información sobre la posición de cada objeto en la jerarquía de clases y sobre cualquier propiedad de GObject y las señales que proporciona.</para>
          <para><application>gtkdoc-scanobj</application> no se debería usar más. Se necesitó en el pasado, cuando GObject todavía era GtkObject dentro de GTK+.</para>
-        </listitem>
-
-        <listitem>
-          <para><guilabel>Generar los archivos «plantilla».</guilabel> <application>gtkdoc-mktmpl</application> crea un número de archivos en la subcarpeta <filename class="directory">tmpl/</filename>, usando la información obtenida en el primer paso. (Tenga en cuenta que esto se puede ejecutar de forma separada. Intentará asegurarse de que la documentación nunca se pierde.)</para>
-          <note>
-            <para>Desde de GTK-Doc 1.9 se pueden evitar las plantillas. Animamos a la gente a que mantenga la documentación en el código. <application>gtkdocize</application> ahora soporta una opción <command>--flavour no-tmpl</command> que elige un archivo makefile que omite completamente el uso de tmpl. Si nunca ha cambiado a mano el archivo tmpl, elimine la carpeta una vez (por ejemplo, desde el sistema de control de versiones).</para>
-          </note>
         </listitem>
 
         <listitem>
@@ -153,10 +154,9 @@
 
       <sect2 id="requirements">
         <title>Requerimientos</title>
-        <para><guilabel>Perl v5</guilabel>: los scripts principales están en Perl.</para>
+        <para><guilabel>python 2/3</guilabel> - los scripts principales están escritos en python.</para>
         <para><guilabel>xsltproc</guilabel>: el procesador xslt de libxslt <ulink url="http://xmlsoft.org/XSLT/" type="http">xmlsoft.org/XSLT/</ulink></para>
         <para><guilabel>docbook-xsl</guilabel>: las hojas de estilo XLS de docbook <ulink url="http://sourceforge.net/projects/docbook/files/docbook-xsl/" type="http">sourceforge.net/projects/docbook/files/docbook-xsl</ulink></para>
-        <para><guilabel>Python</guilabel>: opcional, para gtkdoc-depscan</para>
         <para>Una de <guilabel>source-highlight</guilabel>, <guilabel>highlight</guilabel> o <guilabel>vim</guilabel>: opcional, usada para el resaltado de sintaxis de los ejemplos.</para>
       </sect2>
     </sect1>
@@ -242,7 +242,7 @@ AM_CONDITIONAL([ENABLE_GTK_DOC], false)
       	<para>GTK-Doc está desactivado de forma predeterminada. Recuerde pasar la opción <option>«--enable-gtk-doc»</option> en la siguiente ejecución de <filename>configure</filename>. De otra forma, la documentación pregenerada se instala (lo que tiene sentido para usuarios, pero no para desarrolladores).</para>
       </important>
 
-      <para>Aún más, se recomienda que tenga la siguiente línea en su script <filename>configure.ac</filename>. Esto permite que <filename>gtkdocize</filename> copie automáticamente la definición del macro para <function>GTK_DOC_CHECK</function> a su proyecto.</para>
+      <para>Aún más, se recomienda que tenga la siguiente línea en su script <filename>configure.ac</filename>. Esto permite que <application>gtkdocize</application> copie automáticamente la definición de la macro para <function>GTK_DOC_CHECK</function> a su proyecto.</para>
 
       <para>
         <example><title>Preparación para gtkdocize</title>
@@ -768,8 +768,8 @@ g_object_class_install_property (object_class, PROP_SOME_PROPERTY, ...);
  *
  * The ::foobarized signal is emitted each time someone tries to foobarize @widget.
  */
-foo_signals[FOOBARIZE] =
-  g_signal_new ("foobarize",
+foo_signals[FOOBARIZED] =
+  g_signal_new ("foobarized",
                 ...
 </programlisting>
         </example>
@@ -821,6 +821,93 @@ typedef enum {
         </example>
 
         <para>Use <code>/*&lt; private &gt;*/</code> antes de enumerar valores privados que quiera ocultar. Use <code>/*&lt; public &gt;*/</code> para revertir el comportamiento anterior.</para>
+
+      </sect2>
+    </sect1>
+
+
+    <sect1 id="documenting_inline_program">
+      <title>Documentación en línea del programa</title>
+      <para>Puede documentar programas y su interfaz de línea de comandos usando la documentación en línea.</para>
+
+      <variablelist>
+      <title>Etiquetas</title>
+
+      <varlistentry><term>PROGRAM</term>
+
+      <listitem>
+      <para>Define el inicio de la documentación de un programa.</para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>@short_description:</term>
+      <listitem>
+      <para>Define una descripción corta del programa. (Opcional)</para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>@synopsis:</term>
+      <listitem>
+      <para>Define el argumento o la lista de argumentos que el programa puede usar. (Opcional)</para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>@see_also:</term>
+      <listitem>
+      <para>Página del manual Ver también. (Opcional)</para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>@arg:</term>
+      <listitem>
+      <para>Argumentos pasados al programa y su descripción. (Opcional)</para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>Description:</term>
+      <listitem>
+      <para>Una descripción más larga del programa.</para>
+      </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term>Devuelve:</term>
+      <listitem>
+      <para>Especifique qué valores devuelve el programa. (Opcional)</para>
+      </listitem>
+      </varlistentry>
+
+      </variablelist>
+
+      <sect2>
+        <title>Ejemplo de documentación de un programa.</title>
+        <example><title>Bloque de documentación del programa</title>
+        <programlisting>
+/**
+ * PROGRAM:test-program
+ * @short_description: A test program
+ * @synopsis: test-program [*OPTIONS*...] --arg1 *arg* *FILE*
+ * @see_also: test(1)
+ * @--arg1 *arg*: set arg1 to *arg*
+ * @--arg2 *arg*: set arg2 to *arg*
+ * @-v, --version: Print the version number
+ * @-h, --help: Print the help message
+ *
+ * Long description of program.
+ *
+ * Returns: Zero on success, non-zero on failure
+ */
+int main(int argc, char *argv[])
+{
+	return 0;
+}
+</programlisting>
+        </example>
 
       </sect2>
     </sect1>
@@ -992,17 +1079,17 @@ gtk_arrow_get_type
       </para>
 
       <para>Se crean además unos pocos elementos de opciones de la manera comentada. Puede revisarlos y activarlos como quiera.</para>
-      
+
       <para>
         <example><title>Parte opcional en el documento maestro</title>
           <programlisting>
-  &lt;!-- enable this when you use gobject introspection annotations
+  &lt;!-- active esto cuando use anotaciones de introspección de gobject
   &lt;xi:include href="xml/annotation-glossary.xml"&gt;&lt;xi:fallback /&gt;&lt;/xi:include&gt;
   --&gt;          
 </programlisting>
         </example>
       </para>
-      
+
       <para>Por último, necesita añadir una sección nueva siempre que quiera introducir una. La herramienta <link linkend="modernizing-gtk-doc-1-16">gtkdoc-check</link> le recordará los nuevos archivos xml generados que no estén inclídos todavía en la documentación.</para>
 
       <para>
@@ -1024,7 +1111,7 @@ gtk_arrow_get_type
       <para>El archivo de sección se usa para organizar la salida de la documentación por GTK-Doc. Aquí se especifica qué símbolos pertenecen a qué módulo o clase y el control de la visibilidad (pública o privada).</para>
 
       <para>El archivo de sección es un archivo de texto plano con etiquetas que delimitan las secciones. Se ignoran las líneas vacías y las líneas que comiencen con «#» se tratan como comentarios.</para>
-      
+
       <note>
         <para>Aunque las etiquetas hacen que el archivo parezca XML, no lo es. No incluya etiquetas del tipo &lt;SUBSECTION&gt;.</para>
       </note>
@@ -1079,22 +1166,22 @@ meep_app_get_type
 
     <para>Si el proyecto está basado en GObject, también se puede mirar en los archivos producidos por el analizador de objetos: <filename>&lt;paquete&gt;.args.txt</filename>, <filename>&lt;paquete&gt;.hierarchy.txt</filename>, <filename>&lt;paquete&gt;.interfaces.txt</filename>, <filename>&lt;paquete&gt;.prerequisites.txt</filename> y <filename>&lt;paquete&gt;.signals.txt</filename>. Si faltan símbolos en cualquiera de ellos, puede hacer que GTK-Doc guarde el análisis de archivos para futuros análisis, pero ejecutándolo como <command>GTK_DOC_KEEP_INTERMEDIATE=1 make</command>.</para>
   </chapter>
-  
+
   <chapter id="modernizing">
     <title>Modernizar la documentación</title>
-    
+
     <para>GTK-Doc ha existido durante mucho tiempo. En esta sección se listan las características nuevas junto con la versión desde la que están disponibles.</para>
-    
+
     <sect1 id="modernizing-gtk-doc-1-9">
       <title>GTK-Doc 1.9</title>
 
       <para>Al usar XML en lugar de SGML, actualmente se puede nombrar el documento maestro <filename>&lt;paquete&gt;-docs.xml</filename>.</para>
-      
+
       <para>Esta versión soporta <option>SCAN_OPTIONS=--rebuild-sections</option> en <filename>Makefile.am</filename>. Cuando está activada, el archivo <filename>&lt;paquete&gt;-sections.txt</filename> se genera automáticamente y se puede quitar del control de versiones. Esto sólo funciona en proyectos que tienen una estructura regular (ej. cada pareja .{c,h} creará una sección nueva). Si se organiza un proyecto parecido a esto, actualizar una sección mantenida manualmente puede ser tan sencillo como ejecutar <code>meld &lt;paquete&gt;-decl-list.txt &lt;paquete&gt;-sections.txt</code>.</para>
-      
+
       <para>La versión 1.18 ya introdujo la sintaxis para documentar secciones en las fuentes en lugar de tener que hacerlo en archivos separados bajo <filename class="directory">tmpl</filename>. Esta versión añade opciones para cambiar todo el módulo «doc» del documento para que no realice el paso de construcción de tmpl adicional, usando <option>--flavour no-tmpl</option> en <filename>configure.ac</filename>. Si no tiene una <filename class="directory">tmpl</filename> marcada en su sistema de control de versiones y todavía no ha cambiado, simplemente añada la opción al archivo <filename>configure.ac</filename> y lo tendrá hecho.</para>
     </sect1>
-    
+
     <sect1 id="modernizing-gtk-doc-1-10">
       <title>GTK-Doc 1.10</title>
 
@@ -1510,9 +1597,9 @@ EXTRA_DIST += meep.xml
     <para>Para usar esta licencia en un documento que ha escrito, incluya una copia de la Licencia en el documento y ponga el siguiente copyright y las notas justo después del título de la página.</para>
     
     <blockquote>
-      <para>Copyright 2009-2010 Jorge González González
-Copyright 2009-2010 Francisco Javier Fernández Serrador
-Copyright 2009 Daniel Mustieles</para>
+      <para>Copyright 2009-2016 Daniel Mustieles
+Copyright 2009-2010 Jorge González González
+Copyright 2009-2010 Francisco Javier Fernández Serrador</para>
       <para>Se otorga permiso para copiar, distribuir y/o modificar este documento bajo los términos de la Licencia de Documentación Libre de GNU, Versión 1.1 o cualquier otra versión posterior publicada por la Free Software Foundation; con las <link linkend="fdl-invariant">Secciones Invariantes</link> siendo su LISTE SUS TÍTULOS, con <link linkend="fdl-cover-texts">Textos de Cubierta Delantera</link> siendo LISTA, y con los <link linkend="fdl-cover-texts">Textos de Cubierta Trasera</link> siendo LISTA. Una copia de la licencia está incluida en la sección titulada <quote>GNU Free Documentation License</quote>.</para>
     </blockquote>
       

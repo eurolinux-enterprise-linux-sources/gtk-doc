@@ -5,35 +5,26 @@ SUBDIRS = cmake help tests
 
 bin_SCRIPTS = \
 	gtkdoc-check    \
+	gtkdoc-depscan  \
 	gtkdoc-fixxref  \
 	gtkdoc-mkdb     \
 	gtkdoc-mkhtml   \
+	gtkdoc-mkhtml2  \
 	gtkdoc-mkman    \
-	gtkdoc-mkpdf   \
-	gtkdoc-mktmpl   \
+	gtkdoc-mkpdf    \
 	gtkdoc-rebase   \
 	gtkdoc-scan     \
 	gtkdoc-scangobj \
 	gtkdocize
 
-if HAVE_PYTHON
-bin_SCRIPTS += \
-	gtkdoc-depscan
-endif
-
 gtkdocdatadir = $(datadir)/gtk-doc/data
 gtkdocdata_DATA = \
-	gtkdoc-common.pl	\
-	gtk-doc.dsl		\
-	gtk-doc.dcl		\
 	gtk-doc.xsl		\
 	version-greater-or-equal.xsl \
 	devhelp2.xsd		\
 	devhelp2.xsl		\
 	gtk-doc.make		\
-	gtk-doc.notmpl.make	\
 	gtk-doc.flat.make	\
-	gtk-doc.notmpl-flat.make	\
 	style/home.png			\
 	style/left.png			\
 	style/left-insensitive.png		\
@@ -43,40 +34,46 @@ gtkdocdata_DATA = \
 	style/up-insensitive.png		\
 	style/style.css
 
+pylibdatadir = $(datadir)/gtk-doc/python/gtkdoc
+pylibdata_DATA = \
+  gtkdoc/__init__.py \
+  gtkdoc/check.py \
+  gtkdoc/common.py \
+  gtkdoc/config.py \
+  gtkdoc/fixxref.py \
+  gtkdoc/md_to_db.py \
+  gtkdoc/mkdb.py \
+  gtkdoc/mkhtml.py \
+  gtkdoc/mkhtml2.py \
+  gtkdoc/mkman.py \
+  gtkdoc/mkpdf.py \
+  gtkdoc/rebase.py \
+  gtkdoc/scan.py \
+  gtkdoc/scangobj.py
+
 pkgconfigdir = $(datadir)/pkgconfig
 pkgconfig_DATA = gtk-doc.pc
 
 aclocaldir = $(datadir)/aclocal
 aclocal_DATA = gtk-doc.m4
 
-sgmldir = $(datadir)/sgml/gtk-doc
-sgml_DATA = gtk-doc.cat
-
 gtk-doc.flat.make: gtk-doc.make
-	@$(SED) -e "s/EXTRA_DIST =/EXTRA_DIST +=/" $< >$@
-
-gtk-doc.notmpl-flat.make: gtk-doc.notmpl.make
 	@$(SED) -e "s/EXTRA_DIST =/EXTRA_DIST +=/" $< >$@
 
 EXTRA_DIST = \
 	MAINTAINERS     \
 	$(gtkdocdata_DATA) \
+	$(pylibdata_DATA) \
 	gtk-doc.pc.in   \
 	gtk-doc.m4      \
 	gtk-doc.doap \
-	gtk-doc.spec.in \
-	gtk-doc.spec    \
 	gtk-doc-fo.xsl     \
-	gtk-doc.cat.in  \
 	doc/README            \
 	doc/authors.txt       \
 	doc/gnome.txt         \
 	doc/sections-file.txt \
 	doc/setting-up.txt    \
 	doc/style-guide.txt   \
-	db2man/README            \
-	db2man/docbook-to-man    \
-	db2man/docbook-to-man.ts \
 	examples/README       \
 	examples/Makefile.am  \
 	tools/docpercentages.pl \
@@ -85,28 +82,46 @@ EXTRA_DIST = \
 
 CLEANFILES = \
   gtk-doc.flat.make \
-  gtk-doc.notmpl-flat.make \
-  gtkdoc-depscanc
-  
+  gtkdoc-checkc \
+  gtkdoc-depscanc \
+  gtkdoc-fixxrefc \
+  gtkdoc-mkdbc \
+  gtkdoc-mkhtmlc \
+  gtkdoc-mkhtml2c \
+  gtkdoc-mkmanc \
+  gtkdoc-mkpdfc \
+  gtkdoc-rebasec \
+  gtkdoc-scangobjc \
+  gtkdoc/__init__.pyc \
+  gtkdoc/check.pyc \
+  gtkdoc/common.pyc \
+  gtkdoc/config.pyc \
+  gtkdoc/fixxref.pyc \
+  gtkdoc/md_to_db.pyc \
+  gtkdoc/mkdb.pyc \
+  gtkdoc/mkhtml.pyc \
+  gtkdoc/mkhtml2.pyc \
+  gtkdoc/mkman.pyc \
+  gtkdoc/mkpdf.pyc \
+  gtkdoc/rebase.pyc \
+  gtkdoc/scan.pyc \
+  gtkdoc/scangobj.pyc
+
 DISTCLEANFILES = \
-  gtk-doc.cat \
   gtkdoc-check \
-  gtkdoc-common.pl \
   gtkdoc-depscan \
-  gtk-doc.dsl \
   gtkdoc-fixxref \
   gtkdocize \
   gtkdoc-mkdb \
   gtkdoc-mkhtml \
+  gtkdoc-mkhtml2 \
   gtkdoc-mkman \
   gtkdoc-mkpdf \
-  gtkdoc-mktmpl \
   gtk-doc.pc \
   gtkdoc-rebase \
   gtkdoc-scangobj \
   gtkdoc-scan \
-  gtk-doc.spec
-
+  gtkdoc/config.py
 
 MAINTAINERCLEANFILES = \
 	$(GITIGNORE_MAINTAINERCLEANFILES_TOPLEVEL) \
@@ -116,7 +131,8 @@ MAINTAINERCLEANFILES = \
 	RELNOTES.txt \
 	ChangeLog-?.?? \
 	gtk-doc-*.tar.xz \
-	build-aux
+	build-aux \
+	__pycache__ gtkdoc/__pycache__ tests/__pycache__
 
 -include $(top_srcdir)/git.mk
 
