@@ -19,7 +19,7 @@ SCANGOBJ_OPTIONS=
 
 # Extra options to supply to gtkdoc-scan.
 SCAN_OPTIONS=--deprecated-guards="GTKDOC_TESTER_DISABLE_DEPRECATED" \
-  --ignore-decorators='GLIB_VAR|GTKDOC_GNUC_CONST' \
+  --ignore-decorators='GLIB_VAR|GTKDOC_GNUC_CONST|BUG_711598_DEPRECATED_FOR\(.+\)' \
   --rebuild-types
 
 # Extra options to supply to gtkdoc-mkdb.
@@ -68,13 +68,9 @@ include $(top_srcdir)/tests/gtk-doc.notmpl.make
 # e.g. EXTRA_DIST += version.xml.in
 EXTRA_DIST +=
 
-DISTCLEANFILES = \
-	gtkdoc-scan.log \
-	gtkdoc-scangobj.log \
-	gtkdoc-mktmpl.log \
-	gtkdoc-mkdb.log \
-	gtkdoc-mkhtml.log \
-	gtkdoc-fixxref.log
+CLEANFILES += \
+  $(DOC_MODULE)-overrides.txt \
+  $(DOC_MODULE).types
 
 if BUILD_TESTS
 TESTS_ENVIRONMENT = \

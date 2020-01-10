@@ -10,16 +10,27 @@
 <book id="index" lang="zh-CN">
   <bookinfo>
     <title>GTK-Doc 手册</title>
-    <edition>1.18.1</edition>
+    <edition>1.24.1</edition>
     <abstract role="description"><para>为开发人员提供 GTK-Doc 用法说明的用户手册。</para></abstract>
     <authorgroup>
       <author><firstname>Chris</firstname> <surname>Lyttle</surname> <affiliation> <address> <email>chris@wilddev.net</email> </address> </affiliation></author>
       <author><firstname>Dan</firstname> <surname>Mueth</surname> <affiliation> <address> <email>d-mueth@uchicago.edu</email> </address> </affiliation></author>
-      <author><firstname>Stefan</firstname> <surname>Kost</surname> <affiliation> <address> <email>ensonic@users.sf.net</email> </address> </affiliation></author>
+      <author>
+        <firstname>Stefan</firstname>
+        <surname>Sauer (Kost)</surname>
+        <affiliation>
+          <address>
+            <email>ensonic@users.sf.net</email>
+          </address>
+        </affiliation>
+      </author>
     </authorgroup>
     <publisher role="maintainer"><publishername>GTK-Doc 项目</publishername> <address><email>gtk-doc-list@gnome.org</email></address></publisher>
     <copyright><year>2000, 2005</year> <holder>Dan Mueth and Chris Lyttle</holder></copyright>
-    <copyright><year>2007-2011</year> <holder>Stefan Sauer (Kost)</holder></copyright>
+    <copyright>
+      <year>2007-2015</year>
+      <holder>Stefan Sauer (Kost)</holder>
+    </copyright>
 
     <!-- translators: uncomment this:
     <copyright>
@@ -34,6 +45,42 @@
     </legalnotice>
 
     <revhistory>
+      <revision>
+        <revnumber>1.24.1</revnumber>
+        <date>30 May 2015</date>
+        <authorinitials>ss</authorinitials>
+        <revremark>development version</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.24</revnumber>
+        <date>29 May 2015</date>
+        <authorinitials>ss</authorinitials>
+        <revremark>bug fix</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.23</revnumber>
+        <date>17 May 2015</date>
+        <authorinitials>ss</authorinitials>
+        <revremark>bug fix</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.22</revnumber>
+        <date>07 May 2015</date>
+        <authorinitials>ss</authorinitials>
+        <revremark>bug fixes, dropping deprecated features</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.21</revnumber>
+        <date>17 Jul 2014</date>
+        <authorinitials>ss</authorinitials>
+        <revremark>bug fixes, dropping deprecated features</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.20</revnumber>
+        <date>16 Feb 2014</date>
+        <authorinitials>ss</authorinitials>
+        <revremark>bug fixes, markdown support, style improvements</revremark>
+      </revision>
       <revision>
         <revnumber>1.19</revnumber>
         <date>05 Jun 2013</date>
@@ -188,26 +235,24 @@
 
         <listitem>
           <para>
-            <guilabel>Generating the SGML/XML and HTML/PDF.</guilabel>
+            <guilabel>Generating the XML and HTML/PDF.</guilabel>
 
             <application>gtkdoc-mkdb</application> turns the template files into
-            SGML or XML files in the <filename class="directory">sgml/</filename>
-            or <filename class="directory">xml/</filename> subdirectory.
+            XML files in the <filename class="directory">xml/</filename> subdirectory.
             If the source code contains documentation on functions, using the
             special comment blocks, it gets merged in here. If there are no tmpl files used
-            it only reads docs from sources and introspection data. We recommend
-            to use Docbook XML.
+            it only reads docs from sources and introspection data.
           </para>
           <para>
-            <application>gtkdoc-mkhtml</application> turns the SGML/XML files into HTML
+            <application>gtkdoc-mkhtml</application> turns the XML files into HTML
             files in the <filename class="directory">html/</filename> subdirectory.
-            Likewise <application>gtkdoc-mkpdf</application> turns the SGML/XML files into a PDF
+            Likewise <application>gtkdoc-mkpdf</application> turns the XML files into a PDF
             document called <filename>&lt;package&gt;.pdf</filename>.
           </para>
           <para>
-            Files in <filename class="directory">sgml/</filename> or
-            <filename class="directory">xml/</filename> and <filename class="directory">html/</filename>
-            directories are always overwritten. One should never edit them directly.
+            Files in <filename class="directory">xml/</filename> and 
+            <filename class="directory">html/</filename> directories are always
+            overwritten. One should never edit them directly.
           </para>
         </listitem>
 
@@ -235,52 +280,23 @@
       <sect2 id="requirements">
         <title>要求</title>
         <para><guilabel>Perl v5</guilabel>- 主脚本是Perl格式。</para>
-        <para><guilabel>DocBook DTD v3.0</guilabel> - 这是DocBook SGML DTD的链接. <ulink url="http://www.ora.com/davenport" type="http">http://www.ora.com/davenport</ulink></para>
-        <para><guilabel>Jade v1.1</guilabel> -这是一个DSSSL处理器，用来把SGML转换为各种格式。<ulink url="http://www.jclark.com/jade" type="http">http://www.jclark.com/jade</ulink></para>
         <para>
-          <guilabel>Modular DocBook Stylesheets</guilabel>
-          This is the DSSSL code to convert DocBook to HTML (and a few other
-          formats). It's used together with jade.
-          I've customized the DSSSL code slightly, in gtk-doc.dsl, to colour
-          the program code listings/declarations, and to support global
-          cross-reference indices in the generated HTML.
-          <ulink url="http://nwalsh.com/docbook/dsssl" type="http">http://nwalsh.com/docbook/dsssl</ulink>
+          <guilabel>xsltproc</guilabel> - the xslt processor from libxslt
+          <ulink url="http://xmlsoft.org/XSLT/" type="http">xmlsoft.org/XSLT/</ulink>
         </para>
         <para>
-          <guilabel>docbook-to-man</guilabel> - if you want to create man pages from the DocBook.
-          I've customized the 'translation spec' slightly, to capitalise section
-          headings and add the 'GTK Library' title at the top of the pages and the
-          revision date at the bottom.
-          There is a link to this on <ulink url="http://www.ora.com/davenport" type="http">http://www.ora.com/davenport</ulink>
-          NOTE: This does not work yet.
+          <guilabel>docbook-xsl</guilabel> - the docbook xsl stylesheets
+          <ulink url="http://sourceforge.net/projects/docbook/files/docbook-xsl/" type="http">sourceforge.net/projects/docbook/files/docbook-xsl</ulink>
+        </para>
+        <para>
+          <guilabel>Python</guilabel> - optional - for gtkdoc-depscan
+        </para>
+        <para>
+          One of <guilabel>source-highlight</guilabel>, <guilabel>highlight</guilabel> or
+          <guilabel>vim</guilabel> - optional - used for syntax highlighting of examples
         </para>
       </sect2>
-
-      <sect2 id="installation">
-        <title>安装</title>
-        <para>DocBook Modular Stylesheets没有标准的安装位置。</para>
-        <para>GTK-Doc 的配置脚本会自动地查找这三个目录：</para>
-        <para><filename> /usr/lib/sgml/stylesheets/nwalsh-modular </filename> (在 RedHat 中使用)</para>
-        <para><filename> /usr/lib/dsssl/stylesheets/docbook </filename> (在 Debian 中使用)</para>
-        <para><filename> /usr/share/sgml/docbkdsl </filename> (在 SuSE 中使用)</para>
-        <para>如果把样式表安装在其它地方，您必须用这个选项来配置GTK-Doc：<command> --with-dsssl-dir=&lt;PATH_TO_TOPLEVEL_STYLESHEETS_DIR&gt; </command>。</para>
-      </sect2>
-
     </sect1>
-
-    <!-- not realy worth a section
-    <sect1 id="whentousegtkdoc">
-      <title>When to Use GTK-Doc</title>
-
-      <para>
-        (What things GTK-Doc should, and shouldn't, be used for.)
-        (- ???)
-        (- non C-based projects)
-        (+ Tutorials)
-      </para>
-
-    </sect1>
-    -->
 
     <sect1 id="aboutgtkdoc">
       <title>关于 GTK-Doc</title>
@@ -290,7 +306,7 @@
       </para>
 
       <para>
-        (History, authors, web pages, license, future plans,
+        (History, authors, web pages, mailing list, license, future plans,
         comparison with other similar systems.)
       </para>
 
@@ -333,8 +349,7 @@
       </para>
 
       <para>目录结构将会如下所示：<example><title>范例目录结构</title>
-          <programlisting>
-
+          <programlisting><![CDATA[
 meep/
   docs/
     reference/
@@ -343,8 +358,7 @@ meep/
   src/
     libmeep/
     meeper/
-
-          </programlisting>
+]]></programlisting>
         </example></para>
     </sect1>
 
@@ -355,12 +369,10 @@ meep/
 
       <para>
         <example><title>与autoconf集成</title>
-          <programlisting>
-
-# 检查 gtk-doc
+          <programlisting><![CDATA[
+# check for gtk-doc
 GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
-
-          </programlisting>
+]]></programlisting>
         </example>
       </para>
 
@@ -370,16 +382,14 @@ GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
         solve this as below. Keep it as is, as gtkdocize is looking for
         <function>GTK_DOC_CHECK</function>  at the start of a line.
         <example><title>Keep gtk-doc optional</title>
-          <programlisting>
-<![CDATA[
+          <programlisting><![CDATA[
 # check for gtk-doc
 m4_ifdef([GTK_DOC_CHECK], [
 GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
 ],[
 AM_CONDITIONAL([ENABLE_GTK_DOC], false)
 ])
-]]>
-          </programlisting>
+]]></programlisting>
         </example>
       </para>
 
@@ -403,12 +413,15 @@ AM_CONDITIONAL([ENABLE_GTK_DOC], false)
 
       <para>
         <example><title>准备gtkdocize</title>
-          <programlisting>
-
+          <programlisting><![CDATA[
 AC_CONFIG_MACRO_DIR(m4)
-
-          </programlisting>
+]]></programlisting>
         </example>
+      </para>
+      <para>
+        After all changes to <filename>configure.ac</filename> are made, update
+        the <filename>configure</filename> file. This can be done by re-running
+        <code>autoreconf -i</code> or <code>autogen.sh</code>.
       </para>
     </sect1>
 
@@ -416,9 +429,13 @@ AC_CONFIG_MACRO_DIR(m4)
       <title>与automake集成</title>
 
       <para>
-        First copy the <filename>Makefile.am</filename> from the examples subdirectory of the gtkdoc-sources
+        First copy the <filename>Makefile.am</filename> from the 
+        <filename class="directory">examples</filename> sub directory of the
+        <ulink url="https://git.gnome.org/browse/gtk-doc/tree/examples/Makefile.am">gtkdoc-sources</ulink>
         to your project's API documentation directory (
         <filename class="directory">./docs/reference/&lt;package&gt;</filename>).
+        A local copy should be available under e.g. 
+        <filename>/usr/share/doc/gtk-doc-tools/examples/Makefile.am</filename>.
         If you have multiple doc-packages repeat this for each one.
       </para>
 
@@ -432,22 +449,6 @@ AC_CONFIG_MACRO_DIR(m4)
       </para>
 
       <!-- FIXME: explain options ? -->
-
-      <para>
-        You may also want to enable GTK-Doc for the distcheck make target. Just
-        add the one line shown in the next example to your top-level
-        <filename>Makefile.am</filename>:
-      </para>
-
-      <para>
-        <example><title>在make distcheck过程中启用GTK-Doc</title>
-          <programlisting>
-
-DISTCHECK_CONFIGURE_FLAGS=--enable-gtk-doc
-
-          </programlisting>
-        </example>
-      </para>
 
     </sect1>
 
@@ -464,11 +465,9 @@ DISTCHECK_CONFIGURE_FLAGS=--enable-gtk-doc
 
       <para>
         <example><title>从autogen.sh中运行gtkdocize</title>
-          <programlisting>
-
+          <programlisting><![CDATA[
 gtkdocize || exit 1
-
-          </programlisting>
+]]></programlisting>
         </example>
       </para>
 
@@ -516,12 +515,10 @@ gtkdocize || exit 1
       </para>
       <para>
         <example><title>运行文档构建</title>
-          <programlisting>
-
+          <programlisting><![CDATA[
 ./autogen.sh --enable-gtk-doc
 make
-
-          </programlisting>
+]]></programlisting>
         </example>
       </para>
       <para>
@@ -535,12 +532,17 @@ make
       <title>与版本控制系统集成</title>
 
       <para>
-        As a rule of the thumb, it's those files you edit, that should go under
+        As a rule of thumb, it's the files you edit which should go under
         version control. For typical projects it's these files:
         <filename>&lt;package&gt;.types</filename>,
         <filename>&lt;package&gt;-docs.xml</filename> (in the past .sgml),
         <filename>&lt;package&gt;-sections.txt</filename>,
-        <filename>Makefile.am</filename>
+        <filename>Makefile.am</filename>.
+      </para>
+      <para>
+        Files in the <filename>xml/</filename> and <filename>html/</filename>
+        directories should not go under version control. Neither should any of
+        the <filename>.stamp</filename> files.
       </para>
     </sect1>
 
@@ -555,25 +557,59 @@ make
 
       <para>
         <example><title>文档构建步骤</title>
-          <programlisting>
-<![CDATA[
+          <programlisting><![CDATA[
 DOC_MODULE=meep
 // sources have changed
-gtkdoc-scan --module=$(DOC_MODULE) --source-dir=...
+gtkdoc-scan --module=$(DOC_MODULE) <source-dir>
 gtkdoc-scangobj --module=$(DOC_MODULE)
-gtkdoc-mkdb --module=$(DOC_MODULE) --output-format=xml
+gtkdoc-mkdb --module=$(DOC_MODULE) --output-format=xml --source-dir=<source-dir>
 // xml files have changed
 mkdir html
 cd html && gtkdoc-mkhtml $(DOC_MODULE) ../meep-docs.xml
 gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
-]]>
-          </programlisting>
+]]></programlisting>
         </example>
       </para>
 
       <para>您必须查阅<filename>Makefile.am</filename> 和 <filename>gtk-doc.mak</filename>以获取所须的额外选项。</para>
     </sect1>
 
+    <sect1 id="cmake">
+       <title>Integration with CMake build systems</title>
+
+       <para>
+          GTK-Doc now provides a <filename>GtkDocConfig.cmake</filename> module
+          (and the corresponding <filename>GtkDocConfigVersion.cmake</filename>
+          module). This provides a <literal>gtk_doc_add_module</literal>
+          command that you can set in your <filename>CMakeLists.txt</filename>
+          file.
+       </para>
+
+       <para>
+          The following example shows how to use this command.
+          <example><title>Example of using GTK-Doc from CMake</title>
+             <programlisting><![CDATA[
+find_package(GtkDoc 1.25 REQUIRED)
+
+# Create the doc-libmeep target.
+gtk_doc_add_module(
+   libmeep ${CMAKE_SOURCE_DIR}/libmeep
+      XML meep-docs.xml
+      LIBRARIES libmeep
+)
+
+# Build doc-libmeep as part of the default target. Without this, you would
+# have to explicitly run something like `make doc-libmeep` to build the docs.
+add_custom_target(documentation ALL DEPENDS doc-libmeep)
+
+# Install the docs. (This assumes you're using the GNUInstallDirs CMake module
+# to set the CMAKE_INSTALL_DOCDIR variable correctly).
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/libmeep/html
+        DESTINATION ${CMAKE_INSTALL_DOCDIR})
+]]></programlisting>
+         </example>
+       </para>
+     </sect1>
   </chapter>
 
   <chapter id="documenting">
@@ -595,17 +631,24 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
     <para>
       The scanner can handle the majority of C headers fine. In the case of
       receiving warnings from the scanner that look like a special case, one can
-      hint GTK-Doc to skip over them.
+      hint GTK-Doc to skip over them. 
       <example><title>GTK-Doc comment block</title>
-        <programlisting>
-<![CDATA[
+        <programlisting><![CDATA[
 #ifndef __GTK_DOC_IGNORE__
 /* unparseable code here */
 #endif
-]]>
-        </programlisting>
+]]></programlisting>
       </example>
     </para>
+
+    <note>
+      <title>Limitations</title>
+      <para>
+        Note, that GTK-Doc's supports
+        <code>#ifndef(__GTK_DOC_IGNORE__)</code> but not 
+        <code>#if !defined(__GTK_DOC_IGNORE__)</code> or other combinations.
+      </para>
+    </note>
 
     <!--  -->
 
@@ -616,14 +659,12 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
         A multiline comment that starts with an additional '*' marks a
         documentation block that will be processed by the GTK-Doc tools.
         <example><title>GTK-Doc comment block</title>
-          <programlisting>
-<![CDATA[
+          <programlisting><![CDATA[
 /**
  * identifier:
  * documentation ...
  */
-]]>
-          </programlisting>
+]]></programlisting>
         </example>
       </para>
 
@@ -689,38 +730,90 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
             </para>
           </listitem>
           <listitem>
-            <para>用#Struct.field指示结构体的字段。</para>
+            <para>
+              Use #Struct.field to refer to a field inside a structure and
+              #GObjectClass.foo_bar() to refer to a vmethod.
+            </para>
           </listitem>
         </itemizedlist></para>
 
       <tip>
-	     <para>如果你要在文档里面使用一些特殊的字符'&lt;', '&gt;', '()', '@', '%', or '#' 且不用GTK-Doc来修改它们，你可以相应地用XML 实体 "&amp;lt;", "&amp;gt;", "&amp;lpar;", "&amp;rpar;", "&amp;commat;", "&amp;percnt;" 以及 "&amp;num;"或者用一个反斜线'\'来转义它们。</para>
+        <para>如果你要在文档里面使用一些特殊的字符'&lt;', '&gt;', '()', '@', '%', or '#' 且不用GTK-Doc来修改它们，你可以相应地用XML 实体 "&amp;lt;", "&amp;gt;", "&amp;lpar;", "&amp;rpar;", "&amp;commat;", "&amp;percnt;" 以及 "&amp;num;"或者用一个反斜线'\'来转义它们。</para>
       </tip>
 
-      <para>DocBook可以做比链接多得多的事情。你可以有列表，表格和示例。要在doc-comments中激活docbook SGML/XML标识的使用，你得往<filename>Makefile.am</filename>文件中的变量<symbol>MKDB_OPTIONS</symbol>上加入<option>--xml-mode</option> 或 <option>--sgml-mode</option>选项。</para>
+      <para>
+        DocBook can do more than just links. One can also have lists,
+        examples, headings, and images. As of version 1.20, the
+        preferred way is to use a subset of the basic text formatting
+        syntax called
+        <ulink url="http://daringfireball.net/projects/markdown/">Markdown</ulink>.
+        On older GTK-Doc versions any documentation that includes
+        Markdown will be rendered as is.  For example, list items will
+        appear as lines starting with a dash.
+      </para>
 
-      <para>从 GTK-Doc-1.18 版本开始，该工具支持 <ulink url="http://daringfireball.net/projects/markdown/">markdown 标记语言</ulink> 的一个子集。可以用它定义小标题和简单的项目列表。在较早的 GTK-Doc 版本中，内容会原样渲染(列表项会显示在一行，以短划线隔开)。<example><title>使用markdown进行GTK-Doc块注释</title>
-          <programlisting>
+      <para>
+        While markdown is now preferred one can mix both. One limitation here is
+        that one can use docbook xml within markdown, but markdown within
+        docbook xml is not supported.
+      </para>
 
+      <para>
+        In older GTK-Doc releases, if you need support for additional
+        formatting, you would need to enable the usage of docbook
+        XML tags inside doc-comments by putting <option>--xml-mode</option> 
+        (or <option>--sgml-mode</option>) in the variable
+        <symbol>MKDB_OPTIONS</symbol> inside <filename>Makefile.am</filename>.
+      </para>
+
+      <para>
+        <example><title>GTK-Doc comment block using Markdown</title>
+          <programlisting><![CDATA[
 /**
- * 标识符:
+ * identifier:
  *
- * 文档内容 ...
+ * documentation paragraph ...
  *
- * # 小标题 #
+ * # Sub Heading #
  *
- * 更多文档：
- * - 列表项1
- * - 列表项2
+ * ## Second Sub Heading
  *
- * 其余更多文档。
+ * # Sub Heading With a Link Anchor # {#heading-two}
+ *
+ * more documentation:
+ *
+ * - list item 1
+ *
+ *   Paragraph inside a list item.
+ *
+ * - list item 2
+ *
+ * 1. numbered list item
+ *
+ * 2. another numbered list item
+ *
+ * Another paragraph. [A Link to the GNOME Website](http://www.gnome.org/)
+ *
+ * ![an inline image](plot-result.png)
+ *
+ * [A link to the heading anchor above][heading-two]
+ *
+ * A C-language example:
+ * |[<!-- language="C" -->
+ * GtkWidget *label = gtk_label_new ("Gorgeous!");
+ * ]|
  */
+]]></programlisting>
+        </example>
+      </para>
 
-          </programlisting>
-        </example></para>
+      <para>
+        More examples of what markdown tags are supported can be found in the
+        <ulink url="https://wiki.gnome.org/Projects/GTK%2B/DocumentationSyntax/Markdown">GTK+ Documentation Markdown Syntax Reference</ulink>.
+      </para>
 
       <tip>
-	<para>如早先所述，GTK-Doc是为编写公共的API而作的。所以你不能够为静态符号编写文档。尽管如此，它也可以很好地为那些符号作注释。这有助于他人理解你的代码。因此我们建议你用普通的注释来注释它们（不使用第一行的第二个'*'号）。如果以后函数须要作为public，你须做的只是在注释块中加入另一个 '*'号并且在区段文件里插入正确的标识符名称。</para>
+        <para>如早先所述，GTK-Doc是为编写公共的API而作的。所以你不能够为静态符号编写文档。尽管如此，它也可以很好地为那些符号作注释。这有助于他人理解你的代码。因此我们建议你用普通的注释来注释它们（不使用第一行的第二个'*'号）。如果以后函数须要作为public，你须做的只是在注释块中加入另一个 '*'号并且在区段文件里插入正确的标识符名称。</para>
       </tip>
     </sect1>
 
@@ -731,8 +824,7 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
 
       <para>
         <example><title>节注释块</title>
-          <programlisting>
-
+          <programlisting><![CDATA[
 /**
  * SECTION:meepapp
  * @short_description: the application class
@@ -745,8 +837,7 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
  *
  * The application class handles ...
  */
-
-          </programlisting>
+]]></programlisting>
         </example>
       </para>
 
@@ -880,11 +971,49 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
           </varlistentry>
         </variablelist>
 
-          <para>(FIXME : 稳定性信息)</para>
+        <para>
+          You can also add stability information to all documentation elements
+          to indicate whether API stability is guaranteed for them for all
+          future minor releases of the project.
+        </para>
+
+        <para>
+          The default stability level for all documentation elements can be set
+          by passing the <option>--default-stability</option> argument to
+          <application>gtkdoc-mkdb</application> with one of the values below.
+        </para>
+
+        <variablelist><title>Stability Tags</title>
+          <varlistentry><term>Stability: Stable</term>
+            <listitem>
+              <para>
+                Mark the element as stable. This is for public APIs which are
+                guaranteed to remain stable for all future minor releases of the
+                project.
+              </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry><term>Stability: Unstable</term>
+            <listitem>
+              <para>
+                Mark the element as unstable. This is for public APIs which are
+                released as a preview before being stabilised.
+              </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry><term>Stability: Private</term>
+            <listitem>
+              <para>
+                Mark the element as private. This is for interfaces which can be
+                used by tightly coupled modules, but not by arbitrary third
+                parties.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
 
         <example><title>一般标记</title>
-          <programlisting>
-<![CDATA[
+          <programlisting><![CDATA[
 /**
  * foo_get_bar:
  * @foo: some foo
@@ -900,8 +1029,39 @@ Bar *
 foo_get_bar(Foo *foo)
 {
 ...
-]]>
-          </programlisting>
+]]></programlisting>
+        </example>
+      </sect2>
+
+      <sect2><title>Annotations</title>
+
+        <para>
+          Documentation blocks can contain annotation-tags. These tags will be
+          rendered with tooltips describing their meaning. The tags are used by
+          gobject-introspection to generate language bindings. A detailed list
+          of the supported tags can be found on 
+          <ulink url="http://live.gnome.org/GObjectIntrospection/Annotations" type="http">the wiki</ulink>.
+        </para>
+
+        <example><title>Annotations</title>
+          <programlisting><![CDATA[
+/**
+ * foo_get_bar: (annotation)
+ * @foo: (annotation): some foo
+ *
+ * Retrieves @foo's bar.
+ *
+ * Returns: (annotation): @foo's bar
+ */
+...
+/**
+ * foo_set_bar_using_the_frobnicator: (annotation) (another annotation)
+ *                                    (and another annotation)
+ * @foo: (annotation) (another annotation): some foo
+ *
+ * Sets bar on @foo.
+ */
+]]></programlisting>
         </example>
       </sect2>
 
@@ -921,34 +1081,26 @@ foo_get_bar(Foo *foo)
 
         <para>Gtk-doc 假定所有以'_'符开头的符号（宏，函数）是私有的并视它们为静态函数。</para>
 
-        <para>
-          <!-- FIXME: we should ideally link/describe the gobject introspection
-          annotation tag -->
-          Also, take a look at GObject Introspection annotation tags:
-          http://live.gnome.org/GObjectIntrospection/Annotations
-        </para>
-
         <example><title>函数注释块</title>
-          <programlisting>
-
+          <programlisting><![CDATA[
 /**
  * function_name:
- * @par1:  对参数 1 的描述。
- * 可超过一行。
- * @par2:  对参数 2 的描述
- * @...: 一个以 %NULL 终止的 bars 列表
+ * @par1:  description of parameter 1. These can extend over more than
+ * one line.
+ * @par2:  description of parameter 2
+ * @...: a %NULL-terminated list of bars
  *
- * 这里是函数描述。您可以用 @par1 引用参数，这样在输出中它们会突出显示。
- * 您也可以使用 %constant 代表常量，function_name2() 代表函数，#GtkWidget 
- * 代表指向指向其他声明的链接(可能在其他位置描述)。
+ * The function description goes here. You can use @par1 to refer to parameters
+ * so that they are highlighted in the output. You can also use %constant
+ * for constants, function_name2() for functions and #GtkWidget for links to
+ * other declarations (which may be documented elsewhere).
  *
- * 返回值: 一个整型值。
+ * Returns: an integer.
  *
- * 始于: 2.2
- * 废弃: 2.18: 请转用 other_function()。
+ * Since: 2.2
+ * Deprecated: 2.18: Use other_function() instead.
  */
-
-          </programlisting>
+]]></programlisting>
         </example>
 
         <variablelist><title>函数标记</title>
@@ -969,16 +1121,14 @@ foo_get_bar(Foo *foo)
       <sect2><title>属性注释块</title>
 
         <example><title>属性注释块</title>
-          <programlisting>
-
+          <programlisting><![CDATA[
 /**
  * SomeWidget:some-property:
  *
- * 这里您可以描述一个属性。
+ * Here you can document a property.
  */
 g_object_class_install_property (object_class, PROP_SOME_PROPERTY, ...);
-
-          </programlisting>
+]]></programlisting>
         </example>
 
       </sect2>
@@ -995,47 +1145,47 @@ g_object_class_install_property (object_class, PROP_SOME_PROPERTY, ...);
           </itemizedlist></para>
 
         <example><title>信号注释块</title>
-          <programlisting>
-
+          <programlisting><![CDATA[
 /**
  * FooWidget::foobarized:
- * @widget: 接受信号的窗口部件
+ * @widget: the widget that received the signal
  * @foo: some foo
  * @bar: some bar
  *
- * ::foobarized 信号在每次有人尝试 foobarize @widget 时发射。
+ * The ::foobarized signal is emitted each time someone tries to foobarize @widget.
  */
 foo_signals[FOOBARIZE] =
   g_signal_new ("foobarize",
                 ...
-
-          </programlisting>
+]]></programlisting>
         </example>
 
       </sect2>
 
       <sect2><title>结构注释块</title>
         <example><title>结构注释块</title>
-          <programlisting>
-
+          <programlisting><![CDATA[
 /**
  * FooWidget:
  * @bar: some #gboolean
  *
- * 这是史上最好的窗口部件。
+ * This is the best widget, ever.
  */
 typedef struct _FooWidget {
-  /*&lt; private &gt;*/
-  GtkWidget parent;
+  GtkWidget parent_instance;
 
-  /*&lt; public &gt;*/
   gboolean bar;
 } FooWidget;
-
-          </programlisting>
+]]></programlisting>
         </example>
 
         <para>在你需要隐藏的私有结构字段之前使用<code>/*&lt; private &gt;*/</code> 。反之使用<code>/*&lt; public &gt;*/</code>.</para>
+
+        <para>
+          If the first field is "g_iface", "parent_instance" or "parent_class"
+          it will be considered private automatically and doesn't need to be
+          mentioned in the comment block.
+        </para>
 
         <para>结构注释块也可以用于GObjects与GObjectClasses。为一个类添加注释块通常是个极好的主意，如果它有vmethod（因为这是怎样制作它的文档的方法）。对于GObject自身而言，你可以使用相关的章节文档，如果对象实例有公共字段，为每个实例结构体单独块注释是非常有用的。缺点是这会为同一名字创建两个索引记录（结构与章节）。</para>
 
@@ -1043,8 +1193,7 @@ typedef struct _FooWidget {
 
       <sect2><title>枚举注释块</title>
         <example><title>枚举注释块</title>
-          <programlisting>
-<![CDATA[
+          <programlisting><![CDATA[
 /**
  * Something:
  * @SOMETHING_FOO: something foo
@@ -1058,8 +1207,7 @@ typedef enum {
   /*< private >*/
   SOMETHING_COUNT
 } Something;
-]]>
-          </programlisting>
+]]></programlisting>
         </example>
 
         <para>在你要隐藏的枚举数值前使用<code>/*&lt; private &gt;*/</code>。反之使用<code>/*&lt; public &gt;*/</code> 。</para>
@@ -1076,11 +1224,9 @@ typedef enum {
         To link to another section in the GTK docs:
 
         <informalexample>
-          <programlisting>
-<![CDATA[
+          <programlisting><![CDATA[
 <link linkend="glib-Hash-Tables">Hash Tables</link>
-]]>
-          </programlisting>
+]]></programlisting>
         </informalexample>
         The linkend is the SGML/XML id on the top item of the page you want to link to.
         For most pages this is currently the part ("gtk", "gdk", "glib") and then
@@ -1089,121 +1235,97 @@ typedef enum {
       </para>
 
       <para>引用一个外部函数，比如一个标准 C 函数：<informalexample>
-          <programlisting>
-
-&lt;function&gt;...&lt;/function&gt;
-
-          </programlisting>
+          <programlisting><![CDATA[
+<function>...</function>
+]]></programlisting>
         </informalexample></para>
 
       <para>要包含示例代码：<informalexample>
-          <programlisting>
-
-&lt;example&gt;
-  &lt;title&gt;Using a GHashTable.&lt;/title&gt;
-  &lt;programlisting&gt;
+          <programlisting><![CDATA[
+<example>
+  <title>Using a GHashTable.</title>
+  <programlisting>
       ...
-  &lt;/programlisting&gt;
-&lt;/example&gt;
-
-          </programlisting>
+  </programlisting>
+</example>
+]]></programlisting>
         </informalexample> 或类似的，很短的不需要标题的代码段：<informalexample>
-          <programlisting>
-
-&lt;informalexample&gt;
-  &lt;programlisting&gt;
+          <programlisting><![CDATA[
+<informalexample>
+  <programlisting>
   ...
-  &lt;/programlisting&gt;
-&lt;/informalexample&gt;
-
-          </programlisting>
+  </programlisting>
+</informalexample>
+]]></programlisting>
         </informalexample> 对后者，GTK-Doc 还支持一种缩写方式：|[ ... ]|</para>
 
       <para>要包含符号列表：<informalexample>
-          <programlisting>
-
-&lt;itemizedlist&gt;
-  &lt;listitem&gt;
-    &lt;para&gt;
+          <programlisting><![CDATA[
+<itemizedlist>
+  <listitem>
+    <para>
       ...
-    &lt;/para&gt;
-  &lt;/listitem&gt;
-  &lt;listitem&gt;
-    &lt;para&gt;
+    </para>
+  </listitem>
+  <listitem>
+    <para>
       ...
-    &lt;/para&gt;
-  &lt;/listitem&gt;
-&lt;/itemizedlist&gt;
-
-          </programlisting>
+    </para>
+  </listitem>
+</itemizedlist>
+]]></programlisting>
         </informalexample></para>
 
       <para>要包含一条文字中突出显示的注解：<informalexample>
-          <programlisting>
-
-&lt;note&gt;
-  &lt;para&gt;
+          <programlisting><![CDATA[
+<note>
+  <para>
     Make sure you free the data after use.
-  &lt;/para&gt;
-&lt;/note&gt;
-
-          </programlisting>
+  </para>
+</note>
+]]></programlisting>
         </informalexample></para>
 
       <para>要引用一个类型：<informalexample>
-          <programlisting>
-
-&lt;type&gt;unsigned char&lt;/type&gt;
-
-          </programlisting>
+          <programlisting><![CDATA[
+<type>unsigned char</type>
+]]></programlisting>
         </informalexample></para>
 
       <para>引用一个外部结构（不是在GTK 文档中描述的）：<informalexample>
-          <programlisting>
-
-&lt;structname&gt;XFontStruct&lt;/structname&gt;
-
-          </programlisting>
+          <programlisting><![CDATA[
+<structname>XFontStruct</structname>
+]]></programlisting>
         </informalexample></para>
 
       <para>要引用一个结构字段：<informalexample>
-          <programlisting>
-
-&lt;structfield&gt;len&lt;/structfield&gt;
-
-          </programlisting>
+          <programlisting><![CDATA[
+<structfield>len</structfield>
+]]></programlisting>
         </informalexample></para>
 
       <para>要引用一个类的名字，你可能会使用：<informalexample>
-          <programlisting>
-
-&lt;classname&gt;GtkWidget&lt;/classname&gt;
-
-          </programlisting>
+          <programlisting><![CDATA[
+<classname>GtkWidget</classname>
+]]></programlisting>
         </informalexample> 但是你可能正在使用#GtkWidget（要自动创建一个到GtkWidget 页面的链接－请参阅<link linkend="documenting_syntax">缩写</link>）。</para>
 
       <para>要强调文本：<informalexample>
-          <programlisting>
-
-&lt;emphasis&gt;This is important&lt;/emphasis&gt;
-
-          </programlisting>
+          <programlisting><![CDATA[
+<emphasis>This is important</emphasis>
+]]></programlisting>
         </informalexample></para>
 
       <para>对于文件名，使用：<informalexample>
-          <programlisting>
-
-&lt;filename&gt;/home/user/documents&lt;/filename&gt;
-
-          </programlisting>
+          <programlisting><![CDATA[
+<filename>/home/user/documents</filename>
+]]></programlisting>
         </informalexample></para>
 
       <para>要引用键值，使用：<informalexample>
-          <programlisting>
-
-&lt;keycombo&gt;&lt;keycap&gt;Control&lt;/keycap&gt;&lt;keycap&gt;L&lt;/keycap&gt;&lt;/keycombo&gt;
-
-          </programlisting>
+          <programlisting><![CDATA[
+<keycombo><keycap>Control</keycap><keycap>L</keycap></keycombo>
+]]></programlisting>
         </informalexample></para>
 
     </sect1>
@@ -1227,16 +1349,14 @@ typedef enum {
 
       <para>
         <example><title>示例类型文件代码段</title>
-          <programlisting>
-
-#include &lt;gtk/gtk.h&gt;
+          <programlisting><![CDATA[
+#include <gtk/gtk.h>
 
 gtk_accel_label_get_type
 gtk_adjustment_get_type
 gtk_alignment_get_type
 gtk_arrow_get_type
-
-          </programlisting>
+]]></programlisting>
         </example>
       </para>
 
@@ -1249,7 +1369,14 @@ gtk_arrow_get_type
 
       <para>GTK-Doc 以 DocBook SGML/XML 格式生成文档。当处理源代码内嵌注释时， GTK-Doc 工具以独立文件为每个类或模块生成一个文档页。主文档包含了它们并且将它们按顺序排列。</para>
 
-      <para>GTK-Doc为你创建一个模板主文档，之后的运行就不会再动它了。这意味着你可以自由地组织这个文档，包括分组页和加入的额外页面。GTK-Doc现在有一个测试套件，它的主文档也重新生成。建议您经常关注它，又了解是否引入了新的功能特性。</para>
+      <para>
+        While GTK-Doc creates a template master document for you, later runs will
+        not touch it again. This means that one can freely structure the
+        documentation. That includes grouping pages and adding extra pages.
+        GTK-Doc has now a test suite, where also the master-document is recreated from scratch.
+        Its a good idea to look at this from time to time to see if there are
+        some new goodies introduced there.
+      </para>
 
       <tip>
         <para>不要把教程(tutorial)当作额外的文档来编写。写成额外的章节即可。把你的库教程直接放入API文档的好处就是教程与符号文档之间的链接很容易。另外教程与库一同升级时分离的机会也更高。</para>
@@ -1259,21 +1386,52 @@ gtk_arrow_get_type
 
       <para>
         <example><title>主文档头部</title>
-          <programlisting>
-
-&lt;bookinfo&gt;
-  &lt;title&gt;MODULENAME Reference Manual&lt;/title&gt;
-  &lt;releaseinfo&gt;
+          <programlisting><![CDATA[
+<bookinfo>
+  <title>MODULENAME Reference Manual</title>
+  <releaseinfo>
     for MODULENAME [VERSION]
     The latest version of this documentation can be found on-line at
-    &lt;ulink role="online-location" url="http://[SERVER]/MODULENAME/index.html"&gt;http://[SERVER]/MODULENAME/&lt;/ulink&gt;.
-  &lt;/releaseinfo&gt;
-&lt;/bookinfo&gt;
+    <ulink role="online-location" url="http://[SERVER]/MODULENAME/index.html">http://[SERVER]/MODULENAME/</ulink>.
+  </releaseinfo>
+</bookinfo>
 
-&lt;chapter&gt;
-  &lt;title&gt;[Insert title here]&lt;/title&gt;
+<chapter>
+  <title>[Insert title here]</title>
+]]></programlisting>
+        </example>
+      </para>
 
-          </programlisting>
+      <para>
+        In addition a few option elements are created in commented form. You can
+        review these and enable them as you like.
+      </para>
+      
+      <para>
+        <example><title>Optional part in the master document</title>
+          <programlisting><![CDATA[
+  <!-- enable this when you use gobject introspection annotations
+  <xi:include href="xml/annotation-glossary.xml"><xi:fallback /></xi:include>
+  -->          
+]]></programlisting>
+        </example>
+      </para>
+      
+      <para>
+        Finally you need to add new section whenever you introduce one. The
+        <link linkend="modernizing-gtk-doc-1-16">gtkdoc-check</link> tool will
+        remind you of newly generated xml files that are not yet included into
+        the doc.
+      </para>
+
+      <para>
+        <example><title>Including generated sections</title>
+          <programlisting><![CDATA[
+  <chapter>
+    <title>my library</title>
+      <xi:include href="xml/object.xml"/>
+      ...
+]]></programlisting>
         </example>
       </para>
 
@@ -1285,9 +1443,35 @@ gtk_arrow_get_type
       <para>节文件用于组织由GTK-Doc输出的文档。在此你指定哪个符号属于哪个类或模块，并控制它是否可见(公共的或私有的)。</para>
 
       <para>
-        The section file is a plain text file with XML-like syntax (using tags).
+        The section file is a plain text file with tags delimiting sections.
         Blank lines are ignored and lines starting with a '#' are treated as
         comment lines.
+      </para>
+      
+      <note>
+        <para>
+          While the tags make the file look like xml, it is not. Please do not
+          close tags like &lt;SUBSECTION&gt;.
+        </para>
+      </note>
+
+      <para>
+        <example><title>Including generated sections</title>
+          <programlisting><![CDATA[
+<INCLUDE>libmeep/meep.h</INCLUDE>
+
+<SECTION>
+<FILE>meepapp</FILE>
+<TITLE>MeepApp</TITLE>
+MeepApp
+<SUBSECTION Standard>
+MEEP_APP
+...
+MeepAppClass
+meep_app_get_type
+</SECTION>
+]]></programlisting>
+        </example>
       </para>
 
       <para>
@@ -1295,7 +1479,7 @@ gtk_arrow_get_type
         without any suffix. For example, using '&lt;FILE&gt;gnome-config&lt;/FILE&gt;'
         will result in the section declarations being output in the template
         file <filename>tmpl/gnome-config.sgml</filename>, which will be
-        converted into the DocBook SGML/XML file <filename>sgml/gnome-config.sgml</filename>
+        converted into the DocBook XML file <filename>xml/gnome-config.sgml</filename>
         or the DocBook XML file <filename>xml/gnome-config.xml</filename>.
         (The name of the HTML file is based on the module name and the section
         title, or for GObjects it is based on the GObjects class name converted
@@ -1396,10 +1580,129 @@ gtk_arrow_get_type
       <filename>&lt;package&gt;.interfaces.txt</filename>,
       <filename>&lt;package&gt;.prerequisites.txt</filename> and
       <filename>&lt;package&gt;.signals.txt</filename>. If there are missing
-      symbols in any of those, one can ask gtkdoc to keep the intermediate scanner
-      file for further analysis, by running it as
+      symbols in any of those, one can ask GTK-Doc to keep the intermediate
+      scanner file for further analysis, by running it as
       <command>GTK_DOC_KEEP_INTERMEDIATE=1 make</command>.
     </para>
+  </chapter>
+  
+  <chapter id="modernizing">
+    <title>Modernizing the documentation</title>
+    
+    <para>
+      GTK-Doc has been around for quite some time. In this section we list new
+      features together with the version since when it is available.
+    </para>
+    
+    <sect1 id="modernizing-gtk-doc-1-9">
+      <title>GTK-Doc 1.9</title>
+
+      <para>
+        When using xml instead of sgml, one can actually name the master
+        document <filename>&lt;package&gt;-docs.xml</filename>.
+      </para>
+      
+      <para>
+        This version supports <option>SCAN_OPTIONS=--rebuild-sections</option>
+        in <filename>Makefile.am</filename>. When this is enabled, the
+        <filename>&lt;package&gt;-sections.txt</filename> is autogenerated and
+        can be removed from the vcs. This only works nicely for projects that
+        have a very regular structure (e.g. each .{c,h} pair will create new
+        section). If one organize a project close to that updating a manually
+        maintained section file can be as simple as running 
+        <code>meld &lt;package&gt;-decl-list.txt &lt;package&gt;-sections.txt</code>.
+      </para>
+      
+      <para>
+        Version 1.8 already introduced the syntax for documenting sections in
+        the sources instead of the separate files under <filename class="directory">tmpl</filename>.
+        This version adds options to switch the whole doc module to not use the
+        extra tmpl build step at all, by using <option>--flavour no-tmpl</option>
+        in <filename>configure.ac</filename>. If you don't have a <filename class="directory">tmpl</filename>
+        checked into you source control system and haven't yet switched, just
+        add the flag to <filename>configure.ac</filename> and you are done.
+      </para>
+    </sect1>
+    
+    <sect1 id="modernizing-gtk-doc-1-10">
+      <title>GTK-Doc 1.10</title>
+
+      <para>
+        This version supports <option>SCAN_OPTIONS=--rebuild-types</option> in
+        <filename>Makefile.am</filename>. When this is enabled, the
+        <filename>&lt;package&gt;.types</filename> is autogenerated and can be
+        removed from the vcs. When using this feature it is important to also
+        setup the <varname>IGNORE_HFILES</varname> in
+        <filename>Makefile.am</filename> for code that is build conditionally.
+      </para>
+    </sect1>
+
+    <sect1 id="modernizing-gtk-doc-1-16">
+      <title>GTK-Doc 1.16</title>
+
+      <para>
+        This version includes a new tool called gtkdoc-check. This tool can run
+        a set of sanity checks on your documentation. It is enabled by adding
+        these lines to the end of <filename>Makefile.am</filename>.
+        <example><title>Enable gtkdoc-check</title>
+          <programlisting><![CDATA[
+if ENABLE_GTK_DOC
+TESTS_ENVIRONMENT = \
+  DOC_MODULE=$(DOC_MODULE) DOC_MAIN_SGML_FILE=$(DOC_MAIN_SGML_FILE) \
+  SRCDIR=$(abs_srcdir) BUILDDIR=$(abs_builddir)
+TESTS = $(GTKDOC_CHECK)
+endif
+]]></programlisting>
+        </example>
+      </para>
+    </sect1>
+
+    <sect1 id="modernizing-gtk-doc-1-20">
+      <title>GTK-Doc 1.20</title>
+
+      <para>
+        Version 1.18 brought some initial markdown support. Using markdown in
+        doc comments is less intrusive than writing docbook xml. This version
+        improves a lot on this and add a lot more styles. The section that
+        explains the <link linkend="documenting_syntax">comment syntax</link>
+        has all the details.
+      </para>
+    </sect1>
+
+    <sect1 id="modernizing-gtk-doc-1-25">
+      <title>GTK-Doc 1.25</title>
+
+      <para>
+        The makefiles shipped with this version generate an entity file at <filename>xml/gtkdocentities.ent</filename>,
+        containing entities for e.g. package_name and package_version. You can
+        use this e.g. in the main xml file to avoid hardcoding the version
+        number. Below is any example that shows how the entity file is included
+        and how the entities are used. The entities can also be used in all
+        generated files, GTK-Doc will use the same xml header in generated xml
+        files.
+        <example><title>Use pre-generated entities</title>
+          <programlisting><![CDATA[
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+  <!ENTITY % gtkdocentities SYSTEM "xml/gtkdocentities.ent">
+  %gtkdocentities;
+]>
+<book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
+  <bookinfo>
+    <title>&package_name; Reference Manual</title>
+    <releaseinfo>
+      for &package_string;.
+      The latest version of this documentation can be found on-line at
+      <ulink role="online-location" url="http://[SERVER]/&package_name;/index.html">http://[SERVER]/&package_name;/</ulink>.
+    </releaseinfo>
+  </bookinfo>
+]]></programlisting>
+        </example>
+      </para>
+    </sect1>
   </chapter>
 
   <chapter id="documenting-others">
@@ -1437,8 +1740,7 @@ gtk_arrow_get_type
 
         <para>
           <example><title>额外的配置检查</title>
-            <programlisting>
-<![CDATA[
+            <programlisting><![CDATA[
 AC_ARG_ENABLE(man,
               [AC_HELP_STRING([--enable-man],
                               [regenerate man pages from Docbook [default=no]])],enable_man=yes,
@@ -1446,8 +1748,7 @@ AC_ARG_ENABLE(man,
 
 AC_PATH_PROG([XSLTPROC], [xsltproc])
 AM_CONDITIONAL(ENABLE_MAN, test x$enable_man != xno)
-]]>
-            </programlisting>
+]]></programlisting>
           </example>
         </para>
       </sect2>
@@ -1457,8 +1758,7 @@ AM_CONDITIONAL(ENABLE_MAN, test x$enable_man != xno)
 
         <para>
           <example><title>额外的配置检查</title>
-            <programlisting>
-<![CDATA[
+            <programlisting><![CDATA[
 man_MANS = \
        meeper.1
 
@@ -1473,8 +1773,7 @@ endif
 
 BUILT_EXTRA_DIST = $(man_MANS)
 EXTRA_DIST += meep.xml
-]]>
-            </programlisting>
+]]></programlisting>
           </example>
         </para>
       </sect2>
@@ -1554,7 +1853,7 @@ http://cgit.freedesktop.org/DeviceKit/DeviceKit/tree/doc/dbus)
           but not in <filename>xml/tree_index.sgml</filename> then double check
           that the type is correctly placed in the <filename>&lt;package&gt;-sections.txt</filename>.
           If the type instance (e.g. <type>GtkWidget</type>) is not listed or
-          incidentialy makred private it will not be shown.
+          incidentally marked private it will not be shown.
         </seg>
       </seglistitem>
       <seglistitem>
@@ -2095,7 +2394,7 @@ http://cgit.freedesktop.org/DeviceKit/DeviceKit/tree/doc/dbus)
     
     <para>
       You may extract a single document from such a collection, and
-      dispbibute it individually under this License, provided you
+      distribute it individually under this License, provided you
       insert a copy of this License into the extracted document, and
       follow this License in all other respects regarding verbatim
       copying of that document.

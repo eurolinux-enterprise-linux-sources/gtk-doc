@@ -1,6 +1,7 @@
 /**
  * SECTION:tester
  * @short_description: module for gtk-doc unit test
+ * @stability: stable
  *
  * This file contains non-sense code for the sole purpose of testing the docs.
  */
@@ -27,7 +28,7 @@ annotation_array_length (GObject *list,
 
 
 /**
- * annotation_nullable:
+ * annotation_allow_none:
  * @uri: a uri
  * @label: (allow-none): an optional string, which is used in ways too
  *  complicated to describe in a single line, making it necessary to wrap it
@@ -38,8 +39,44 @@ annotation_array_length (GObject *list,
  *  free after use, whose description is also rather long
  */
 gchar *
+annotation_allow_none (const gchar *uri,
+                       const gchar *label)
+{
+  return NULL;
+}
+
+/**
+ * annotation_nullable:
+ * @uri: a uri
+ * @label: (nullable): an optional string, which is used in ways too
+ *  complicated to describe in a single line, making it necessary to wrap it
+ *
+ * Document optional parameters.
+ *
+ * Returns: (transfer full) (nullable): Returns stuff which you have to
+ *  free after use, whose description is also rather long
+ */
+gchar *
 annotation_nullable (const gchar *uri,
                      const gchar *label)
+{
+  return NULL;
+}
+
+/**
+ * annotation_not_nullable:
+ * @uri: a uri
+ * @label: (not nullable): a non-optional string, which is used in ways too
+ *  complicated to describe in a single line, making it necessary to wrap it
+ *
+ * Document non-nullable parameters.
+ *
+ * Returns: (transfer full) (not nullable): Returns stuff which you have to
+ *  free after use, whose description is also rather long
+ */
+gchar *
+annotation_not_nullable (const gchar *uri,
+                         const gchar *label)
 {
   return NULL;
 }
@@ -100,6 +137,80 @@ annotation_outparams (GList **list)
 }
 
 /**
+ * annotation_outparams_optional:
+ * @list: (out) (transfer none) (optional): a pointer to take a list, or %NULL
+ *
+ * Document optional parameters.
+ *
+ * Returns: %TRUE for success
+ */
+gboolean
+annotation_outparams_optional (GList **list)
+{
+  return TRUE;
+}
+
+/**
+ * annotation_outparams_nullable:
+ * @list: (out) (transfer none) (nullable): a pointer to take a list; but %NULL
+ * may also be returned
+ *
+ * Document optional parameters.
+ *
+ * Returns: %TRUE for success
+ */
+gboolean
+annotation_outparams_nullable (GList **list)
+{
+  return TRUE;
+}
+
+/**
+ * annotation_outparams_not_nullable:
+ * @list: (out) (transfer none) (not nullable): a pointer to take a list; %NULL
+ *    must not be returned
+ *
+ * Document optional parameters.
+ *
+ * Returns: %TRUE for success
+ */
+gboolean
+annotation_outparams_not_nullable (GList **list)
+{
+  return TRUE;
+}
+
+/**
+ * annotation_outparams_optional_nullable:
+ * @list: (out) (transfer none) (optional) (nullable): a pointer to take a
+ * list, or %NULL; but %NULL may also be returned in @list — isn’t that cool?
+ *
+ * Document non-optional parameters.
+ *
+ * Returns: %TRUE for success
+ */
+gboolean
+annotation_outparams_optional_nullable (GList **list)
+{
+  return TRUE;
+}
+
+/**
+ * annotation_outparams_optional_not_nullable:
+ * @list: (out) (transfer none) (optional) (not nullable): a pointer to take a
+ * list, not %NULL; and %NULL must not be returned in @list — isn’t that cool?
+ *
+ * Document non-optional parameters.
+ *
+ * Returns: %TRUE for success
+ */
+gboolean
+annotation_outparams_optional_not_nullable (GList **list)
+{
+  return TRUE;
+}
+
+/**
  * annotation_skip: (skip)
  * @list: a pointer to take a list
  *
@@ -133,5 +244,47 @@ annotation_skip_return (GList *list)
  */
 void
 annotation_scope (GCallback *callback, gpointer user_data)
+{
+}
+
+/**
+ * annotation_rename_to: (rename-to annotation_scope)
+ *
+ * Documentation for this function.
+ */
+void
+annotation_rename_to (void)
+{
+}
+
+/**
+ * stability_unstable:
+ *
+ * An experimental function.
+ *
+ * Stability: unstable
+ */
+void
+stability_unstable(void)
+{
+}
+
+/**
+ * annotation_multiline_on_function: (rename-to annotation_scope)
+ *                                   (skip)
+ *
+ * Documentation for this function.
+ */
+void annotation_multiline_on_function (void)
+{
+}
+
+/**
+ * annotation_multiline_on_function2:
+ * (rename-to annotation_scope)(skip)
+ *
+ * Documentation for this function.
+ */
+void annotation_multiline_on_function2 (void)
 {
 }

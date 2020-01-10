@@ -10,16 +10,16 @@
 <book id="index" lang="el">
   <bookinfo>
     <title>Εγχειρίδιο GTK-Doc</title>
-    <edition>1.18.1</edition>
-    <abstract role="description"><para>Εγχειρίδιο χρήσης του GTK-Doc για προγραμματιστές.</para></abstract>
+    <edition>1.24.1</edition>
+    <abstract role="description"><para>Εγχειρίδιο χρήστη για προγραμματιστές με οδηγίες για τη χρήση του GTK-Doc.</para></abstract>
     <authorgroup>
       <author><firstname>Chris</firstname> <surname>Lyttle</surname> <affiliation> <address> <email>chris@wilddev.net</email> </address> </affiliation></author>
       <author><firstname>Dan</firstname> <surname>Mueth</surname> <affiliation> <address> <email>d-mueth@uchicago.edu</email> </address> </affiliation></author>
-      <author><firstname>Stefan</firstname> <surname>Kost</surname> <affiliation> <address> <email>ensonic@users.sf.net</email> </address> </affiliation></author>
+      <author><firstname>Stefan</firstname> <surname>Sauer (Kost)</surname> <affiliation> <address> <email>ensonic@users.sf.net</email> </address> </affiliation></author>
     </authorgroup>
     <publisher role="maintainer"><publishername>Έργο GTK-Doc</publishername> <address><email>gtk-doc-list@gnome.org</email></address></publisher>
     <copyright><year>2000, 2005</year> <holder>Dan Mueth και Chris Lyttle</holder></copyright>
-    <copyright><year>2007-2011</year> <holder>Stefan Sauer (Kost)</holder></copyright>
+    <copyright><year>2007-2015</year> <holder>Stefan Sauer (Kost)</holder></copyright>
 
     <!-- translators: uncomment this:
     <copyright>
@@ -34,27 +34,36 @@
     </legalnotice>
 
     <revhistory>
-      <revision>
-        <revnumber>1.19</revnumber>
-        <date>05 Jun 2013</date>
-        <authorinitials>ss</authorinitials>
-        <revremark>bug fixes</revremark>
-      </revision>
-      <revision>
-        <revnumber>1.18</revnumber>
-        <date>14 Sep 2011</date>
-        <authorinitials>ss</authorinitials>
-        <revremark>bug fixes, speedups, markdown support</revremark>
-      </revision>
-      <revision><revnumber>1.17</revnumber> <date>26 Φεβ 2011</date> <authorinitials>sk</authorinitials> <revremark>διόρθωση σφάλματος</revremark></revision>
+      <revision><revnumber>1.24.1</revnumber> <date>30 Μαΐου 2015</date> <authorinitials>ss</authorinitials> <revremark>έκδοση ανάπτυξης</revremark></revision>
+      <revision><revnumber>1.24</revnumber> <date>29 Μαΐου 2015</date> <authorinitials>ss</authorinitials> <revremark>διόρθωση σφαλμάτων</revremark></revision>
+      <revision><revnumber>1.23</revnumber> <date>17 Μαΐου 2015</date> <authorinitials>ss</authorinitials> <revremark>διόρθωση σφαλμάτων</revremark></revision>
+      <revision><revnumber>1.22</revnumber> <date>07 Μαΐου 2015</date> <authorinitials>ss</authorinitials> <revremark>διορθώσεις σφαλμάτων, απόρριψη παρωχημένων λειτουργιών</revremark></revision>
+      <revision><revnumber>1.21</revnumber> <date>17 Ιουλ 2013</date> <authorinitials>ss</authorinitials> <revremark>διορθώσεις σφαλμάτων, απόρριψη παρωχημένων λειτουργιών</revremark></revision>
+      <revision><revnumber>1.20</revnumber> <date>16 Φεβ 2014</date> <authorinitials>ss</authorinitials> <revremark>διορθώσεις σφαλμάτων, υποστήριξη markdown, και βελτιώσεις στυλ</revremark></revision>
+      <revision><revnumber>1.19</revnumber> <date>05 Ιουν 2013</date> <authorinitials>ss</authorinitials> <revremark>διόρθωση σφαλμάτων</revremark></revision>
+      <revision><revnumber>1.18</revnumber> <date>14 Σεπτ 2011</date> <authorinitials>ss</authorinitials> <revremark>διορθώσεις σφαλμάτων, επιταχύνσεις, υποστήριξη markdown</revremark></revision>
+      <revision><revnumber>1.17</revnumber> <date>26 Φεβ 2011</date> <authorinitials>sk</authorinitials> <revremark>επείγουσα διόρθωση σφάλματος</revremark></revision>
       <revision><revnumber>1.16</revnumber> <date>14 Ιαν 2011</date> <authorinitials>sk</authorinitials> <revremark>διορθώσεις σφαλμάτων και βελτιώσεις διάταξης</revremark></revision>
-      <revision><revnumber>1.15</revnumber> <date>21 Μαίου 2010</date> <authorinitials>sk</authorinitials> <revremark>bug and regression fixes</revremark></revision>
+      <revision><revnumber>1.15</revnumber> <date>21 Μαίου 2010</date> <authorinitials>sk</authorinitials> <revremark>διορθώσεις σφαλμάτων και αναδρομής</revremark></revision>
       <revision><revnumber>1.14</revnumber> <date>28 Μαρτίου 2010</date> <authorinitials>sk</authorinitials> <revremark>διορθώσεις σφαλμάτων και βελτιώσεις επίδοσης</revremark></revision>
-      <revision><revnumber>1.13</revnumber> <date>18 Δεκεμβρίου 2009</date> <authorinitials>sk</authorinitials> <revremark>ανανέωση σπασμένου συμπιεσμένου αρχείου</revremark></revision>
-      <revision><revnumber>1.12</revnumber> <date>18 Δεκεμβρίου 2009</date> <authorinitials>sk</authorinitials> <revremark>νέα χαρακτηριστικά και διορθώσεις σφαλμάτων</revremark></revision>
+      <revision><revnumber>1.13</revnumber> <date>18 Δεκεμβρίου 2009</date> <authorinitials>sk</authorinitials> <revremark>ανανέωση κατεστραμμένου συμπιεσμένου αρχείου</revremark></revision>
+      <revision><revnumber>1.12</revnumber> <date>18 Δεκεμβρίου 2009</date> <authorinitials>sk</authorinitials> <revremark>νέα χαρακτηριστικά εργαλείων και διορθώσεις σφαλμάτων</revremark></revision>
       <revision><revnumber>1.11</revnumber> <date>16 Νοεμβρίου 2008</date> <authorinitials>mal</authorinitials> <revremark>Μετάβαση σε GNOME doc-utils</revremark></revision>
     </revhistory>
 
+  
+    <othercredit class="translator">
+      <personname>
+        <firstname>Ελληνική μεταφραστική ομάδα GNOME</firstname>
+      </personname>
+      <email>team@gnome.gr</email>
+    </othercredit>
+    <copyright>
+      
+        <year>2009-2015</year>
+      
+      <holder>Ελληνική μεταφραστική ομάδα GNOME</holder>
+    </copyright>
   
     <othercredit class="translator">
       <personname>
@@ -79,6 +88,8 @@
       
         <year>2012</year>
       
+        <year>2015</year>
+      
       <holder>Θάνος Τρυφωνίδης</holder>
     </copyright>
   
@@ -90,9 +101,35 @@
     </othercredit>
     <copyright>
       
-        <year>2013</year>
+        <year>2013-2015</year>
       
       <holder>Δημήτρης Σπίγγος</holder>
+    </copyright>
+  
+    <othercredit class="translator">
+      <personname>
+        <firstname>Μαρία Θουκυδίδου</firstname>
+      </personname>
+      <email>marablack3@gmail.com</email>
+    </othercredit>
+    <copyright>
+      
+        <year>2014</year>
+      
+      <holder>Μαρία Θουκυδίδου</holder>
+    </copyright>
+  
+    <othercredit class="translator">
+      <personname>
+        <firstname>Μαρία Μαυρίδου</firstname>
+      </personname>
+      <email>mavridou@gmail.com</email>
+    </othercredit>
+    <copyright>
+      
+        <year>2014</year>
+      
+      <holder>Μαρία Μαυρίδου</holder>
     </copyright>
   </bookinfo>
 
@@ -114,7 +151,7 @@
 
       <para>Το GTK-Doc χρησιμοποιεί την τεκμηρίωση συναρτήσεων που έχει συμπεριληφθεί στα πηγαία αρχεία (εντός μπλοκ σχολίων με ειδική μορφή), ή την τεκμηρίωση που έχει προστεθεί στα πρότυπα αρχεία που χρησιμοποιεί το GTK-Doc (σημειώστε όμως ότι το GTK-Doc παράγει τεκμηρίωση μόνο για τις συναρτήσεις που δηλώνονται σε αρχεία κεφαλίδας· δεν παράγει τεκμηρίωση για στατικές συναρτήσεις).</para>
 
-      <para>Το GTK-Doc αποτελείται από μια σειρά από σενάρια perl , καθένα από τα οποία είναι υπεύθυνο για διαφορετικό στάδιο της όλης διαδικασίας.</para>
+      <para>Το GTK-Doc αποτελείται από μια σειρά δέσμης ενεργειών perl, καθένα από τα οποία είναι υπεύθυνο για διαφορετικό στάδιο της όλης διαδικασίας.</para>
 
       <para>Η διαδικασία περιλαμβάνει 5 κύρια στάδια:</para>
 
@@ -125,26 +162,26 @@
         </listitem>
 
         <listitem>
-          <para><guilabel>Συλλέγοντας πληροφορίες σχετικά με τον κώδικα.</guilabel> Το <application>gtkdoc-scan</application> σαρώνει τα αρχεία κεφαλίδων του κώδικα ψάχνοντας για δηλώσεις συναρτήσεων, μακροεντολές, enums, δομές και ενώσεις. Δημιουργεί το αρχείο <filename>&lt;module&gt;-decl-list.txt</filename> που περιέχει μια λίστα με τις δηλώσεις, και τις τοποθετεί σε ενότητες αναλόγως με το αρχείο κεφαλίδας που βρίσκονται. Από την πρώτη εκτέλεση του προγράμματος το αρχείο αντιγράφεται στο <filename>&lt;module&gt;-sections.txt</filename>. Ο συγγραφέας μπορεί να τακτοποιήσει τις ενότητες και τη σειρά των δηλώσεων, για να παράξει το επιθυμητό τελικό αποτέλεσμα. Το δεύτερο αρχείο δημιουργεί το <filename>&lt;module&gt;-decl.txt</filename>. Το αρχείο αυτό περιέχει τις πλήρεις δηλώσεις που βρέθηκαν από τον σαρωτή.Αν για κάποιο λόγο θέλετε μερικά σύμβολα να εμφανίζονται στην τεκμηρίωση, όπου η πλήρης δήλωση δεν μπορεί να βρεθεί από τον σαρωτή ή πρέπει να εμφανίζεται διαφορετικά, κάποιος μπορεί να τοποθετήσει οντότητες όμοιες με αυτές <filename>&lt;module&gt;-decl.txt</filename> στο αρχείο <filename>&lt;module&gt;-overrides.txt</filename>.</para>
-         <para>Το <application>gtkdoc-scanobj</application> μπορεί επίσης να χρησιμοποιηθεί για να κάνει δυναμική αναζήτηση σε μια βιβλιοθήκη για ενδεχόμενες υποκλάσεις GObject. Αποθηκεύει τις πληροφορίες για τη θέση κάθε αντικειμένου στην ιεραρχία κλάσεων καθώς και για τα ορίσματα και σήματα GObject που περιέχει.</para>
-         <para>Το <application>gtkdoc-scanobj</application> δεν πρέπει να χρησιμοποιείτε πλέον. Χρειαζόταν στο παρελθόν όταν το GObject ήταν ακόμα GtkObject μέσα στη gtk+.</para>
+          <para><guilabel>Συλλέγοντας πληροφορίες για τον κώδικα.</guilabel> Το <application>gtkdoc-scan</application> σαρώνει τα αρχεία κεφαλίδων του κώδικα ψάχνοντας για δηλώσεις συναρτήσεων, μακροεντολές, enums, δομές και ενώσεις. Δημιουργεί το αρχείο <filename>&lt;module&gt;-decl-list.txt</filename> που περιέχει μια λίστα με τις δηλώσεις, και τις τοποθετεί σε ενότητες αναλόγως με το αρχείο κεφαλίδας στο οποίο βρίσκονται. Από την πρώτη εκτέλεση του προγράμματος το αρχείο αντιγράφεται στο <filename>&lt;module&gt;-sections.txt</filename>. Ο συγγραφέας μπορεί να τακτοποιεί τις ενότητες και τη σειρά των δηλώσεων, για να παραγάγει το επιθυμητό τελικό αποτέλεσμα. Το δεύτερο αρχείο δημιουργεί το <filename>&lt;module&gt;-decl.txt</filename>. Το αρχείο αυτό περιέχει τις πλήρεις δηλώσεις που βρέθηκαν από τον σαρωτή.Αν για κάποιο λόγο θέλετε μερικά σύμβολα να εμφανίζονται στην τεκμηρίωση, όπου η πλήρης δήλωση δεν μπορεί να βρεθεί από τον σαρωτή, ή πρέπει να εμφανίζεται διαφορετικά, μπορεί κάποιος να τοποθετήσει οντότητες παρόμοιες με αυτές <filename>&lt;module&gt;-decl.txt</filename> στο αρχείο <filename>&lt;module&gt;-overrides.txt</filename>.</para>
+         <para>Το <application>gtkdoc-scanobj</application> μπορεί επίσης να χρησιμοποιηθεί για να κάνει δυναμική αναζήτηση σε μια βιβλιοθήκη για ενδεχόμενες υποκλάσεις GObject. Αποθηκεύει τις πληροφορίες για τη θέση κάθε αντικειμένου στην ιεραρχία κλάσεων καθώς και για τις ιδιότητες και σήματα GObject που περιέχει.</para>
+         <para>Το <application>gtkdoc-scanobj</application> δεν πρέπει να χρησιμοποιείται πλέον. Χρειαζόταν στο παρελθόν όταν το GObject ήταν ακόμα GtkObject μέσα στη gtk+.</para>
         </listitem>
 
         <listitem>
-          <para><guilabel>Δημιουργία "πρότυπων" αρχείων</guilabel> Το <application>gtkdoc-mktmpl</application> παράγει μια σειρά από αρχεία στον υποκατάλογο <filename class="directory">tmpl/</filename>, χρησιμοποιώντας τις πληροφορίες που συλλέχθηκαν κατά το πρώτο στάδιο. (Σημειώστε ότι μπορεί να εκτελεστεί περισσότερες από μία φορές. Προσπαθεί να διασφαλίσει ότι δεν χάνεται ποτέ και κανενός είδους τεκμηρίωση.)</para>
+          <para><guilabel>Δημιουργία "πρότυπων" αρχείων</guilabel> Το <application>gtkdoc-mktmpl</application> παράγει μια σειρά από αρχεία στον υποκατάλογο <filename class="directory">tmpl/</filename>, χρησιμοποιώντας τις πληροφορίες που συλλέχθηκαν κατά το πρώτο στάδιο. (Σημειώστε ότι μπορεί να εκτελεσθεί περισσότερες από μία φορές. Προσπαθεί να διασφαλίσει ότι δεν χάνεται ποτέ και κανενός είδους τεκμηρίωση.)</para>
           <note>
-            <para>Από την έκδοση GTK-Doc 1.9 και μετά τα πρότυπα αρχεία δεν είναι πλέον απαραίτητα. Σας συνιστούμε να διατηρείτε την τεκμηρίωση στον κώδικα. Το <application>gtkdocize</application> υποστηρίζει πλέον την επιλογή <option>--flavour no-tmpl</option> η οποία επιλέγει ένα αρχείο makefile που δεν χρησιμοποιεί καθόλου πρότυπα tmpl. Αν δεν έχετε κάνει ποτέ αλλαγές με το χέρι σε αρχεία προτύπων tmpl, παρακαλώ αφαιρέστε τον κατάλογο (π.χ. από ένα σύστημα ελέγχου εκδόσεων).</para>
+            <para>Από την έκδοση GTK-Doc 1.9 και μετά, τα πρότυπα αρχεία δεν είναι πλέον απαραίτητα. Σας συνιστούμε να διατηρείτε την τεκμηρίωση στον κώδικα. Το <application>gtkdocize</application> υποστηρίζει πλέον την επιλογή <option>--flavour no-tmpl</option> η οποία επιλέγει ένα αρχείο makefile που δεν χρησιμοποιεί καθόλου πρότυπα tmpl. Αν δεν έχετε κάνει ποτέ αλλαγές με το χέρι σε αρχεία προτύπων tmpl, παρακαλώ αφαιρέστε τον κατάλογο (π.χ. από ένα σύστημα ελέγχου εκδόσεων).</para>
           </note>
         </listitem>
 
         <listitem>
-          <para><guilabel>Παραγωγή SGML/XML και HTML/PDF</guilabel>. Το <application>gtkdoc-mkdb</application> μετατρέπει τα αρχεία προτύπων tmpl σε αρχεία SGML ή XML και τα τοποθετεί στους υποκαταλόγους <filename class="directory">sgml/</filename> ή <filename class="directory">xml/</filename>. Αν ο πηγαίος κώδικας περιέχει τεκμηρίωση συναρτήσεων εντός ειδικών μπλοκ σχολίων, τα σχόλια συγχωνεύονται σε αυτό το στάδιο. Αν δεν υπάρχουν αρχεία προτύπων tmpl, τότε χρησιμοποιούνται μόνο τα έγγραφα που προέκυψαν από τον πηγαίο κώδικα και τα δεδομένα της ενδοσκόπησης. Σας συνιστούμε να χρησιμοποιήσετε το βιβλίο τεκμηρίωσης XML.</para>
-          <para> Το <application>gtkdoc-mkhtml</application> μετατρέπει τα αρχεία SGML/XML σε αρχεία HTML που τοποθετούνται στον υποκατάλογο <filename class="directory">html/</filename>. Ομοίως το <application>gtkdoc-mkpdf</application> μετατρέπει τα αρχεία SGML/XML σε ένα αρχείο PDF που ονομάζεται <filename>&lt;package&gt;.pdf</filename>.</para>
-          <para>Τα αρχεία στους καταλόγους <filename class="directory">sgml/</filename>, <filename class="directory">xml/</filename> και <filename class="directory">html/</filename> αντικαθίστανται αυτόματα. Επομένως, δεν πρέπει να τα αλλάζετε με το χέρι.</para>
+          <para><guilabel>Δημιουργία του XML και του HTML/PDF</guilabel>. Το <application>gtkdoc-mkdb</application> μετατρέπει τα αρχεία προτύπων σε αρχεία XML στον υποκατάλογο <filename class="directory">xml/</filename>. Αν ο πηγαίος κώδικας περιέχει τεκμηρίωση συναρτήσεων, χρησιμοποιώντας τις ειδικές ομάδες σχολίων, συγχωνεύεται εδώ. Αν δεν υπάρχουν χρησιμοποιούμενα αρχεία tmpl, διαβάζει μόνο έγγραφα από τα δεδομένα πηγών και αυτοελέγχου.</para>
+          <para>Το <application>gtkdoc-mkhtml</application> μετατρέπει τα αρχεία XML σε αρχεία HTML στον υποκατάλογο <filename class="directory">html/</filename>. Ομοίως, το <application>gtkdoc-mkpdf</application> μετατρέπει τα αρχεία XML σε ένα έγγραφο PDF που ονομάζεται <filename>&lt;package&gt;.pdf</filename>.</para>
+          <para>Τα αρχεία στους καταλόγους <filename class="directory">xml/</filename> και <filename class="directory">html/</filename> αντικαθίστανται πάντα. Επομένως, δεν πρέπει να τα επεξεργάζεστε απευθείας.</para>
         </listitem>
 
         <listitem>
-          <para><guilabel>Διόρθωση παραπομπών μεταξύ εγγράφων</guilabel> Μετά την εγκατάσταση των αρχείων HTML, μπορείτε να εκτελέσετε το <application>gtkdoc-fixxref</application> για να διορθώσετε τυχόν παραπομπές σε διαφορετικά έγγραφα. Για παράδειγμα, η τεκμηρίωση του GTK+ περιέχει πολλές παραπομπές σε τύπους που επεξηγούνται στο εγχειρίδιο του GLib. Όταν ετοιμάζετε πακέτα κώδικα για διανομή, μπορείτε να χρησιμοποιείτε το <application>gtkdoc-rebase</application> για να μετατρέπετε όλους τους εξωτερικούς συνδέσμους σε διαδικτυακούς συνδέσμους. Κατά την εγκατάσταση της τεκμηρίωσης που περιλαμβάνεται στο διανεμηθέντα κώδικα (παράγεται αυτόματα), η ίδια εφαρμογή θα προσπαθήσει να μετατρέψει ξανά τους συνδέσμους σε τοπικούς συνδέσμους (προς τις τοποθεσίες όπου είναι εγκατεστημένη η τεκμηρίωση).</para>
+          <para><guilabel>Διόρθωση διασταυρούμενων παραπομπών μεταξύ εγγράφων</guilabel> Μετά την εγκατάσταση των αρχείων HTML, μπορείτε να εκτελέσετε το <application>gtkdoc-fixxref</application> για να διορθώσετε τυχόν διασταυρούμενες παραπομπές σε διαφορετικά έγγραφα. Για παράδειγμα, η τεκμηρίωση του GTK+ περιέχει πολλές παραπομπές σε τύπους που επεξηγούνται στο εγχειρίδιο του GLib. Όταν ετοιμάζετε πακέτα κώδικα για διανομή, μπορείτε να χρησιμοποιείτε το <application>gtkdoc-rebase</application> για να μετατρέπετε όλους τους εξωτερικούς συνδέσμους σε διαδικτυακούς συνδέσμους. Κατά την εγκατάσταση της τεκμηρίωσης που περιλαμβάνεται στον διανεμηθέντα κώδικα (παράγεται αυτόματα), η ίδια εφαρμογή θα προσπαθήσει να μετατρέψει ξανά τους συνδέσμους σε τοπικούς συνδέσμους (προς τις τοποθεσίες όπου είναι εγκατεστημένη η τεκμηρίωση).</para>
         </listitem>
       </orderedlist>
 
@@ -155,45 +192,20 @@
 
       <sect2 id="requirements">
         <title>Απαιτήσεις</title>
-        <para><guilabel>Perl v5</guilabel> - τα βασικά σενάρια είναι γραμμένα σε Perl.</para>
-        <para><guilabel>DocBook DTD v3.0</guilabel> - Πρόκειται για την DocBook SGML DTD. <ulink url="http://www.ora.com/davenport" type="http">http://www.ora.com/davenport</ulink></para>
-        <para><guilabel>Jade v1.1</guilabel> - Πρόκειται για επεξεργαστή DSSSL που μετατρέπει τη SGML σε διάφορες άλλες μορφές. <ulink url="http://www.jclark.com/jade" type="http">http://www.jclark.com/jade</ulink></para>
-        <para><guilabel>Modular DocBook Stylesheets</guilabel> Πρόκειται για τον κώδικα DSSSL που απαιτείται για τη μετατροπή από DocBook σε HTML (και ορισμένες άλλες μορφές). Χρησιμοποιείται σε συνδυασμό με το jade. Έχουν γίνει κάποιες μικρές προσαρμογές του κώδικα DSSSL, στο gtk-doc.dsl, για το χρωματισμό κώδικα/δηλώσεων και για την υποστήριξη των καθολικών ευρετηρίων παραπομπών στα παραγόμενα HTML. <ulink url="http://nwalsh.com/docbook/dsssl" type="http">http://nwalsh.com/docbook/dsssl</ulink></para>
-        <para><guilabel>docbook-to-man</guilabel> - Σε περίπτωση που θέλετε να δημιουργήσετε σελίδες man από το DocBook. Έχουν γίνει κάποιες μικρές προσαρμογές των 'προδιαγραφών μετάφρασης', για να εμφανίζονται με κεφαλαία οι τίτλοι ενοτήτων και να προστίθενται ο τίτλος 'Βιβλιοθήκη GTK' στην αρχή της σελίδας και η ημερομηνία αναθεώρησης στο τέλος της. Βλέπε <ulink url="http://www.ora.com/davenport" type="http">http://www.ora.com/davenport</ulink> ΣΗΜΕΙΩΣΗ: Αυτή η δυνατότητα δε λειτουργεί προς το παρόν.</para>
+        <para><guilabel>Perl v5</guilabel> - οι κύριες δέσμες ενεργειών είναι γραμμένες σε Perl.</para>
+        <para><guilabel>xsltproc</guilabel> - το πρόγραμμα xslt processor από τη βιβλιοθήκη libxslt <ulink url="http://xmlsoft.org/XSLT/" type="http">xmlsoft.org/XSLT/</ulink></para>
+        <para><guilabel>docbook-xsl</guilabel> - τα φύλλα στυλ docbook xsl <ulink url="http://sourceforge.net/projects/docbook/files/docbook-xsl/" type="http">sourceforge.net/projects/docbook/files/docbook-xsl</ulink></para>
+        <para><guilabel>Python</guilabel> - προαιρετική - για το gtkdoc-depscan</para>
+        <para>Ένα από τα <guilabel>source-highlight</guilabel>, <guilabel>highlight</guilabel> ή <guilabel>vim</guilabel> - προαιρετικά - που χρησιμοποιούνται για την επισήμανση της σύνταξης στα παραδείγματα</para>
       </sect2>
-
-      <sect2 id="installation">
-        <title>Εγκατάσταση</title>
-        <para>Δεν υπάρχει σταθερή τοποθεσία για την εγκατάσταση των DocBook Modular Stylesheets.</para>
-        <para>Το σενάριο εντολών configure του GTK-Doc ψάχνει αυτόματα τους τρεις παρακάτω καταλόγους:</para>
-        <para><filename> /usr/lib/sgml/stylesheets/nwalsh-modular </filename> (χρησιμοποιείται από το RedHat)</para>
-        <para><filename> /usr/lib/dsssl/stylesheets/docbook </filename> (χρησιμοποιείται από το Debian)</para>
-        <para><filename> /usr/share/sgml/docbkdsl </filename> (χρησιμοποιείται από το SuSE)</para>
-        <para>Αν τα φύλλα στυλ είναι εγκατεστημένα κάπου αλλού, θα πρέπει να ρυθμίσετε GTK-Doc με την επιλογή: <command> --with-dsssl-dir=&lt; ΔΙΑΔΡΟΜΗ_ΠΡΟΣ_ΡΙΖΙΚΟ_ΚΑΤΑΛΟΓΟ_ΦΥΛΛΩΝ_ΣΤΥΛ&gt; </command></para>
-      </sect2>
-
     </sect1>
-
-    <!-- not realy worth a section
-    <sect1 id="whentousegtkdoc">
-      <title>When to Use GTK-Doc</title>
-
-      <para>
-        (What things GTK-Doc should, and shouldn't, be used for.)
-        (- ???)
-        (- non C-based projects)
-        (+ Tutorials)
-      </para>
-
-    </sect1>
-    -->
 
     <sect1 id="aboutgtkdoc">
       <title>Περί GTK-Doc</title>
 
       <para>(ΠΡΟΣ ΔΙΟΡΘΩΣΗ)</para>
 
-      <para>(Ιστορικό, συγγραφείς, ιστοσελίδες, άδεια, μελλοντικά σχέδια, σύγκριση με άλλα παρόμοια συστήματα.)</para>
+      <para>(Ιστορικό, συγγραφείς, ιστοσελίδες, λίστα αλληλογραφίας, άδεια, μελλοντικά σχέδια, σύγκριση με άλλα παρόμοια συστήματα.)</para>
 
     </sect1>
 
@@ -209,18 +221,17 @@
   </chapter>
 
   <chapter id="settingup">
-    <title>Δημιουργώντας ένα έργο</title>
+    <title>Δημιουργώντας το δικό σας έργο</title>
 
-    <para>Οι επόμενες ενότητες περιγράφουν τα βήματα που απαιτούνται για να ενσωματώσετε το GTK-Doc στο έργο σας. Υποθέστε ότι εργάζεστε στο έργο 'meep'. Το έργο περιέχει τη βιβλιοθήκη 'libmeep' και την εφαρμογή 'meeper' για τον τελικό χρήστη. Υποθέστε επίσης ότι θα χρησιμοποιήσουμε το autoconf και το automake. Επιπλέον η ενότητα <link linkend="plain_makefiles">αρχεία makefiles ή άλλα συστήματα ανάπτυξης</link> περιγράφει τα βασικά που χρειάζονται για να δουλέψουμε σε διαφορετικό έργο.</para>
+    <para>Οι επόμενες ενότητες περιγράφουν τα βήματα που απαιτούνται για να ενσωματώσετε το GTK-Doc στο έργο σας. Αυτές οι ενότητες προϋποθέτουν ότι εργάζεσθε σε ένα έργο που λέγεται 'meep'. Το έργο περιέχει τη βιβλιοθήκη 'libmeep' και την εφαρμογή 'meeper' για τον τελικό χρήστη. Θεωρούμε επίσης, ότι θα χρησιμοποιείτε το autoconf και το automake. Επιπλέον, η ενότητα <link linkend="plain_makefiles">αρχεία makefiles ή άλλα συστήματα ανάπτυξης</link> θα περιγράψει τα βασικά στοιχεία που απαιτούνται για να εργαστείτε σε μια διαφορετική δόμηση ρυθμίσεων.</para>
 
     <sect1 id="settingup_docfiles">
       <title>Δημιουργία του σκελετού τεκμηρίωσης</title>
 
       <para>Εντός του ριζικού καταλόγου του έργου δημιουργήστε το φάκελο docs/reference (ώστε να μπορείτε να χρησιμοποιήσετε το όνομα docs/help για την τεκμηρίωση του τελικού χρήστη). Συνιστάται να δημιουργήσετε έναν ακόμη υποκατάλογο με το όνομα του πακέτου τεκμηρίωσης. Αυτό δε χρειάζεται για πακέτα που περιλαμβάνουν μόνο μία βιβλιοθήκη.</para>
 
-      <para>Αυτό θα φαίνεται όπως είναι παρακάτω: <example><title>Παράδειγμα δομής καταλόγου</title>
+      <para>Αυτό θα φαίνεται, λοιπόν, όπως εμφανίζεται παρακάτω: <example><title>Παράδειγμα δομής καταλόγου</title>
           <programlisting>
-
 meep/
   docs/
     reference/
@@ -229,121 +240,99 @@ meep/
   src/
     libmeep/
     meeper/
-
-          </programlisting>
+</programlisting>
         </example></para>
     </sect1>
 
     <sect1 id="settingup_autoconf">
       <title>Ενσωμάτωση στο autoconf</title>
 
-      <para>Πολύ εύκολα! Απλά προσθέτετε μία γραμμή στο σενάριο <filename>configure.ac</filename>.</para>
+      <para>Πολύ εύκολα! Απλά προσθέτετε μία γραμμή στη δέσμη ενεργειών <filename>configure.ac</filename>.</para>
 
       <para>
         <example><title>Ενσωμάτωση στο autoconf</title>
           <programlisting>
-
 # έλεγχος για gtk-doc
 GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
-
-          </programlisting>
+</programlisting>
         </example>
       </para>
 
-      <para>Αυτό θα επαιτεί όλοι οι προγραμματιστές να έχουν εγκατεστημένο το gtk-doc. Αν είναι εντάξει για το έργο σας να έχετε επιπλέον κατασκευή ρυθμίσεων για το api-doc, μπορείτε να το επιλύσετε όπως αναφέρετε παρακάτω. Αφήστε το όπως έχει, όσο το gtkdocize ψάχνει στην αρχή της σειράς για το <function>GTK_DOC_CHECK</function>. <example><title>Προαιρετικά κρατήστε το gtk-doc</title>
+      <para>Αυτό απαιτεί από όλους τους προγραμματιστές να έχουν εγκατεστημένο το gtk-doc. Αν είναι εντάξει για το έργο σας να έχετε μια επιπλέον δόμηση ρυθμίσεων για το api-doc, μπορείτε να το επιλύσετε όπως αναφέρεται παρακάτω. Αφήστε το ως έχει, όσο το gtkdocize αναζητά την αρχή της σειράς για το <function>GTK_DOC_CHECK</function>. <example><title>Προαιρετικά διατηρήστε το gtk-doc</title>
           <programlisting>
-
 # έλεγχος για gtk-doc
 m4_ifdef([GTK_DOC_CHECK], [
 GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
 ],[
 AM_CONDITIONAL([ENABLE_GTK_DOC], false)
 ])
-
-          </programlisting>
+</programlisting>
         </example></para>
 
       <para>Το πρώτο όρισμα χρησιμοποιείται για έλεγχο του gtkdocversion κατά τη ρύθμιση. Το δεύτερο, προαιρετικό όρισμα χρησιμοποιείται από το <application>gtkdocize</application>. Η μακροεντολή <symbol>GTK_DOC_CHECK</symbol> επίσης προσθέτει αρκετούς διακόπτες ρύθμισης:</para>
       <orderedlist>
-        <listitem><para>--with-html-dir=ΔΙΑΔΡΟΜΗ : διαδρομή προς την εγκατεστημένη τεκμηρίωση</para></listitem>
-        <listitem><para>--enable-gtk-doc : χρήση gtk-doc για την τεκμηρίωσης [default=no]</para></listitem>
-        <listitem><para>--enable-gtk-doc-html : παραγωγή τεκμηρίωσης σε μορφή html [default=yes]</para></listitem>
-        <listitem><para>--enable-gtk-doc-pdf : παραγωγή τεκμηρίωσης σε μορφή pdf [default=no]</para></listitem>
+        <listitem><para>--with-html-dir= PATH : διαδρομή προς την εγκατεστημένη τεκμηρίωση</para></listitem>
+        <listitem><para>--enable-gtk-doc : χρήση gtk-doc για τη δόμηση τεκμηρίωσης [προεπιλογή=no]</para></listitem>
+        <listitem><para>--enable-gtk-doc-html : δόμηση τεκμηρίωσης σε μορφή html [προεπιλογή=yes]</para></listitem>
+        <listitem><para>--enable-gtk-doc-pdf : δόμηση τεκμηρίωσης σε μορφή pdf [προεπιλογή=no]</para></listitem>
       </orderedlist>
 
       <important>
-      	<para>Η προεπιλογή είναι να είναι απενεργοποιημένο το GTK-Doc! Θυμηθείτε να χρησιμοποιήσετε την επιλογή <option>'--enable-gtk-doc'</option> στην επόμενη εκτέλεση του <filename>configure</filename>. Διαφορετικά εγκαθίσταται η προπαραχθείσα τεκμηρίωση (δυνατότητα χρήσιμη για το χρήστη, αλλά όχι για τον προγραμματιστή).</para>
+      	<para>Το GTK-Doc είναι απενεργοποιημένο από προεπιλογή! Να θυμάστε να χρησιμοποιείτε την επιλογή <option>'--enable-gtk-doc'</option> στην επόμενη εκτέλεση του <filename>configure</filename>. Διαφορετικά, εγκαθίσταται η προπαραχθείσα τεκμηρίωση (δυνατότητα χρήσιμη για τον χρήστη, αλλά όχι για τον προγραμματιστή).</para>
       </important>
 
-      <para>Επίσης, συνιστάται να προσθέσετε την ακόλουθη γραμμή στο σενάριο <filename>configure.ac</filename>. Επιτρέπει στο <filename>gtkdocize</filename> να αντιγράφει αυτόματα τον ορισμό της μακροεντολής  <function>GTK_DOC_CHECK</function> στο έργο σας.</para>
+      <para>Επίσης, συνιστάται να προσθέσετε την ακόλουθη γραμμή στη δέσμη ενεργειών <filename>configure.ac</filename>. Αυτό επιτρέπει στο <filename>gtkdocize</filename> να αντιγράφει αυτόματα τον ορισμό της μακροεντολής για το <function>GTK_DOC_CHECK</function> στο έργο σας.</para>
 
       <para>
         <example><title>Προετοιμασία για το gtkdocize</title>
           <programlisting>
-
 AC_CONFIG_MACRO_DIR(m4)
-
-          </programlisting>
+</programlisting>
         </example>
       </para>
+      <para>Όταν όλες οι αλλαγές στο <filename>configure.ac</filename> έχουν γίνει, ενημερώστε το αρχείο <filename>configure</filename>. Αυτό μπορείτε να το κάνετε επανεκετελώντας το <code>autoreconf -i</code> ή το <code>autogen.sh</code>.</para>
     </sect1>
 
     <sect1 id="settingup_automake">
       <title>Ενσωμάτωση στο automake</title>
 
-      <para>Πρώτα αντιγράψτε το <filename>Makefile.am</filename> από τον υποκατάλογο με τα παραδείγματα των gtkdoc-sources στον κατάλογο της τεκμηρίωσης API του έργου σας ( <filename class="directory">./docs/reference/&lt;package&gt;</filename>). Αν έχετε περισσότερα από ένα πακέτα τεκμηρίωσης, επαναλάβετε τη διαδικασία για καθένα από αυτά.</para>
+      <para>Πρώτα αντιγράψτε το <filename>Makefile.am</filename> από τον υποκατάλογο με τα <filename class="directory">παραδείγματα</filename> των <ulink url="https://git.gnome.org/browse/gtk-doc/tree/examples/Makefile.am">gtkdoc-sources</ulink> στον κατάλογο της τεκμηρίωσης API του έργου σας ( <filename class="directory">./docs/reference/&lt;package&gt;</filename>). Ένα τοπικό αντίγραφο θα πρέπει να είναι διαθέσιμο π.χ. στο <filename>/usr/share/doc/gtk-doc-tools/examples/Makefile.am</filename>. Αν έχετε πολλά doc-packages επαναλάβετε αυτό το βήμα για το καθένα απο αυτά.</para>
 
-      <para>Το επόμενο βήμα είναι να τροποποιήσετε τις ρυθμίσεις στο <filename>Makefile.am</filename>. Πριν από κάθε ρύθμιση υπάρχει ένα σχόλιο που εξηγεί τη χρησιμότητά της. Οι περισσότερες είναι σημαίες που στέλνονται στα αντίστοιχα εργαλεία. Κάθε εργαλείο διαθέτει μια μεταβλητή της μορφής <option>&lt;ΟΝΟΜΑ_ΕΡΓΑΛΕΙΟΥ&gt;_ΕΠΙΛΟΓΕΣ</option>. όλα τα εργαλεία υποστηρίζουν την επιλογή <option>--help</option> για την παραγωγή λίστας με τις υποστηριζόμενες παραμέτρους.</para>
+      <para>Το επόμενο βήμα είναι να τροποποιήσετε τις ρυθμίσεις στο <filename>Makefile.am</filename>. Πριν από κάθε ρύθμιση υπάρχει ένα σχόλιο που εξηγεί τη χρησιμότητά της. Οι περισσότερες είναι σημαίες που στέλνονται στα αντίστοιχα εργαλεία. Κάθε εργαλείο διαθέτει μια μεταβλητή της μορφής <option>&lt;TOOLNAME&gt;_OPTIONS</option>. Όλα τα εργαλεία υποστηρίζουν την επιλογή <option>--help</option> για την παραγωγή λίστας με τις υποστηριζόμενες παραμέτρους.</para>
 
       <!-- FIXME: explain options ? -->
-
-      <para>Μπορείτε, επίσης, να ενεργοποιήσετε το GTK-Doc για το distcheckmake target. Απλά προσθέστε τη γραμμή του επόμενου παραδείγματος στο ριζικό <filename>Makefile.am</filename>:</para>
-
-      <para>
-        <example><title>Ενεργοποίηση του GTK-Doc κατά το make distcheck</title>
-          <programlisting>
-
-DISTCHECK_CONFIGURE_FLAGS=--enable-gtk-doc
-
-          </programlisting>
-        </example>
-      </para>
 
     </sect1>
 
     <sect1 id="settingup_autogen">
       <title>Ενσωμάτωση στο autogen</title>
 
-      <para>Τα περισσότερα έργα διαθέτουν ένα σενάριο <filename>autogen.sh</filename> για τη δημιουργία υποδομών μετά από το checkout από ένα το σύστημα ελέγχου εκδόσεων (π.χ., cvs/svn/git). Το GTK-Doc διαθέτει το εργαλείο <filename>gtkdocize</filename>, το οποίο μπορεί να χρησιμοποιηθεί για ένα τέτοιο σενάριο. Θα πρέπει να εκτελείται πριν το autoheader, το automake ή το autoconf.</para>
+      <para>Τα περισσότερα έργα διαθέτουν ένα σενάριο <filename>autogen.sh</filename> για τη δόμηση υποδομών μετά από έναν έλεγχο από το σύστημα ελέγχου εκδόσεων (π.χ., cvs/svn/git). Το GTK-Doc διαθέτει το εργαλείο <filename>gtkdocize</filename>, το οποίο μπορεί να χρησιμοποιηθεί για ένα τέτοιο σενάριο. Θα πρέπει να εκτελείται πριν το autoheader, το automake ή το autoconf.</para>
 
       <para>
         <example><title>Εκτέλεση του gtkdocize από το autogen.sh</title>
           <programlisting>
-
 gtkdocize || exit 1
-
-          </programlisting>
+</programlisting>
         </example>
       </para>
 
-      <para>Κατά την εκτέλεσή του, το <filename>gtkdocize</filename> αντιγράφει το <filename>gtk-doc.make</filename> στο ριζικό κατάλογο του έργου σας (ή στον κατάλογο που ορίζει η επιλογή <option>--docdir</option>). Επίσης, ελέγχει το σενάριο configure για να βρει την κλήση στο <function>GTK_DOC_CHECK</function>.</para>
+      <para>Κατά την εκτέλεσή του, το <filename>gtkdocize</filename> αντιγράφει το <filename>gtk-doc.make</filename> στο ριζικό κατάλογο του έργου σας (ή στον κατάλογο που ορίζει η επιλογή <option>--docdir</option>). Επίσης, ελέγχει τη δέσμη ενεργειών configure για να βρει την κλήση στο <function>GTK_DOC_CHECK</function>.</para>
 
-      <para>Αρχικά, το GTK-Doc δημιουργούσε αρχεία προτύπων εκεί που οι προγραμματιστές εισήγαγαν την τεκμηρίωση.  Δυστυχώς, αυτή η προσέγγιση δεν ήταν ιδιαίτερα επιτυχής (π.χ η ανάγκη για την παραγωγή αρχείων  στο σύστημα ελέγχου εκδόσεων). Από την έκδοση 1.9 και μετά, τα πρότυπα αρχεία δεν είναι πλέον απαραίτητα. Σας συνιστούμε να διατηρείτε την τεκμηρίωση στον κώδικα. To <application>gtkdocize</application> υποστηρίζει πλέον την επιλογή <option>--flavour no-tmpl</option> που επιλέγει ένα αρχείο makefile που δεν χρησιμοποιεί καθόλου πρότυπα tmpl. Πέρα από την άμεση προσθήκη της επιλογής στην κλήση της εντολής, μπορεί να προστεθεί και σε μια μεταβλητή περιβάλλοντος που ονομάζεται <symbol>GTKDOCIZE_FLAGS</symbol> ή να οριστεί ως δεύτερη παράμετρος στη μακροεντολή <symbol>GTK_DOC_CHECK</symbol> στο σενάριο configure. Αν δεν έχετε κάνει ποτέ αλλαγές με το χέρι σε αρχεία προτύπων και μεταβαίνετε από μια παλιότερη έκδοση του gtkdoc, παρακαλώ αφαιρέστε τον κατάλογο (π.χ. από το σύστημα ελέγχου εκδόσεων).</para>
+      <para>Αρχικά, το GTK-Doc δημιουργούσε αρχεία προτύπων εκεί που οι προγραμματιστές εισήγαγαν την τεκμηρίωση.  Δυστυχώς, αυτή η προσέγγιση δεν ήταν ιδιαίτερα επιτυχής (π.χ η ανάγκη για παραγωγή αρχείων στο σύστημα ελέγχου εκδόσεων). Από την έκδοση 1.9 και μετά, τα πρότυπα αρχεία δεν είναι πλέον απαραίτητα. Σας συνιστούμε να διατηρείτε την τεκμηρίωση στον κώδικα. To <application>gtkdocize</application> υποστηρίζει πλέον την επιλογή <option>--flavour no-tmpl</option> που επιλέγει ένα αρχείο makefile που δεν χρησιμοποιεί καθόλου πρότυπα tmpl. Πέρα από την άμεση προσθήκη της επιλογής στην κλήση της εντολής, μπορεί να προστεθεί και σε μια μεταβλητή περιβάλλοντος που ονομάζεται <symbol>GTKDOCIZE_FLAGS</symbol> ή να ορισθεί ως δεύτερη παράμετρος στη μακροεντολή <symbol>GTK_DOC_CHECK</symbol> στο σενάριο configure. Αν δεν έχετε κάνει ποτέ αλλαγές με το χέρι σε αρχεία προτύπων και μεταβαίνετε από μια παλιότερη έκδοση του gtkdoc, παρακαλώ αφαιρέστε τον κατάλογο (π.χ. από το σύστημα ελέγχου εκδόσεων).</para>
     </sect1>
 
     <sect1 id="settingup_firstrun">
-      <title>Παραγωγή της τεκμηρίωσης</title>
+      <title>Εκτέλεση της δόμησης τεκμηρίωσης</title>
 
-      <para>Αφού ολοκληρωθούν τα προηγούμενα βήματα, προχωρήστε στην παραγωγή. Πρώτα, θα πρέπει να εκτελεστεί εκ νέου το <filename>autogen.sh</filename>. Αν το σενάριο εκτελεί και το configure, προσθέστε την επιλογή <option>--enable-gtk-doc</option>. Διαφορετικά, εκτελέστε εσείς το<filename>configure</filename> με αυτή την επιλογή.</para>
+      <para>Αφού ολοκληρωθούν τα προηγούμενα βήματα, προχωρήστε στην δόμηση. Πρώτα, θα πρέπει να εκτελεσθεί εκ νέου το <filename>autogen.sh</filename>. Αν το σενάριο εκτελεί και το configure, προσθέστε την επιλογή <option>--enable-gtk-doc</option>. Διαφορετικά, εκτελέστε εσείς το<filename>configure</filename> με αυτή την επιλογή.</para>
       <para>Η πρώτη εκτέλεση του make δημιουργεί μια σειρά από πρόσθετα αρχεία στους καταλόγους της τεκμηρίωσης. Τα σημαντικά είναι τα: <filename>&lt;package&gt;.types</filename>, <filename>&lt;package&gt;-docs.xml</filename> (στο παρελθόν .sgml), <filename>&lt;package&gt;-sections.txt</filename>.</para>
       <para>
-        <example><title>Παραγωγή της τεκμηρίωσης</title>
+        <example><title>Εκτέλεση της δόμησης τεκμηρίωσης</title>
           <programlisting>
-
 ./autogen.sh --enable-gtk-doc
 make
-
-          </programlisting>
+</programlisting>
         </example>
       </para>
       <para>Τώρα, μπορείτε να εμφανίσετε το <filename>docs/reference/&lt;package&gt;/index.html</filename> στον περιηγητή σας. Είναι αλήθεια ότι προς το παρόν το αποτέλεσμα είναι μάλλον απογοητευτικό. Μην ανησυχείτε όμως. Στο επόμενο κεφάλαιο θα μάθετε πώς μπορείτε να ζωντανέψετε τις σελίδες σας.</para>
@@ -352,18 +341,18 @@ make
     <sect1 id="settingup_vcs">
       <title>Ενσωμάτωση σε συστήματα ελέγχου εκδόσεων</title>
 
-      <para>Ο εμπειρικός κανόνας είναι ότι αυτά τα αρχεία που επεξεργαστήκατε πρέπει να περάσουν από τον έλεγχο έκδοσης. Για τυπικά έργα, πρόκειται για τα αρχεία: <filename>&lt;package&gt;.types</filename>, <filename>&lt;package&gt;-docs..xml</filename> (στο παρελθόν .sgml), <filename>&lt;package&gt;-sections.txt</filename>, <filename>Makefile.am</filename></para>
+      <para>Ο εμπειρικός κανόνας είναι ότι αυτά τα αρχεία που επεξεργασθήκατε πρέπει να περάσουν από τον έλεγχο έκδοσης. Για τυπικά έργα, πρόκειται για τα αρχεία: <filename>&lt;package&gt;.types</filename>, <filename>&lt;package&gt;-docs.xml</filename> (στο παρελθόν .sgml), <filename>&lt;package&gt;-sections.txt</filename>, <filename>Makefile.am</filename>.</para>
+      <para>Αρχεία στους καταλόγους <filename>xml/</filename> και <filename>html/</filename> δεν θα πρέπει να υποβληθούν σε έλεγχο έκδοσης. Ούτε και αρχεία <filename>xml/</filename> and <filename>html/</filename>.</para>
     </sect1>
 
     <sect1 id="plain_makefiles">
-      <title>Ενσωμάτωση στα αρχεία makefiles ή άλλα συστήματα ανάπτυξης</title>
+      <title>Ενσωμάτωση στα αρχεία makefiles ή άλλα συστήματα δόμησης</title>
 
-      <para>Στην περίπτωση που κάποιος δεν θέλει να χρησιμοποιήσει το automake και επομένως το <filename>gtk-doc.mak</filename> θα χρειαστεί να καλέσει τα εργαλεία του gtkdoc στη σωστή σειρά στα makefiles (ή άλλα εργαλεία ανάπτυξης).</para>
+      <para>Στην περίπτωση που κάποιος δε θέλει να χρησιμοποιήσει το automake και, επομένως, το <filename>gtk-doc.mak</filename> θα χρειαστεί να καλέσει τα εργαλεία του gtkdoc στη σωστή σειρά στα makefiles (ή άλλα εργαλεία δόμησης).</para>
 
       <para>
-        <example><title>Βήματα παραγωγής τεκμηρίωσης</title>
+        <example><title>Βήματα δόμησης τεκμηρίωσης</title>
           <programlisting>
-
 DOC_MODULE=meep
 // sources have changed
 gtkdoc-scan --module=$(DOC_MODULE) --source-dir=...
@@ -373,14 +362,49 @@ gtkdoc-mkdb --module=$(DOC_MODULE) --output-format=xml
 mkdir html
 cd html &amp;&amp; gtkdoc-mkhtml $(DOC_MODULE) ../meep-docs.xml
 gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
-
-          </programlisting>
+</programlisting>
         </example>
       </para>
 
       <para>Πρέπει να κοιτάξετε στα αρχεία <filename>Makefile.am</filename> και <filename>gtk-doc.mak</filename> για να επιλέξετε τις ρυθμίσεις που χρειάζονται.</para>
     </sect1>
 
+    <sect1 id="cmake">
+       <title>Integration with CMake build systems</title>
+
+       <para>
+          GTK-Doc now provides a <filename>GtkDocConfig.cmake</filename> module
+          (and the corresponding <filename>GtkDocConfigVersion.cmake</filename>
+          module). This provides a <literal>gtk_doc_add_module</literal>
+          command that you can set in your <filename>CMakeLists.txt</filename>
+          file.
+       </para>
+
+       <para>
+          The following example shows how to use this command.
+          <example><title>Example of using GTK-Doc from CMake</title>
+             <programlisting><![CDATA[
+find_package(GtkDoc 1.25 REQUIRED)
+
+# Create the doc-libmeep target.
+gtk_doc_add_module(
+   libmeep ${CMAKE_SOURCE_DIR}/libmeep
+      XML meep-docs.xml
+      LIBRARIES libmeep
+)
+
+# Build doc-libmeep as part of the default target. Without this, you would
+# have to explicitly run something like `make doc-libmeep` to build the docs.
+add_custom_target(documentation ALL DEPENDS doc-libmeep)
+
+# Install the docs. (This assumes you're using the GNUInstallDirs CMake module
+# to set the CMAKE_INSTALL_DOCDIR variable correctly).
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/libmeep/html
+        DESTINATION ${CMAKE_INSTALL_DOCDIR})
+]]></programlisting>
+         </example>
+       </para>
+     </sect1>
   </chapter>
 
   <chapter id="documenting">
@@ -394,15 +418,18 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
       <para>Για να αποφύγετε αυτά τα προβλήματα, σας προτείνουμε να ενσωματώνετε την τεκμηρίωση στον πηγαίο κώδικα. Αυτή είναι και η μόνη μέθοδος που θα περιγράψουμε σε αυτό το εγχειρίδιο.</para>
     </note>
 
-    <para>Ο σαρωτής μπορεί να χειριστεί άνετα την πλειοψηφία των κεφαλίδων C . Σε περίπτωση που παίρνετε προειδοποιήσεις από τον σαρωτή οι οποίες μοιάζουν με έναν ειδικό χαρακτήρα, μπορείτε να υποδείξετε στο GTK-Doc να τους παραλείψει. <example><title>Μπλοκ σχολίου GTK-Doc</title>
+    <para>Ο σαρωτής μπορεί να χειρισθεί άνετα την πλειοψηφία των κεφαλίδων C. Σε περίπτωση που παίρνετε προειδοποιήσεις από τον σαρωτή οι οποίες μοιάζουν με έναν ειδικό χαρακτήρα, μπορείτε να υποδείξετε στο GTK-Doc να τους παραλείψει. <example><title>Μπλοκ σχολίου GTK-Doc</title>
         <programlisting>
-
 #ifndef __GTK_DOC_IGNORE__
 /* unparseable code here */
 #endif
-
-        </programlisting>
+</programlisting>
       </example></para>
+
+    <note>
+      <title>Περιορισμοί</title>
+      <para>Σημειώστε, ότι το GTK-Doc υποστηρίζει το <code>#ifndef(__GTK_DOC_IGNORE__)</code>, αλλά όχι το <code>#if !defined(__GTK_DOC_IGNORE__)</code> ή άλλους συνδυασμούς.</para>
+    </note>
 
     <!--  -->
 
@@ -411,13 +438,11 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
 
       <para>Ένα σχόλιο πολλαπλών γραμμών που διαθέτει ένα επιπλέον «*» στην αρχή αποτελεί ένα μπλοκ τεκμηρίωσης που λαμβάνεται υπόψη από τα εργαλεία του GTK-Doc. <example><title>Μπλοκ σχολίου GTK-Doc</title>
           <programlisting>
-
 /**
  * identifier:
  * documentation ...
  */
-
-          </programlisting>
+</programlisting>
         </example></para>
 
       <para>Το 'αναγνωριστικό' είναι μία γραμμή που περιέχει το όνομα του στοιχείου στο οποίο αναφέρεται το σχόλιο. Η σύνταξή του εξαρτάται από τον τύπο του στοιχείου. (ΜΕΛΛΟΝΤΙΚΑ: να προστεθεί πίνακας με τα αναγνωριστικά)</para>
@@ -435,70 +460,96 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
            </itemizedlist></para>
       </tip>
 
-      <para>Ένα πλεονέκτημα της χρήσης υπερκειμένου αντί για απλό κείμενο είναι η δυνατότητα προσθήκης συνδέσμων στο έγγραφο. Ωστόσο, η χρήση της σωστής σύνταξης για τη δημιουργία συνδέσμων μπορεί να είναι αρκετά κουραστική διαδικασία. Το GTK-Doc σας βοηθάει, παρέχοντάς σας μια σειρά από χρήσιμες συντμήσεις. <itemizedlist>
+      <para>Ένα πλεονέκτημα της χρήσης υπερκειμένου αντί για απλό κείμενο, είναι η δυνατότητα προσθήκης συνδέσμων στο έγγραφο. Ωστόσο, η συγγραφή της σωστής επισήμανσης για έναν σύνδεσμο μπορεί να είναι αρκετά κουραστική διαδικασία. Το GTK-Doc σας βοηθάει, παρέχοντάς σας μια σειρά από χρήσιμες συντομεύσεις. <itemizedlist>
           <listitem>
-            <para>Χρησιμοποιήστε τη γραφή function() για αναφορές σε συναρτήσεις ή μακροεντολές που δέχονται ορίσματα.</para>
+            <para>Χρησιμοποιήστε το function() για να αναφερθείτε σε συναρτήσεις ή μακροεντολές που δέχονται ορίσματα.</para>
           </listitem>
           <listitem>
-            <para>Χρησιμοποιήστε τη γραφή @param για να αναφερθείτε σε παραμέτρους. Επίσης, χρησιμοποιήστε αυτή τη γραφή για να αναφερθείτε σε παραμέτρους άλλων συναρτήσεων, σχετικών με την περιγραφόμενη.</para>
+            <para>Χρησιμοποιήστε το @param για να αναφερθείτε σε παραμέτρους. Επίσης, χρησιμοποιήστε αυτή τη γραφή για να αναφερθείτε σε παραμέτρους άλλων συναρτήσεων, σχετικών με την περιγραφόμενη.</para>
           </listitem>
           <listitem>
-            <para>Χρησιμοποιήστε τη γραφή %constant για να αναφερθείτε σε σταθερές, π.χ. %G_TRAVERSE_LEAFS.</para>
+            <para>Χρησιμοποιήστε το %constant για να αναφερθείτε σε σταθερές, π.χ. %G_TRAVERSE_LEAFS.</para>
           </listitem>
           <listitem>
-            <para>Χρησιμοποιήστε τη γραφή #symbol για να αναφερθείτε σε άλλους τύπους συμβόλων, π.χ. δομές, αριθμήσεις και μακροεντολές που δε δέχονται ορίσματα.</para>
+            <para>Χρησιμοποιήστε το #symbol για να αναφερθείτε σε άλλους τύπους συμβόλων, π.χ. δομές, αριθμήσεις και μακροεντολές που δε δέχονται ορίσματα.</para>
           </listitem>
           <listitem>
-            <para>Χρησιμοποιήστε τη γραφή #Object::signal για να αναφερθείτε σε ένα σήμα GObject.</para>
+            <para>Χρησιμοποιήστε το #Object::signal για να αναφερθείτε σε ένα σήμα GObject.</para>
           </listitem>
           <listitem>
-            <para>Χρησιμοποιήστε τη γραφή #Object::property για να αναφερθείτε σε μία ιδιότητα GObject.</para>
+            <para>Χρησιμοποιήστε το #Object::property για να αναφερθείτε σε μία ιδιότητα GObject.</para>
           </listitem>
           <listitem>
-            <para>Χρησιμοποιήστε τη γραφή #Struct.field για να αναφερθείτε σε ένα πεδίο μιας δομής.</para>
+            <para>Χρησιμοποιήστε το #Struct.field για να αναφερθείτε σε ένα πεδίο μέσα σε μια δομή και #GObjectClass.foo_bar() για να αναφερθείτε σε μια vmethod.</para>
           </listitem>
         </itemizedlist></para>
 
       <tip>
-	     <para>Αν θέλετε να χρησιμοποιήσετε τους ειδικούς χαρακτήρες «&lt;», «&gt;», «()», «@», «%» ή «#» στην τεκμηρίωση, χωρίς να φοβάστε ότι θα τους αλλάξει το GTK-Doc, μπορείτε να χρησιμοποιήσετε τις οντότητες XML «&amp;lt;», «&amp;gt;», «&amp;lpar;», «&amp;rpar;», «&amp;commat;», «&amp;percnt;» και «&amp;num;», αντίστοιχα, ή να χρησιμοποιήσετε την ανάποδη κάθετο «\» ως χαρακτήρα διαφυγής.</para>
+        <para>Αν θέλετε να χρησιμοποιήσετε τους ειδικούς χαρακτήρες «&lt;», «&gt;», «()», «@», «%» ή «#» στην τεκμηρίωση, χωρίς να φοβάστε ότι θα τους αλλάξει το GTK-Doc, μπορείτε να χρησιμοποιήσετε τις οντότητες XML «&amp;lt;», «&amp;gt;», «&amp;lpar;», «&amp;rpar;», «&amp;commat;», «&amp;percnt;» και «&amp;num;», αντίστοιχα, ή να χρησιμοποιήσετε την ανάποδη κάθετο «\» ως χαρακτήρα διαφυγής.</para>
       </tip>
 
-      <para>Το DocBook σας προσφέρει και άλλες δυνατότητες πέρα από τους συνδέσμους. Μπορεί να περιλαμβάνει λίστες, πίνακες και παραδείγματα. Για να επιτρέπεται η χρήση ετικετών SGML/XML στα σχόλια τεκμηρίωσης, θα πρέπει να έχει προστεθεί η επιλογή <option>--xml-mode</option> ή <option>--sgml-mode</option> στη μεταβλητή <symbol>MKDB_OPTIONS</symbol> του <filename>Makefile.am</filename>.</para>
+      <para>Το DocBook μπορεί να κάνει παραπάνω από απλούς συνδέσμους. Μπορεί κάποιος να έχει και λίστες, παραδείγματα, κεφαλίδες και εικόνες. Από την έκδοση 1.20 και μετά, ο προτιμώμενος τρόπος είναι με τη χρήση ενός υποσυνόλου της βασικής σύνταξης για μορφοποίηση κειμένου που ονομάζεται <ulink url="http://daringfireball.net/projects/markdown/">Markdown</ulink>. Σε παλιότερες εκδόσεις GTK-Doc οποιαδήποτε τεκμηρίωση που περιλαμβάνει Markdown θα αποδίδεται ως έχει. Για παράδειγμα, οι καταχωρήσεις της λίστας θα εμφανίζονται σαν γραμμές που αρχίζουν με μια παύλα.</para>
 
-      <para>Από το GTK-Doc-1.18 το εργαλείο υποστηρίζει υποσύνολα ή <ulink url="http://daringfireball.net/projects/markdown/">γλώσσα markdown</ulink>. Κάποιος μπορεί να τα χρησιμοποιήσει για υπό-κεφαλίδες και για απλές κατηγοριοποιημένες λίστες. Στις παλαιότερες εκδόσεις του GTK-Doc το περιεχόμενο θα πρέπει να καταστεί ως έχει (τα στοιχεία της λίστας θα εμφανιστούν σε μία γραμμή χωρισμένες με παύλες). <example><title>Μπλοκ σχολίου GTK-Doc χρησιμοποιώντας markdown</title>
+      <para>Αν και τώρα προτιμάται η Markdown μπορεί κάποιος να αναμείξει και τις δύο. Ένας περιορισμός εδώ είναι ότι κάποιος μπορεί να χρησιμοποιήσει το docbook xml μέσα στο markdown, αλλά το markdown μέσα στο docbook xml δεν υποστηρίζεται.</para>
+
+      <para>Σε παλιότερες εκδόσεις του GTK-Doc, αν χρειάζεστε υποστήριξη για πρόσθετη μορφοποίηση, θα πρέπει να ενεργοποιήσετε τη χρήση των ετικετών docbook XML μέσα στα doc-comments θέτοντας το <option>--xml-mode</option> (ή το <option>--sgml-mode</option>) στη μεταβλητή <symbol>MKDB_OPTIONS</symbol> μέσα στο <filename>Makefile.am</filename>.</para>
+
+      <para>
+        <example><title>Μπλοκ σχολίου GTK-Doc χρησιμοποιώντας Markdown</title>
           <programlisting>
-
 /**
- * identifier:
+ * ταυτοποιητής:
  *
- * documentation ...
+ * παράγραφος τεκμηρίωσης ...
  *
- * # Sub heading #
+ * # Δευτερεύουσα επικεφαλίδα #
  *
- * more documentation:
- * - list item 1
- * - list item 2
+ * ## Δεύτερη δευτερεύουσα επικεφαλίδα
  *
- * Even more docs.
+ * # Δευτερεύουσα επικεφαλίδα με μια άγκυρα συνδέσμου # {#επικεφαλίδα-δύο}
+ *
+ * περισσότερη τεκμηρίωση:
+ *
+ * - στοιχείο 1 καταλόγου
+ *
+ *   Παράγραφος μέσα σε ένα στοιχείο καταλόγου.
+ *
+ * - στοιχείο καταλόγου 2
+ *
+ * 1. αριθμημένο στοιχείο καταλόγου
+ *
+ * 2. άλλο αριθμημένο στοιχείο καταλόγου
+ *
+ * Μια άλλη παράγραφος. [Ένας σύνδεσμος στην ιστοσελίδα GNOME](http://www.gnome.org/)
+ *
+ * ![μια ενσωματωμένη εικόνα ](plot-result.png)
+ *
+ * [Ένας σύνδεσμος στην από πάνω άγκυρα επικεφαλίδας][επικεφαλίδα-δύο]
+ *
+ * Ένα παράδειγμα γλώσσας C:
+ * |[&lt;!-- language="C" --&gt;
+ * GtkWidget *label = gtk_label_new ("Gorgeous!");
+ * ]|
  */
+</programlisting>
+        </example>
+      </para>
 
-          </programlisting>
-        </example></para>
+      <para>Μπορείτε να βρείτε περισσότερα παραδείγματα για το ποιες ετικέτες markdown υποστηρίζονται στη διεύθυνση <ulink url="https://wiki.gnome.org/Projects/GTK%2B/DocumentationSyntax/Markdown">GTK+ Documentation Markdown Syntax Reference</ulink>.</para>
 
       <tip>
-	<para>Όπως αναφέρθηκε και προηγουμένως το GTK-Doc αναλαμβάνει την τεκμηρίωση του δημόσιου API. Άρα, δεν μπορεί να γραφτεί τεκμηρίωση για στατικά σύμβολα. Παρόλα αυτά, συνιστάται ο σχολιασμός και αυτών των συμβόλων, γιατί βοηθά στην κατανόηση του κώδικα. Σας προτείνουμε λοιπόν να τα σχολιάζετε χρησιμοποιώντας κανονικά σχόλια (χωρίς το δεύτερο «*» στην πρώτη γραμμή). Αν αργότερα χρειαστεί να μετατραπεί η συνάρτηση σε δημόσια, το μόνο που θα πρέπει να γίνει είναι να προστεθεί άλλο ένα «*» στο μπλοκ του σχολίου, και να εισαχθεί το όνομα του συμβόλου στην κατάλληλη θέση του αρχείου ενοτήτων.</para>
+        <para>Όπως αναφέρθηκε και προηγουμένως το GTK-Doc στοχεύει στην τεκμηρίωση του δημόσιου API. Άρα, δεν μπορεί κάποιος να γράψει τεκμηρίωση για στατικά σύμβολα. Παρόλα αυτά, συνιστάται ο σχολιασμός και αυτών των συμβόλων, γιατί βοηθά στην κατανόηση του κώδικα. Σας προτείνουμε λοιπόν να τα σχολιάζετε χρησιμοποιώντας κανονικά σχόλια (χωρίς το δεύτερο «*» στην πρώτη γραμμή). Αν αργότερα χρειαστεί να μετατραπεί η συνάρτηση σε δημόσια, το μόνο που θα πρέπει να γίνει είναι να προστεθεί άλλο ένα «*» στο μπλοκ του σχολίου, και να εισαχθεί το όνομα του συμβόλου στην κατάλληλη θέση του αρχείου ενοτήτων.</para>
       </tip>
     </sect1>
 
     <sect1 id="documenting_sections">
       <title>Τεκμηρίωση ενοτήτων</title>
 
-      <para>Κάθε ενότητα της τεκμηρίωσης περιέχει πληροφορίες για μία κλάση ή ένα άρθρωμα. Για να εισάγετε το συστατικό μπορείτε να γράψετε ένα μπλοκ σχολίου ενότητας. Η σύντομη αυτή περιγραφή χρησιμοποιείται και για τον πίνακα περιεχομένων. Όλα τα πεδία @fields είναι προαιρετικά.</para>
+      <para>Κάθε ενότητα της τεκμηρίωσης περιέχει πληροφορίες για μια κλάση ή ένα άρθρωμα. Για να εισάγετε το συστατικό μπορείτε να γράψετε ένα μπλοκ σχολίου ενότητας. Η σύντομη αυτή περιγραφή χρησιμοποιείται και για τον πίνακα περιεχομένων. Όλα τα πεδία @fields είναι προαιρετικά.</para>
 
       <para>
         <example><title>Μπλοκ σχολίου ενότητας</title>
           <programlisting>
-
 /**
  * SECTION:meepapp
  * @short_description: the application class
@@ -511,8 +562,7 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
  *
  * The application class handles ...
  */
-
-          </programlisting>
+</programlisting>
         </example>
       </para>
 
@@ -526,7 +576,7 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
         <varlistentry>
           <term>@short_description</term>
           <listitem>
-            <para>Περιγραφή της ενότητας σε μία γραμμή, η οποία θα εμφανίζεται, στη συνέχεια, μετά από τους συνδέσμους του πίνακα περιεχομένων και στην αρχή της σελίδας της ενότητας.</para>
+            <para>Περιγραφή της ενότητας σε μια γραμμή, η οποία θα εμφανίζεται, στη συνέχεια, μετά από τους συνδέσμους του πίνακα περιεχομένων και στην αρχή της σελίδας της ενότητας.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -561,7 +611,7 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
                   <para>Ιδιωτική - Διεπαφή που μπορεί να χρησιμοποιηθεί εντός της στοίβας του GNOME, αλλά δε διαθέτει τεκμηρίωση που να απευθύνεται στους τελικούς χρήστες. Τέτοιου είδους συναρτήσεις μπορούν να χρησιμοποιούνται μόνο στο πλαίσιο σαφώς καθορισμένων και τεκμηριωμένων διαδικασιών.</para>
                 </listitem>
                 <listitem>
-                  <para>Εσωτερική - Μια διεπαφή που είναι εσωτερική σε ένα module δεν απαιτεί την ύπαρξη τεκμηρίωσης για τον τελικό χρήστη. Οι συναρτήσεις που δεν περιέχουν τεκμηρίωση θεωρείται ότι είναι εσωτερικές.</para>
+                  <para>Εσωτερική - Μια διεπαφή που είναι εσωτερική σε ένα άρθρωμα και δεν απαιτεί την ύπαρξη τεκμηρίωσης για τον τελικό χρήστη. Οι συναρτήσεις που δεν περιέχουν τεκμηρίωση εκλαμβάνονται ως εσωτερικές.</para>
                 </listitem>
               </itemizedlist></para>
           </listitem>
@@ -589,71 +639,112 @@ gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html
     <sect1 id="documenting_symbols">
       <title>Τεκμηρίωση συμβόλων</title>
 
-      <para>Κάθε σύμβολο (συνάρτηση, μακροεντολή, δομή, αρίθμηση, σήμα, ιδιότητα) τεκμηριώνεται σε ξεχωριστό μπλοκ. Η καταλληλότερη θέση για τα μπλοκ είναι δίπλα στους ορισμούς των συμβόλων, γιατί διευκολύνει το έργο συγχρονισμού. Επομένως, η τεκμηρίωση των συναρτήσεων συνήθως βρίσκεται στο αρχείο του πηγαίου κώδικα, ενώ των μακροεντολών, δομών και αριθμήσεων στο αρχείο κεφαλίδας.</para>
+      <para>Κάθε σύμβολο (συνάρτηση, μακροεντολή, δομή, αρίθμηση, σήμα, ιδιότητα) τεκμηριώνεται σε ξεχωριστή ομάδα. Η καταλληλότερη θέση για τις ομάδες είναι δίπλα στους ορισμούς των συμβόλων, γιατί διευκολύνει το έργο συγχρονισμού. Επομένως, η τεκμηρίωση των συναρτήσεων συνήθως βρίσκεται στο αρχείο του πηγαίου κώδικα, ενώ των μακροεντολών, δομών και αριθμήσεων στο αρχείο κεφαλίδας.</para>
 
       <sect2><title>Γενικές ετικέτες</title>
 
         <para>Μπορείτε να προσθέσετε πληροφορίες εκδόσεων σε όλα τα στοιχεία της τεκμηρίωσης για να πείτε πότε εισήχθηκε ένα API, ή πότε καταργήθηκε.</para>
 
-        <variablelist><title>Ετικέτες εκδόσεων</title>
-          <varlistentry><term>Since:</term>
+        <variablelist><title>Εκδόσεις Ετικετών</title>
+          <varlistentry><term>Από:</term>
             <listitem>
-              <para>Περιγραφή για ποια έκδοση του κώδικα είναι διαθέσιμο το API.</para>
+              <para>Περιγραφή οπό ποια έκδοση του κώδικα και μετά είναι διαθέσιμο το API.</para>
             </listitem>
           </varlistentry>
-          <varlistentry><term>Deprecated:</term>
+          <varlistentry><term>Παρωχημένη:</term>
             <listitem>
-              <para>Παράγραφος που ενημερώνει ότι θα πρέπει να σταματήσει η χρήση της συνάρτησης. Η περιγραφή θα πρέπει να παραπέμπει τον αναγνώστη στο νέο API.</para>
+              <para>Παράγραφος που επισημαίνει ότι θα πρέπει να σταματήσει η χρήση της συνάρτησης. Η περιγραφή θα πρέπει να παραπέμπει τον αναγνώστη στο νέο API.</para>
             </listitem>
           </varlistentry>
         </variablelist>
 
-          <para>(FIXME : Πληροφορίες σταθερότητας)</para>
+        <para>Μπορείτε επίσης να προσθέσετε πληροφορίες σταθερότητας σε όλα τα στοιχεία της τεκμηρίωσης για να δείξετε αν η σταθερότητα API είναι εγγυημένη για αυτά για όλες τις μελλοντικές δευτερεύουσες εκδόσεις του έργου.</para>
+
+        <para>Το επίπεδο προεπιλεγμένης σταθερότητας για όλα τα στοιχεία τεκμηρίωσης μπορούν να οριστούν μεταφέροντας το όρισμα <option>--default-stability</option> στην <application>gtkdoc-mkdb</application> με μια άπω τις παρακάτω τιμές.</para>
+
+        <variablelist><title>Ετικέτες σταθερότητας</title>
+          <varlistentry><term>Σταθερότητα: σταθερό</term>
+            <listitem>
+              <para>Σημείωση του στοιχείου ως σταθερού. Αυτό είναι για δημόσια APIs που είναι βέβαια ότι παραμένουν σταθερά για όλες τις μελλοντικές δευτερεύουσες εκδόσεις του έργου.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry><term>Σταθερότητα: ασταθές</term>
+            <listitem>
+              <para>Σημείωση του στοιχείου ως ασταθούς. Αυτό είναι για τα δημόσια APIs που εκδίδονται ως μια προεπισκόπηση πριν να σταθεροποιηθούν.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry><term>Σταθερότητα: προσωπική</term>
+            <listitem>
+              <para>Σημείωση του στοιχείου ως προσωπικό. Αυτό είναι για διεπαφές που μπορούν να χρησιμοποιηθούν με σφικτά συνδυασμένες ενότητες, αλλά όχι από ελεύθερα τρίτα μέρη.</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
 
         <example><title>Γενικές ετικέτες</title>
           <programlisting>
-
 /**
  * foo_get_bar:
  * @foo: some foo
  *
- * Ανάκτηση του @foo's bar.
+ * Retrieves @foo's bar.
  *
- * Επιστρέφει: @foo's bar
+ * Returns: @foo's bar
  *
- * Από το: 2.6
- * Παρωχημένο: 2.12: Χρησιμοποιείστε το foo_baz_get_bar() στη θέση του.
+ * Since: 2.6
+ * Deprecated: 2.12: Use foo_baz_get_bar() instead.
  */
 Bar *
 foo_get_bar(Foo *foo)
 {
 ...
-
-          </programlisting>
+</programlisting>
         </example>
       </sect2>
 
-      <sect2><title>Μπλοκ σχολίου συνάρτησης</title>
+      <sect2><title>Σχόλια</title>
+
+        <para>Οι ομάδες τεκμηρίωσης μπορούν να περιέχουν ετικέτες σχολιασμού. Αυτές οι ετικέτες θα αποδοθούν με συμβουλές οθόνης που περιγράφουν το νόημά τους. Οι ετικέτες χρησιμοποιούνται από το gobject-introspection για τη δημιουργία των συνδέσεων γλώσσας. Ένας λεπτομερής κατάλογος των υποστηριζόμενων ετικετών μπορεί να βρεθεί στο <ulink url="http://live.gnome.org/GObjectIntrospection/Annotations" type="http">η βίκι</ulink>.</para>
+
+        <example><title>Σχόλια</title>
+          <programlisting>
+/**
+ * foo_get_bar: (σχόλιο)
+ * @foo: (σχόλιο): some foo
+ *
+ * Ανακτά @foo's bar.
+ *
+ * Επιστρέφει: (σχόλιο): @foo's bar
+ */
+...
+/**
+ * foo_set_bar_using_the_frobnicator: (σχόλιο) (ένα άλλο σχόλιο)
+ *                                    (και ένα άλλο σχόλιο)
+ * @foo: (σχόλιο) (ένα άλλο σχόλιο): some foo
+ *
+ * Ορίζει γραμμή στο @foo.
+ */
+</programlisting>
+        </example>
+      </sect2>
+
+      <sect2><title>Ομάδα σχολίων συνάρτησης</title>
 
         <para>Παρακαλούμε να θυμηθείτε να: <itemizedlist>
             <listitem>
-              <para>Τεκμηριώσετε κατά πόσο τα επιστρεφόμενα αντικείμενα, λίστες, συμβολοσειρές, κ.λπ, θα πρέπει να ελευθερώνονται, να μην ελευθερώνονται ή να απορρίπτονται.</para>
+              <para>Τεκμηριώστε κατά πόσο τα επιστρεφόμενα αντικείμενα, λίστες, συμβολοσειρές, κ.λπ, θα πρέπει να ελευθερώνονται, να μην ελευθερώνονται ή να απορρίπτονται.</para>
             </listitem>
             <listitem>
               <para>Τεκμηριώσετε κατά πόσο οι παράμετροι μπορούν να είναι μηδενικές (NULL) και τι συμβαίνει αν είναι.</para>
             </listitem>
             <listitem>
-              <para>Αναφέρετε ενδιαφέρουσες προ-υποθέσεις και μετα-υποθέσεις όπου χρειάζεται.</para>
+              <para>Αναφέρετε ενδιαφέρουσες προ-καταστάσεις και μετα-καταστάσεις όπου χρειάζεται.</para>
             </listitem>
           </itemizedlist></para>
 
         <para>Το Gtk-doc θεωρεί ότι όλα τα σύμβολα (μακροεντολές, συναρτήσεις, κτλ.) που ξεκινούν με '_' είναι ιδιωτικά και τα μεταχειρίζεται σαν στατικές συναρτήσεις.</para>
 
-        <para>Επίσης, ρίξτε μια ματιά στις ετικέτες σημείωσης ενδοσκόπησης: http://live.gnome.org/GObjectIntrospection/Annotations</para>
-
-        <example><title>Μπλοκ σχολίου συνάρτησης</title>
+        <example><title>Ομάδα σχολίων συνάρτησης</title>
           <programlisting>
-
 /**
  * function_name:
  * @par1:  description of parameter 1. These can extend over more than
@@ -671,56 +762,52 @@ foo_get_bar(Foo *foo)
  * Since: 2.2
  * Deprecated: 2.18: Use other_function() instead.
  */
-
-          </programlisting>
+</programlisting>
         </example>
 
         <variablelist><title>Ετικέτες συναρτήσεων</title>
-          <varlistentry><term>Returns:</term>
+          <varlistentry><term>Επιστροφές:</term>
             <listitem>
               <para>Παράγραφος που περιγράφει το επιστρεφόμενο αποτέλεσμα.</para>
             </listitem>
           </varlistentry>
           <varlistentry><term>@...:</term>
             <listitem>
-              <para>Σε περίπτωση που η μεταβλητή μπορεί να δεκτεί μεταβλητό αριθμό ορισμάτων (variadic), πρέπει να χρησιμοποιήσετε αυτή την ετικέτα (η ετικέτα @Varargs: λειτουργεί επίσης, για ιστορικούς λόγους).</para>
+              <para>Σε περίπτωση που η συνάρτηση μπορεί να δεχθεί μεταβλητό αριθμό ορισμάτων (variadic), πρέπει να χρησιμοποιήσετε αυτή την ετικέτα (η ετικέτα @Varargs: λειτουργεί επίσης, για ιστορικούς λόγους).</para>
             </listitem>
           </varlistentry>
         </variablelist>
 
       </sect2>
 
-      <sect2><title>Μπλοκ σχολίου ιδιότητας</title>
+      <sect2><title>Ομάδα σχολίων ιδιότητας</title>
 
-        <example><title>Μπλοκ σχολίου ιδιότητας</title>
+        <example><title>Ομάδα σχολίων ιδιότητας</title>
           <programlisting>
-
 /**
  * SomeWidget:some-property:
  *
  * Here you can document a property.
  */
 g_object_class_install_property (object_class, PROP_SOME_PROPERTY, ...);
-
-          </programlisting>
+</programlisting>
         </example>
 
       </sect2>
 
-      <sect2><title>Μπλοκ σχολίου σήματος</title>
+      <sect2><title>Ομάδα σχολίων σήματος</title>
 
         <para>Παρακαλούμε να θυμηθείτε να: <itemizedlist>
             <listitem>
-              <para>Τεκμηριώστε πότε εκπέμπεται το σήμα και αν εκπέμπεται πριν ή μετά από άλλα σήματα.</para>
+              <para>Τεκμηριώστε πότε εκπέμπεται το σήμα και κατά πόσο εκπέμπεται πριν ή μετά από άλλα σήματα.</para>
             </listitem>
             <listitem>
               <para>Τεκμηριώστε τι μπορεί να κάνει μια εφαρμογή στον διαχειριστή σημάτων.</para>
             </listitem>
           </itemizedlist></para>
 
-        <example><title>Μπλοκ σχολίου σήματος</title>
+        <example><title>Ομάδα σχολίων σήματος</title>
           <programlisting>
-
 /**
  * FooWidget::foobarized:
  * @widget: the widget that received the signal
@@ -732,16 +819,14 @@ g_object_class_install_property (object_class, PROP_SOME_PROPERTY, ...);
 foo_signals[FOOBARIZE] =
   g_signal_new ("foobarize",
                 ...
-
-          </programlisting>
+</programlisting>
         </example>
 
       </sect2>
 
-      <sect2><title>Μπλοκ σχολίου δομής</title>
-        <example><title>Μπλοκ σχολίου δομής</title>
+      <sect2><title>Ομάδα σχολίων δομής</title>
+        <example><title>Ομάδα σχολίων δομής</title>
           <programlisting>
-
 /**
  * FooWidget:
  * @bar: some #gboolean
@@ -749,41 +834,38 @@ foo_signals[FOOBARIZE] =
  * This is the best widget, ever.
  */
 typedef struct _FooWidget {
-  /*&lt; private &gt;*/
-  GtkWidget parent;
+  GtkWidget parent_instance;
 
-  /*&lt; public &gt;*/
   gboolean bar;
 } FooWidget;
-
-          </programlisting>
+</programlisting>
         </example>
 
         <para>Χρησιμοποιήστε το <code>/*&lt; private &gt;*/</code> πριν από πεδία ιδιωτικών δομών που θέλετε να αποκρύψετε. Χρησιμοποιήστε το <code>/*&lt; public &gt;*/</code>για την αντίστροφη συμπεριφορά.</para>
 
-        <para>Οι ομάδες σχολίων μιας Δομής μπορούν επίσης να χρησιμοποιηθούν για GObjects και για GObjectClasses. Είναι συνήθως καλή ιδέα να προσθέτετε μία ομάδα σχολίου για μια κλάση, εάν έχει vmethods (γιατί έτσι μπορούν να τεκμηριωθούν). Για το ίδιο το GObject μπορείτε να χρησιμοποιήσετε τα σχετικά έγγραφα τμημάτων, έχοντας μία ξεχωριστή ομάδα για το στιγμιότυπο δομής θα ήταν χρήσιμο εάν το στιγμιότυπο έχει δημόσια πεδία. Ένα μειονέκτημα εδώ είναι ότι θα δημιουργηθούν δύο καταχωρήσεις δεικτών για το ίδιο όνομα (για την δομή και για το τμήμα).</para>
+        <para>Αν το πρώτο πεδίο είναι "g_iface", "parent_instance" ή "parent_class" θα θεωρηθεί αυτόματα ιδιωτικό και δεν θα χρειαστεί να αναφερθεί στην περιοχή των σχολίων.</para>
+
+        <para>Οι ομάδες σχολίων μιας δομής μπορούν επίσης να χρησιμοποιηθούν για GObjects και για GObjectClasses. Είναι συνήθως καλή ιδέα να προσθέτετε μία ομάδα σχολίου για μια κλάση, εάν έχει vmethods (γιατί έτσι μπορούν να τεκμηριωθούν). Για το ίδιο το GObject μπορείτε να χρησιμοποιήσετε τα σχετικά έγγραφα τμημάτων, έχοντας μία ξεχωριστή ομάδα για το στιγμιότυπο δομής θα ήταν χρήσιμο εάν το στιγμιότυπο έχει δημόσια πεδία. Ένα μειονέκτημα εδώ είναι ότι θα δημιουργηθούν δύο καταχωρήσεις δεικτών για το ίδιο όνομα (για την δομή και για το τμήμα).</para>
 
       </sect2>
 
-      <sect2><title>Μπλοκ σχολίου Enum</title>
-        <example><title>Μπλοκ σχολίου Enum</title>
+      <sect2><title>Ομάδα σχολίων Enum</title>
+        <example><title>Ομάδα σχολίων Enum</title>
           <programlisting>
-
 /**
  * Something:
  * @SOMETHING_FOO: something foo
  * @SOMETHING_BAR: something bar
  *
- * Τιμές απαρίθμησης χρησιμοποιούνται για το πράγμα, για τον ορισμό του πράγματος.
+ * Enum values used for the thing, to specify the thing.
  */
 typedef enum {
   SOMETHING_FOO,
   SOMETHING_BAR,
   /*&lt; private &gt;*/
   SOMETHING_COUNT
-} Something·
-
-          </programlisting>
+} Something;
+</programlisting>
         </example>
 
         <para>Χρησιμοποιήστε το <code>/*&lt; private &gt;*/</code> πριν από ιδιωτικές τιμές enum που θέλετε να αποκρύψετε. Χρησιμοποιήστε το <code>/*&lt; public &gt;*/</code> για την αντίστροφη συμπεριφορά.</para>
@@ -796,48 +878,39 @@ typedef enum {
 
       <para>Ακολουθούν ορισμένες ετικέτες DocBook, ιδιαίτερα χρήσιμες για την τεκμηρίωση του κώδικα.</para>
 
-      <para>Για να συνδέσετε με μια άλλη ενότητα στην τεκμηρίωση GTK: <informalexample>
+      <para>Για να συνδεθείτε με μια άλλη ενότητα στην τεκμηρίωση GTK: <informalexample>
           <programlisting>
-
 &lt;link linkend="glib-Hash-Tables"&gt;Hash Tables&lt;/link&gt;
-
-          </programlisting>
-        </informalexample> Ο προορισμός είναι το id του SGML/XML στο πρώτο στοιχείο της σελίδας στην οποία παραπέμπει ο σύνδεσμος. Για τις περισσότερες σελίδες είναι το ("gtk", "gdk", glib"), ακολουθούμενο από τον τίτλο της σελίδας («Πίνακες Hash»). Για τα γραφικά συστατικά είναι το όνομα της κλάσης. Τα διαστήματα και τα «_» μετατρέπονται σε «-» για να υπάρχει συμμόρφωση με το SGML/XML.</para>
+</programlisting>
+        </informalexample> Ο προορισμός είναι το αναγνωριστικό του SGML/XML στο πρώτο στοιχείο της σελίδας στην οποία παραπέμπει ο σύνδεσμος. Για τις περισσότερες σελίδες είναι το ("gtk", "gdk", glib"), ακολουθούμενο από τον τίτλο της σελίδας ("Πίνακες Hash"). Για τα γραφικά συστατικά είναι το όνομα της κλάσης. Τα διαστήματα και τα «_» μετατρέπονται σε «-» για να υπάρχει συμμόρφωση με το SGML/XML.</para>
 
       <para>Αναφορά σε εξωτερική συνάρτηση, π.χ. τυποποιημένη συνάρτηση C: <informalexample>
           <programlisting>
-
 &lt;function&gt;...&lt;/function&gt;
-
-          </programlisting>
+</programlisting>
         </informalexample></para>
 
       <para>Συμπερίληψη παραδειγμάτων κώδικα: <informalexample>
           <programlisting>
-
 &lt;example&gt;
   &lt;title&gt;Using a GHashTable.&lt;/title&gt;
   &lt;programlisting&gt;
       ...
   &lt;/programlisting&gt;
 &lt;/example&gt;
-
-          </programlisting>
+</programlisting>
         </informalexample> ή, ενδεχομένως, για πολύ σύντομο κώδικα που δεν χρειάζεται τίτλο: <informalexample>
           <programlisting>
-
 &lt;informalexample&gt;
   &lt;programlisting&gt;
   ...
   &lt;/programlisting&gt;
 &lt;/informalexample&gt;
+</programlisting>
+        </informalexample>. Στην τελευταία περίπτωση το GTK-Doc υποστηρίζει επίσης μια συντόμευση: |[ ... ]|</para>
 
-          </programlisting>
-        </informalexample>. Στην τελευταία περίπτωση το GTK-Doc υποστηρίζει επίσης τη σύντμηση: |[ ... ]|</para>
-
-      <para>Συμπερίληψη λιστών με κουκίδες: <informalexample>
+      <para>Συμπερίληψη λιστών με κουκκίδες: <informalexample>
           <programlisting>
-
 &lt;itemizedlist&gt;
   &lt;listitem&gt;
     &lt;para&gt;
@@ -850,83 +923,66 @@ typedef enum {
     &lt;/para&gt;
   &lt;/listitem&gt;
 &lt;/itemizedlist&gt;
-
-          </programlisting>
+</programlisting>
         </informalexample></para>
 
       <para>Συμπερίληψη σημειώσεων που ξεχωρίζουν από το υπόλοιπο κείμενο: <informalexample>
           <programlisting>
-
 &lt;note&gt;
   &lt;para&gt;
     Make sure you free the data after use.
   &lt;/para&gt;
 &lt;/note&gt;
-
-          </programlisting>
+</programlisting>
         </informalexample></para>
 
-      <para>Αναφορά σε τύπο: <informalexample>
+      <para>Για να αναφερθείτε σε έναν τύπο: <informalexample>
           <programlisting>
-
 &lt;type&gt;unsigned char&lt;/type&gt;
-
-          </programlisting>
+</programlisting>
         </informalexample></para>
 
-      <para>Αναφορά σε εξωτερική δομή (που δεν περιγράφεται στην τεκμηρίωση GTK): <informalexample>
+      <para>Για να αναφερθείτε σε μια εξωτερική δομή (που δεν περιγράφεται στην τεκμηρίωση GTK): <informalexample>
           <programlisting>
-
 &lt;structname&gt;XFontStruct&lt;/structname&gt;
-
-          </programlisting>
+</programlisting>
         </informalexample></para>
 
-      <para>Αναφορά σε πεδίο μιας δομής: <informalexample>
+      <para>Για να αναφερθείτε σε ένα πεδίο μιας δομής: <informalexample>
           <programlisting>
-
 &lt;structfield&gt;len&lt;/structfield&gt;
-
-          </programlisting>
+</programlisting>
         </informalexample></para>
 
-      <para>Αναφορά σε όνομα κλάσης. Μία δυνατότητα είναι το : <informalexample>
+      <para>Για να αναφερθείτε σε ένα όνομα κλάσης, θα μπορούσατε να χρησιμοποιήσετε το : <informalexample>
           <programlisting>
-
 &lt;classname&gt;GtkWidget&lt;/classname&gt;
-
-          </programlisting>
-        </informalexample>, αλλά μάλλον θα χρησιμοποιήσετε το #GtkWidget (για αυτόματη δημιουργία συνδέσμου προς τη σελίδα GtkWidget, δείτε <link linkend="documenting_syntax">τις συντμήσεις</link>).</para>
+</programlisting>
+        </informalexample>, αλλά μάλλον θα χρησιμοποιήσετε το #GtkWidget (για αυτόματη δημιουργία συνδέσμου προς τη σελίδα GtkWidget, δείτε <link linkend="documenting_syntax">τις συντομεύσεις</link>).</para>
 
       <para>Χρήση έντονων χαρακτήρων: <informalexample>
           <programlisting>
-
 &lt;emphasis&gt;This is important&lt;/emphasis&gt;
-
-          </programlisting>
+</programlisting>
         </informalexample></para>
 
-      <para>Ονόματα αρχείων: <informalexample>
+      <para>Για ονόματα αρχείων χρησιμοποιήστε: <informalexample>
           <programlisting>
-
 &lt;filename&gt;/home/user/documents&lt;/filename&gt;
-
-          </programlisting>
+</programlisting>
         </informalexample></para>
 
       <para>Για να αναφερθείτε σε κλειδιά χρησιμοποιήστε: <informalexample>
           <programlisting>
-
 &lt;keycombo&gt;&lt;keycap&gt;Control&lt;/keycap&gt;&lt;keycap&gt;L&lt;/keycap&gt;&lt;/keycombo&gt;
-
-          </programlisting>
+</programlisting>
         </informalexample></para>
 
     </sect1>
   </chapter>
 
   <chapter id="metafiles">
-    <title>Συμπλήρωση επιπλέον αρχείων</title>
+    <title>Συμπλήρωση των επιπλέον αρχείων</title>
 
     <para>Υπάρχουν ορισμένα επιπλέον αρχεία που πρέπει να ενημερώνονται παράλληλα με τα σχόλια εντός του πηγαίου κώδικα: <filename>&lt;package&gt;.types</filename>, <filename>&lt;package&gt;-docs.xml</filename> (στο παρελθόν .sgml), <filename>&lt;package&gt;-sections.txt</filename>.</para>
 
@@ -938,19 +994,17 @@ typedef enum {
       <para>
         <example><title>Υπόδειγμα αποσπάσματος αρχείου types</title>
           <programlisting>
-
 #include &lt;gtk/gtk.h&gt;
 
 gtk_accel_label_get_type
 gtk_adjustment_get_type
 gtk_alignment_get_type
 gtk_arrow_get_type
-
-          </programlisting>
+</programlisting>
         </example>
       </para>
 
-      <para>Από την έκδοση 1.8 και μετά το <application>gtkdoc-scan</application> μπορεί να παράγει αυτόματα αυτή τη λίστα. Απλά προσθέστε την επιλογή «--rebuild-types» στο SCAN_OPTIONS του <filename>Makefile.am</filename>. Αν προτιμήσετε αυτή την προσέγγιση, θα πρέπει να μη συμπεριλάβετε το αρχείο types ούτε στη διανομή ούτε στον έλεγχο εκδόσεων.</para>
+      <para>Από την έκδοση 1.8 και μετά το <application>gtkdoc-scan</application> μπορεί να παράγει αυτόματα αυτή τη λίστα. Απλά προσθέστε την επιλογή "--rebuild-types" στο SCAN_OPTIONS του <filename>Makefile.am</filename>. Αν προτιμήσετε αυτή την προσέγγιση, θα πρέπει να μη συμπεριλάβετε το αρχείο types ούτε στη διανομή ούτε στον έλεγχο εκδόσεων.</para>
 
     </sect1>
 
@@ -959,18 +1013,17 @@ gtk_arrow_get_type
 
       <para>Το GTK-Doc παράγει τεκμηρίωση σε μορφή SGML/XML DocBook. Κατά την επεξεργασία των σχολίων εντός του πηγαίου κώδικα, τα εργαλεία του GTK-Doc παράγουν μία σελίδα τεκμηρίωσης ανά κλάση ή άρθρωμα, η οποία αποθηκεύεται ως ξεχωριστό αρχείο. Το κύριο έγγραφο συμπεριλαμβάνει αυτά τα αρχεία και τα ταξινομεί.</para>
 
-      <para>Αν και το GTK-Doc παράγει αυτόματα ένα πρότυπο κύριο έγγραφο, δεν το τροποποιεί κατά τις επόμενες εκτελέσεις. Αυτό σημαίνει ότι έχετε τη δυνατότητα να αλλάξετε τη δομή της τεκμηρίωσης. Μπορείτε να ομαδοποιήσετε κάποιες σελίδες ή να προσθέσετε νέες. Το GTK-Doc διαθέτει πλέον μια σουίτα για δοκιμές, στην οποία το κύριο έγγραφο παράγεται εκ νέου. Συνιστάται να επαναλαμβάνετε τακτικά αυτή τη διαδικασία, για να διαπιστώνετε αν έχουν προστεθεί νέα στοιχεία.</para>
+      <para>Αν και το GTK-Doc παράγει αυτόματα ένα πρότυπο κύριο έγγραφο για σας, οι επόμενες εκτελέσεις δεν θα το ξαναθίξουν. Αυτό σημαίνει ότι μπορείτε να δομήσετε την τεκμηρίωση ελεύθερα. Αυτό περιλαμβάνει την ομαδοποίηση των σελίδων και την προσθήκη πρόσθετων σελίδων. Το GTK-Doc διαθέτει πλέον μια σουίτα για δοκιμές, στην οποία το κύριο έγγραφο αναδημιουργείται από την αρχή. Είναι καλό να το κοιτάτε κάπου-κάπου για να δείτε αν υπάρχουν κάποια νέα καλούδια που εισήχθησαν εκεί.</para>
 
       <tip>
-        <para>Μη δημιουργείτε νέα έγγραφα για τους οδηγούς εκμάθησης (tutorials). Απλά προσθέστε τους ως επιπλέον κεφάλαια, δηλαδή ενσωματώστε απευθείας τον οδηγό εκμάθησης για μια βιβλιοθήκη στην τεκμηρίωση API. Το πλεονέκτημα είναι ότι έτσι διευκολύνεται η διαδικασία δημιουργίας συνδέσμων από τον οδηγό εκμάθησης προς την τεκμηρίωση των συμβόλων. Επίσης, έτσι καθίσταται πιθανότερη η ενημέρωση του οδηγού μαζί με τη βιβλιοθήκη.</para>
+        <para>Μη δημιουργείτε εγχειρίδια ως νέα έγγραφα. Απλά προσθέστε επιπλέον κεφάλαια. Το όφελος της ενσωμάτωσης απευθείας του εγχειριδίου για μια βιβλιοθήκη στην τεκμηρίωση API είναι ότι έτσι διευκολύνεται η διαδικασία δημιουργίας συνδέσμων από το εγχειρίδιο προς την τεκμηρίωση των συμβόλων. Επίσης, έτσι καθίσταται πιθανότερη η ενημέρωση του εγχειριδίου μαζί με τη βιβλιοθήκη.</para>
       </tip>
 
-      <para>Ποιες είναι λοιπόν οι αλλαγές που πρέπει να γίνουν στο κύριο έγγραφο; Διευκρινίζουμε ότι πρόκειται για λίγες μόνο αλλαγές σε ορισμένα placeholders (κείμενα εντός αγκυλών).</para>
+      <para>Ποιες είναι λοιπόν οι αλλαγές που πρέπει να γίνουν στο κύριο έγγραφο; Πρόκειται για λίγες μόνο αλλαγές σε ορισμένα placeholders (κείμενα εντός αγκυλών) που πρέπει να διευκρινήσετε.</para>
 
       <para>
         <example><title>Κεφαλίδα κύριου εγγράφου</title>
           <programlisting>
-
 &lt;bookinfo&gt;
   &lt;title&gt;MODULENAME Reference Manual&lt;/title&gt;
   &lt;releaseinfo&gt;
@@ -982,8 +1035,32 @@ gtk_arrow_get_type
 
 &lt;chapter&gt;
   &lt;title&gt;[Insert title here]&lt;/title&gt;
+</programlisting>
+        </example>
+      </para>
 
-          </programlisting>
+      <para>Επιπλέον κάποια στοιχεία επιλογής δημιουργούνται με μορφή σχολίου. Μπορείτε να τα ελέγξετε και να τα ενεργοποιήσετε όπως θέλετε.</para>
+      
+      <para>
+        <example><title>Προαιρετικό τμήμα στο κύριο έγγραφο</title>
+          <programlisting>
+  &lt;!-- ενεργοποιήστε το όταν χρησιμοποιείτε σχόλια αυτοελέγχου gobject
+  &lt;xi:include href="xml/annotation-glossary.xml"&gt;&lt;xi:fallback /&gt;&lt;/xi:include&gt;
+  --&gt;          
+</programlisting>
+        </example>
+      </para>
+      
+      <para>Τέλος, χρειάζεται να προσθέσετε νέα ενότητα όποτε εισάγετε μία. Το εργαλείο <link linkend="modernizing-gtk-doc-1-16">gtkdoc-check</link> θα σας θυμίσει τα νεοδημιουργούμενα αρχεία xml που δεν περιλαμβάνονται ακόμα στο έγγραφο.</para>
+
+      <para>
+        <example><title>Συμπερίληψη των δημιουργούμενων ενοτήτων</title>
+          <programlisting>
+  &lt;chapter&gt;
+    &lt;title&gt;my library&lt;/title&gt;
+      &lt;xi:include href="xml/object.xml"/&gt;
+      ...
+</programlisting>
         </example>
       </para>
 
@@ -994,11 +1071,34 @@ gtk_arrow_get_type
 
       <para>Το αρχείο ενοτήτων χρησιμεύει στην οργάνωση της τεκμηρίωσης που παράγεται από το GTK-Doc. Εδώ διευκρινίζεται σε ποιο άρθρωμα ή κλάση ανήκει κάθε σύμβολο και αποφασίζεται η ορατότητά του (αν θα είναι δημόσιο ή ιδιωτικό).</para>
 
-      <para>Το αρχείο ενοτήτων είναι ένα αρχείο απλού κειμένου με σύνταξη παρόμοια με XML (χρησιμοποιώντας ετικέτες). Οι κενές γραμμές αγνοούνται, ενώ οι γραμμές που ξεκινούν με '#' αντιμετωπίζονται ως γραμμές σχολίων.</para>
+      <para>Το αρχείο ενοτήτων είναι ένα αρχείο απλού κειμένου με ετικέτες οριοθετημένων περιοχών. Οι κενές γραμμές αγνοούνται, ενώ οι γραμμές που ξεκινούν με '#' αντιμετωπίζονται ως γραμμές σχολίων.</para>
+      
+      <note>
+        <para>Ενώ οι ετικέτες δείχνουν πως είναι ένα αρχείο xml, στην πραγματικότητα δεν είναι. Παρακαλούμε μην κλείνετε τις ετικέτες όπως &lt;SUBSECTION&gt;.</para>
+      </note>
 
-      <para>Η ετικέτα &lt;FILE&gt; ... &lt;/FILE&gt; χρησιμοποιείται για να δηλώσει το όνομα του αρχείου χωρίς οποιοδήποτε επίθεμα. Για παράδειγμα, το '&lt;FILE&gt;gnome-config&lt;/FILE&gt;' σημαίνει ότι οι δηλώσεις των ενοτήτων θα βρίσκονται στο πρότυπο αρχείο <filename>tmpl/gnome-config.sgml</filename>, το οποίο θα μετατραπεί στο αρχείο DocBook SGML/XML <filename>sgml/gnome-config.sgml</filename> ή DocBook XML <filename>xml/gnome-config.xml</filename>. (Το όνομα του αρχείου HTML βασίζεται στο όνομα του αρθρώματος και τον τίτλο της ενότητας, ή για τα GObjects βασίζεται στο όνομα κλάσης GObjects που μετατράπηκε σε πεζά γράμματα).</para>
+      <para>
+        <example><title>Συμπερίληψη των δημιουργούμενων ενοτήτων</title>
+          <programlisting>
+&lt;INCLUDE&gt;libmeep/meep.h&lt;/INCLUDE&gt;
 
-      <para>Η ετικέτα &lt;TITLE&gt; ... &lt;/TITLE&gt; χρησιμοποιείται για να ορίσει τους τίτλους των ενοτήτων. Χρησιμεύει μόνο πριν τη δημιουργία των προτύπων, καθώς ο τίτλος που περιέχεται στα αρχεία προτύπων αντικαθιστά αυτούς τους τίτλους. Επίσης, αν χρησιμοποιείται το σχόλιο SECTION στον πηγαίο κώδικα, αυτό είναι πεπαλαιωμένο.</para>
+&lt;SECTION&gt;
+&lt;FILE&gt;meepapp&lt;/FILE&gt;
+&lt;TITLE&gt;MeepApp&lt;/TITLE&gt;
+MeepApp
+&lt;SUBSECTION Standard&gt;
+MEEP_APP
+...
+MeepAppClass
+meep_app_get_type
+&lt;/SECTION&gt;
+</programlisting>
+        </example>
+      </para>
+
+      <para>Η ετικέτα &lt;FILE&gt; ... &lt;/FILE&gt; χρησιμοποιείται για να δηλώσει το όνομα του αρχείου, χωρίς οποιοδήποτε επίθημα. Παραδείγματος χάρη, η χρήση του '&lt;FILE&gt;gnome-config&lt;/FILE&gt;' θα καταλήξει στην ενότητα δηλώσεων που εξάγονται στο αρχείο προτύπου <filename>tmpl/gnome-config.sgml</filename>, το οποίο θα μετατραπεί στο αρχείο DocBook XML <filename>xml/gnome-config.sgml</filename> ή στο αρχείο DocBook XML <filename>xml/gnome-config.xml</filename>. (Το όνομα του αρχείου HTML βασίζεται στο όνομα του αρθρώματος και τον τίτλο της ενότητας, ή για τα GObjects βασίζεται στο όνομα κλάσης GObjects που μετατράπηκε σε πεζά γράμματα).</para>
+
+      <para>Η ετικέτα &lt;TITLE&gt; ... &lt;/TITLE&gt; χρησιμοποιείται για να ορίσει τους τίτλους των ενοτήτων. Χρησιμεύει μόνο πριν τη δημιουργία των προτύπων, καθώς ο τίτλος που περιέχεται στα αρχεία προτύπων αντικαθιστά αυτούς τους τίτλους. Επίσης, αν χρησιμοποιείται το σχόλιο SECTION στον πηγαίο κώδικα, αυτό είναι παρωχημένο.</para>
 
       <para>Μπορείτε να ομαδοποιήσετε στοιχεία στην ενότητα χρησιμοποιώντας την ετικέτα &lt;SUBSECTION&gt;. Με την τωρινή της μορφή, εμφανίζει μία κενή γραμμή μεταξύ υποενοτήτων στη συνοπτική παρουσίαση. Μπορείτε επίσης να χρησιμοποιήσετε την &lt;SUBSECTION Standard&gt; για κλασικές δηλώσεις GObject (π.χ. συναρτήσεις όπως η g_object_get_type και μακροεντολές όπως οι G_OBJECT(), G_IS_OBJECT(), κτλ.). Προς το παρόν αυτές οι δηλώσεις μένουν εκτός τεκμηρίωσης. Μπορείτε να χρησιμοποιήσετε την ετικέτα &lt;SUBSECTION Private&gt; για ιδιωτικές δηλώσεις που δεν πρόκειται να εμφανιστούν στην τεκμηρίωση (έτσι αποφεύγετε τις προειδοποιήσεις για δηλώσεις που δεν χρησιμοποιούνται). Αν η βιβλιοθήκη σας περιέχει ιδιωτικούς τύπους, για τους οποίους δεν επιθυμείτε να εμφανίζονται στην ιεραρχία αντικειμένων και στη λίστα υλοποιημένων ή απαιτούμενων διεπαφών, προσθέσετε τους σε μία ιδιωτική υποενότητα. Αν θα τοποθετήσετε κλάσεις GObject και GObjectClass σε δημόσιες ή κλασσικές ενότητες εξαρτάται από το αν έχετε δημόσιες καταχωρήσεις (μεταβλητές,vmethods).</para>
 
@@ -1020,23 +1120,92 @@ gtk_arrow_get_type
     <para>Το αρχείο <filename>&lt;package&gt;-unused.txt</filename> περιέχει ονόματα συμβόλων για τα οποία η σάρωση του GTK-Doc βρήκε τεκμηρίωση, αλλά δεν γνωρίζει πού να την τοποθετήσει. Aυτό σημαίνει ότι τα σύμβολα δεν έχουν προστεθεί ακόμη στο αρχείο <filename>&lt;package&gt;-sections.txt</filename>.</para>
 
     <tip>
-      <para>Ενεργοποιήστε ή προσθέστε τη γραμμή <option>TESTS=($GTKDOC_CHECK)</option> στο Makefile.am. Αν έχετε εγκατεστημένη την έκδοση 1.9 ή μεταγενέστερη, θα πραγματοποιεί διάφορους ελέγχους κατά την εκτέλεση του <command>make check</command>.</para>
+      <para>Ενεργοποιήστε ή προσθέστε τη γραμμή <option>TESTS=($GTKDOC_CHECK)</option> στο Makefile.am. Αν έχετε εγκατεστημένη την έκδοση GTK-Doc 1.9 ή μεταγενέστερη, θα πραγματοποιεί διάφορους ελέγχους κατά την εκτέλεση του <command>make check</command>.</para>
     </tip>
 
     <para>Μπορείτε επίσης να δείτε τα αρχεία που παράγονται από το σαρωτή του πηγαίου κώδικα: <filename>&lt;package&gt;-decl-list.txt</filename> και <filename>&lt;package&gt;-decl.txt</filename>. Το πρώτο μπορεί να συγκριθεί με το αρχείο της ενότητας, αν αυτό συντηρείται χειροκίνητα. Το δεύτερο περιέχει όλες τις δηλώσεις από τις κεφαλίδες. Αν ένα σύμβολο λείπει μπορείτε να ελέγξετε αν περιέχεται σε αυτό το αρχείο.</para>
 
-    <para>Αν το έργο βασίζεται στο GObject, μπορείτε επίσης να δείτε τα αρχεία που παράγονται από το σαρωτή αντικειμένων: <filename>&lt;package&gt;.args.txt</filename>, <filename>&lt;package&gt;.hierarchy.txt</filename>, <filename>&lt;package&gt;.interfaces.txt</filename>, <filename>&lt;package&gt;.prerequisites.txt</filename> και <filename>&lt;package&gt;.signals.txt</filename>. Αν λείπουν σύμβολα από οποιοδήποτε από αυτά, μπορείτε να ζητήσετε από το gtkdoc να κρατήσει το ενδιάμεσο αρχείο σάρωσης για παραπέρα ανάλυση, αλλά εκτελώντας το ως <command>GTK_DOC_KEEP_INTERMEDIATE=1 make</command>.</para>
+    <para>Αν το έργο βασίζεται στο GObject, μπορείτε επίσης να δείτε τα αρχεία που παράγονται από το σαρωτή αντικειμένων: <filename>&lt;package&gt;.args.txt</filename>, <filename>&lt;package&gt;.hierarchy.txt</filename>, <filename>&lt;package&gt;.interfaces.txt</filename>, <filename>&lt;package&gt;.prerequisites.txt</filename> και <filename>&lt;package&gt;.signals.txt</filename>. Αν υπάρχουν σύμβολα που λείπουν από οποιοδήποτε από αυτά, μπορείτε να ζητήσετε από το gtkdoc να κρατήσει το ενδιάμεσο αρχείο σάρωσης για περαιτέρω ανάλυση, εκτελώντας το ως μια εντολή <command>GTK_DOC_KEEP_INTERMEDIATE=1 make</command>.</para>
+  </chapter>
+  
+  <chapter id="modernizing">
+    <title>Εκσυγχρονίζοντας την τεκμηρίωση</title>
+    
+    <para>Το GTK-Doc κυκλοφορεί εδώ και αρκετό καιρό. Σε αυτό το κεφάλαιο θα παραθέσουμε τις νέες λειτουργίες μαζί με την έκδοση στην οποία είναι διαθέσιμες.</para>
+    
+    <sect1 id="modernizing-gtk-doc-1-9">
+      <title>GTK-Doc 1.9</title>
+
+      <para>Όταν χρησιμοποιείτε το xml αντί για το sgml, μπορείτε πράγματι να ονομάσετε το κύριο έγγραφο <filename>&lt;package&gt;-docs.xml</filename>.</para>
+      
+      <para>Αυτή η έκδοση υποστηρίζει <option>SCAN_OPTIONS=--rebuild-sections</option> στο <filename>Makefile.am</filename>. Αν αυτό ενεργοποιηθεί, το <filename>&lt;package&gt;-sections.txt</filename> αυτοδημιουργείται και μπορεί να αφαιρεθεί από το vcs. Αυτό λειτουργεί καλά μόνο για έργα που έχουν μια πολύ κανονική δομή (π.χ. το κάθε ζεύγος .{c,h} θα δημιουργεί μια νέα ενότητα). Αν κάποιος οργανώσει ένα έργο κοντά σε αυτό, τότε η ενημέρωση μιας ενότητας αρχείων που συντηρούνται χειρονακτικά μπορεί να είναι τόσο απλή όσο και το να εκτελούμε <code>meld &lt;package&gt;-decl-list.txt &lt;package&gt;-sections.txt</code>.</para>
+      
+      <para>Η εκδοση 1.8 εισήγαγε ήδη τη σύνταξη για τις ενότητες τεκμηρίωσης στις πηγές, αντί για τα ξεχωριστά αρχεία, κάτω από το <filename class="directory">tmpl</filename>. Αυτή η έκδοση προσθέτει επιλογές για τη μετατροπή ολόκληρου του αρθρώματος doc ώστε να μη χρησιμοποιεί καθόλου το επιπλέον στάδιο δόμησης tmpl, με τη χρήση του <option>--flavour no-tmpl</option> στο <filename>configure.ac</filename>. Εάν δεν έχετε ένα <filename class="directory">tmpl</filename> σημειωμένο στο σύστημα ελέγχου πηγής και δεν έχετε ακόμα αλλάξει, προσθέστε απλά τη σημαία στο <filename>configure.ac</filename> και τελειώσατε.</para>
+    </sect1>
+    
+    <sect1 id="modernizing-gtk-doc-1-10">
+      <title>GTK-Doc 1.10</title>
+
+      <para>Αυτή η έκδοση υποστηρίζει τα <option>SCAN_OPTIONS=--rebuild-types</option> στο <filename>Makefile.am</filename>. Αν αυτό ενεργοποιηθεί, το <filename>&lt;package&gt;.types</filename> αυτοδημιουργείται και μπορεί να αφαιρεθεί από το vcs. Όταν χρησιμοποιείτε αυτή τη λειτουργία είναι σημαντικό να ρυθμίσετε και το <varname>IGNORE_HFILES</varname> στο <filename>Makefile.am</filename> για τον κώδικα που δομείται υπό όρους.</para>
+    </sect1>
+
+    <sect1 id="modernizing-gtk-doc-1-16">
+      <title>GTK-Doc 1.16</title>
+
+      <para>Αυτή η έκδοση περιλαμβάνει ένα νέο εργαλείο που λέγεται gtkdoc-check. Αυτό το εργαλείο μπορέι να εκτελεί ένα σύνολο ελέγχων στην τεκμηρίωσή σας. Ενεργοποιείται προσθέτοντας αυτές τις γραμμές στο τέλος του <filename>Makefile.am</filename>. <example><title>Ενεργοποίηση του gtkdoc-check</title>
+          <programlisting>
+if ENABLE_GTK_DOC
+TESTS_ENVIRONMENT = \
+  DOC_MODULE=$(DOC_MODULE) DOC_MAIN_SGML_FILE=$(DOC_MAIN_SGML_FILE) \
+  SRCDIR=$(abs_srcdir) BUILDDIR=$(abs_builddir)
+TESTS = $(GTKDOC_CHECK)
+endif
+</programlisting>
+        </example></para>
+    </sect1>
+
+    <sect1 id="modernizing-gtk-doc-1-20">
+      <title>GTK-Doc 1.20</title>
+
+      <para>Η έκδοση 1.18 έφερε μια αρχική υποστήριξη για το markdown. Η χρήση markdown στα σχόλια του doc είναι λιγότερο ενοχλητική από το να γράφει κανείς docbook xml. Αυτή η έκδοση επιφέρει μεγάλες βελτιώσεις σε αυτό και προσθέτει περισσότερα στυλ. Η ενότητα που εξηγεί τη <link linkend="documenting_syntax">σύνταξη σχολίων</link> έχει όλες τις λεπτομέρειες.</para>
+    </sect1>
+
+    <sect1 id="modernizing-gtk-doc-1-25">
+      <title>GTK-Doc 1.25</title>
+
+      <para>Τα αρχεία makefiles που έρχονται με αυτή την έκδοση παράγουν ένα αρχείο οντοτήτων στο  <filename>xml/gtkdocentities.ent</filename>, το οποίο περιλαμβάνει οντότητες π.χ. package_name και package_version. Μπορείτε να το χρησιμοποιήσετε π.χ. στο κύριο αρχείο xml για να αποφύγετε τον στατικό ορισμό του αριθμού έκδοσης. Παρακάτω είναι ένα παράδειγμα που σας δείχνει πως συμπεριλαμβάνεται το αρχείο οντοτήτων και πως οι οντότητες χρησιμοποιούνται. Οι οντότητες μπορούν να χρησιμοποιηθούν και σε όλα τα δημιουργημένα αρχεία, καθώς το GTK-Doc θα χρησιμοποιήσει την ίδια κεφαλίδα xml σε όλα τα δημιουργημένα αρχεία xml. <example><title>Χρήση προδημιουργημένων οντοτήτων</title>
+          <programlisting>
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  &lt;!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'"&gt;
+  &lt;!ENTITY % gtkdocentities SYSTEM "xml/gtkdocentities.ent"&gt;
+  %gtkdocentities;
+]&gt;
+&lt;book id="index" xmlns:xi="http://www.w3.org/2003/XInclude"&gt;
+  &lt;bookinfo&gt;
+    &lt;title&gt;&amp;package_name; Reference Manual&lt;/title&gt;
+    &lt;releaseinfo&gt;
+      for &amp;package_string;.
+      The latest version of this documentation can be found on-line at
+      &lt;ulink role="online-location" url="http://[SERVER]/&amp;package_name;/index.html"&gt;http://[SERVER]/&amp;package_name;/&lt;/ulink&gt;.
+    &lt;/releaseinfo&gt;
+  &lt;/bookinfo&gt;
+</programlisting>
+        </example></para>
+    </sect1>
   </chapter>
 
   <chapter id="documenting-others">
     <title>Τεκμηρίωση άλλων διεπαφών</title>
 
-    <para>Τόσο καιρό χρησιμοποιούσαμε το GTK-Doc για να καταγράψουμε το API του κώδικα. Οι επόμενες συνεδρίες περιέχουν προτάσεις για το πώς τα εργαλεία μπορούν να χρησιμοποιηθούν ώστε να καταγράψετε και άλλες επιφάνειες.</para>
+    <para>Μέχρ τώρα, χρησιμοποιούσαμε το GTK-Doc για να καταγράφουμε το API του κώδικα. Οι επόμενες συνεδρίες περιέχουν προτάσεις για το πώς τα εργαλεία μπορούν να χρησιμοποιηθούν για να καταγράφετε και άλλες διεπαφές.</para>
 
     <sect1 id="commandline-interfaces">
       <title>Επιλογές γραμμής εντολών και σελίδες τεκμηρίωσης man</title>
 
-      <para>Δεδομένου ότι κάποιος μπορεί να παραγάγει σελίδες man για ένα docbook refentry επίσης, θα ήταν καλή ιδέα να χρησιμοποιηθεί και για αυτόν τον σκοπό. Με αυτόν τον τρόπο η διεπαφή γίνεται μέρος της αναφοράς και αποχτά την σελίδα-man δωρεάν.</para>
+      <para>Δεδομένου ότι κάποιος μπορεί να παραγάγει σελίδες man για ένα docbook refentry επίσης, θα ήταν καλή ιδέα να χρησιμοποιηθεί και για αυτόν τον σκοπό. Με αυτόν τον τρόπο η διεπαφή γίνεται μέρος της αναφοράς και αποκτά δωρεάν την σελίδα-man.</para>
 
       <sect2 id="commandline-interfaces-file">
         <title>Τεκμηρίωση του εργαλείου</title>
@@ -1048,9 +1217,8 @@ gtk_arrow_get_type
         <title>Προσθήκη του έξτρα ελέγχου διαμόρφωσης</title>
 
         <para>
-          <example><title>Έξτρα έλεγχοι διαμόρφωσης</title>
+          <example><title>Επιπλέον έλεγχοι ρυθμίσεων</title>
             <programlisting>
-
 AC_ARG_ENABLE(man,
               [AC_HELP_STRING([--enable-man],
                               [regenerate man pages from Docbook [default=no]])],enable_man=yes,
@@ -1058,19 +1226,17 @@ AC_ARG_ENABLE(man,
 
 AC_PATH_PROG([XSLTPROC], [xsltproc])
 AM_CONDITIONAL(ENABLE_MAN, test x$enable_man != xno)
-
-            </programlisting>
+</programlisting>
           </example>
         </para>
       </sect2>
 
       <sect2 id="commandline-interfaces-make">
-        <title>Προσθήκη των έξτρα κανόνων makefile</title>
+        <title>Προσθήκη των επιπλέον κανόνων makefile</title>
 
         <para>
-          <example><title>Έξτρα έλεγχοι διαμόρφωσης</title>
+          <example><title>Επιπλέον έλεγχοι ρυθμίσεων</title>
             <programlisting>
-
 man_MANS = \
        meeper.1
 
@@ -1085,15 +1251,14 @@ endif
 
 BUILT_EXTRA_DIST = $(man_MANS)
 EXTRA_DIST += meep.xml
-
-            </programlisting>
+</programlisting>
           </example>
         </para>
       </sect2>
     </sect1>
 
     <sect1 id="dbus-interfaces">
-      <title>DBus interfaces</title>
+      <title>Διεπαφές DBus</title>
 
       <para>(FIXME: http://hal.freedesktop.org/docs/DeviceKit/DeviceKit.html, http://cgit.freedesktop.org/DeviceKit/DeviceKit/tree/doc/dbus)</para>
     </sect1>
@@ -1113,10 +1278,10 @@ EXTRA_DIST += meep.xml
       </seglistitem>
       <seglistitem>
         <seg>Εξακολουθεί να μην υπάρχει ιεραρχία κλάσεων.</seg>
-        <seg>Ελλιπής ή λαθεμένη ονομασία στο αρχείο <filename>&lt;package&gt;-sections.txt</filename> (δείτε την <ulink url="http://mail.gnome.org/archives/gtk-doc-list/2003-October/msg00006.html">αιτιολόγηση</ulink>).</seg>
+        <seg>Ελλιπής ή λανθασμένη ονομασία στο αρχείο <filename>&lt;package&gt;-sections.txt</filename> (δείτε την <ulink url="http://mail.gnome.org/archives/gtk-doc-list/2003-October/msg00006.html">αιτιολόγηση</ulink>).</seg>
       </seglistitem>
       <seglistitem>
-        <seg>Πάλι δεν έχω ιεραρχία κλάσεων.</seg>
+        <seg>Στο καλό του, πάλι δεν έχω ιεραρχία κλάσεων.</seg>
         <seg>Ελέγξτε αν το όνομα του αντικειμένου (δηλαδή το όνομα του συγκεκριμένου παραδείγματος της δομής, π.χ. <type>GtkWidget</type>) περιλαμβάνεται στην κανονική ενότητα (δεν πρέπει να βρίσκεται εντός υποενότητας Standard ή Private).</seg>
       </seglistitem>
       <seglistitem>
@@ -1125,19 +1290,19 @@ EXTRA_DIST += meep.xml
       </seglistitem>
       <seglistitem>
         <seg>Δεν υπάρχουν σύνδεσμοι μεταξύ των συμβόλων και των κατάλληλων ενοτήτων της τεκμηρίωσης.</seg>
-        <seg>Το doc-comment χρησιμοποιεί σωστά τις ετικέτες (έχουν προστεθεί #,% ή ()); Ελέγξτε αν το gtkdoc-fixxref προειδοποιεί για ανεπίλυτα xrefs.</seg>
+        <seg>Το doc-comment χρησιμοποιεί σωστά τις επισημάνσεις (έχουν προστεθεί #,% ή ()); Ελέγξτε αν το gtkdoc-fixxref προειδοποιεί για ανεπίλυτα xrefs.</seg>
       </seglistitem>
       <seglistitem>
         <seg>Μια νέα κλάση δεν εμφανίζεται στην τεκμηρίωση.</seg>
-        <seg>Συμπεριλαμβάνεται μέσω xi:included η νέα σελίδα από το <filename>&lt;package&gt;-docs.{xml,sgml}</filename>;</seg>
+        <seg>Συμπεριλαμβάνεται η νέα σελίδα xi:included από το <filename>&lt;package&gt;-docs.{xml,sgml}</filename>;</seg>
       </seglistitem>
       <seglistitem>
         <seg>Ένα νέο σύμβολο δεν εμφανίζεται στην τεκμηρίωση.</seg>
-        <seg>Είναι το doc-comment κανονικά μορφοποιημένο; Ελέγξτε για συντακτικά λάθη στην αρχή του σχολίου. Ελέγξτε αν το gtkdoc-fixxref προειδοποιεί για ανεπίλυτα xref. Ελέγξτε αν το σύμβολο είναι σωστά καταχωρημένο στο <filename>&lt;package&gt;-sections.txt</filename> σε μια δημόσια υποενότητα.</seg>
+        <seg>Το doc-comment είναι κανονικά μορφοποιημένο; Ελέγξτε για συντακτικά λάθη στην αρχή του σχολίου. Ελέγξτε αν το gtkdoc-fixxref προειδοποιεί για ανεπίλυτα xref. Ελέγξτε αν το σύμβολο είναι σωστά καταχωρημένο στο <filename>&lt;package&gt;-sections.txt</filename> σε μια δημόσια υποενότητα.</seg>
       </seglistitem>
       <seglistitem>
         <seg>Λείπει ένας τύπος από την ιεραρχία κλάσεων.</seg>
-        <seg>Αν ο τύπος υπάρχει στο <filename>&lt;package&gt;.hierarchy</filename> αλλά όχι στο <filename>xml/tree_index.sgml</filename> τότε ελέγξτε ξανά ότι ο τύπος είναι σωστά τοποθετημένος στο <filename>&lt;package&gt;-sections.txt</filename>. Αν η περίσταση του τύπου (π.χ. <type>GtkWidget</type>) δεν είναι καταχωρημένη, ή είναι κατά λάθος σημειωμένη ως ιδιωτική, τότε δε θα εμφανιστεί.</seg>
+        <seg>Αν ο τύπος υπάρχει στο <filename>&lt;package&gt;.hierarchy</filename> αλλά όχι στο <filename>xml/tree_index.sgml</filename> τότε ελέγξτε ξανά ότι ο τύπος είναι σωστά τοποθετημένος στο <filename>&lt;package&gt;-sections.txt</filename>. Αν ο τύπος του παραδείγματος (π.χ. <type>GtkWidget</type>) δεν είναι καταχωρημένος, ή είναι κατά λάθος σημειωμένος ως ιδιωτικός, τότε δε θα εμφανιστεί.</seg>
       </seglistitem>
       <seglistitem>
         <seg>Λαμβάνω συνδέσμους foldoc για όλες τις σημειώσεις gobject.</seg>
@@ -1152,11 +1317,11 @@ EXTRA_DIST += meep.xml
 
       <!-- docbook warnings: -->
       <seglistitem>
-        <seg>Πολλαπλά "IDs" για τον προορισμό συνδέσμου: XYZ</seg>
-        <seg>Το σύμβολο XYZ εμφανίζεται δύο φορές στο <filename>&lt;package&gt;-sections.txt</filename>.</seg>
+        <seg>Πολλαπλά "Αναγνωριστικά" για τον προορισμό συνδέσμου: XYZ</seg>
+        <seg>Το σύμβολο XYZ εμφανίζεται δύο φορές στο αρχείο <filename>&lt;package&gt;-sections.txt</filename>.</seg>
       </seglistitem>
       <seglistitem>
-        <seg>Βρέθηκε το όνομα τύπου του στοιχείου στο namespace '', αλλά δεν αντιστοιχεί σε κανένα πρότυπο.</seg>
+        <seg>Βρέθηκε το όνομα τύπου του στοιχείου στην ονοματοθεσία '', αλλά δεν αντιστοιχεί σε κανένα πρότυπο.</seg>
         <seg/>
       </seglistitem>
     </segmentedlist>
@@ -1187,7 +1352,7 @@ EXTRA_DIST += meep.xml
     <legalnotice id="fdl-legalnotice">
       <para><address>Free Software Foundation, Inc. <street>51 Franklin Street, 
         Suite 330</street>, <city>Boston</city>, <state>MA</state>  
-        <postcode>02110-1301</postcode>  <country>USA</country></address> Επιτρέπεται σε όλους η αντιγραφή και διανομή ακριβούς αντιγράφου του κειμένου αυτής της άδειας αλλά απαγορεύεται η αλλοίωσή του περιεχομένου του.</para>
+        <postcode>02110-1301</postcode>  <country>USA</country></address> Επιτρέπεται σε όλους η αντιγραφή και διανομή ακριβούς αντιγράφου του κειμένου αυτής της άδειας αλλά απαγορεύεται η αλλοίωση του περιεχομένου του.</para>
     </legalnotice>
   </appendixinfo>
   <title>Άδεια Ελεύθερης Τεκμηρίωσης GNU (GFDL)</title>
@@ -1196,7 +1361,7 @@ EXTRA_DIST += meep.xml
     <title>0. ΠΡΟΟΙΜΙΟ</title>
     <para>Σκοπός της παρούσας Άδειας είναι η δημιουργία εγχειριδίων, συγγραμμάτων ή άλλων εγγράφων που είναι <quote>ελεύθερα</quote> υπό την έννοια ότι παρέχουν σε όλους πραγματική ελευθερία αντιγραφής και αναδιανομής τους, με ή χωρίς τροποποιήσεις, για εμπορικούς ή μη εμπορικούς σκοπούς. Δευτερευόντως, η παρούσα Άδεια παρέχει έναν τρόπο για να αναγνωρίζεται το έργο του συγγραφέα και του εκδότη ενός έργου, χωρίς να μπορούν να θεωρηθούν υπεύθυνοι για τροποποιήσεις που έγιναν από τρίτους.</para>
     
-    <para>Η παρούσα Άδεια είναι άδεια τύπου <quote>copyleft</quote>, το οποίο σημαίνει ότι τα παράγωγα έργα του εγγράφου θα πρέπει να είναι και αυτά ελεύθερα υπό την ίδια έννοια. Πρόκειται για άδεια συμπληρωματική της Γενικής Άδειας Δημόσιας Χρήσης GNU, που είναι άδεια copyleft σχεδιασμένη για ελεύθερο λογισμικό.</para>
+    <para>Η παρούσα Άδεια είναι μια άδεια τύπου <quote>copyleft</quote>, το οποίο σημαίνει ότι τα παράγωγα έργα του εγγράφου θα πρέπει να είναι και αυτά ελεύθερα υπό την ίδια έννοια. Πρόκειται για άδεια συμπληρωματική της Γενικής Άδειας Δημόσιας Χρήσης GNU, που είναι άδεια copyleft σχεδιασμένη για ελεύθερο λογισμικό.</para>
     
     <para>Σχεδιάσαμε αυτήν την Άδεια για χρήση με εγχειρίδια ελεύθερου λογισμικού, γιατί το ελεύθερο λογισμικό χρειάζεται και ελεύθερη τεκμηρίωση: τα ελεύθερα προγράμματα πρέπει να συνοδεύονται από εγχειρίδια που παρέχουν τις ίδιες ελευθερίες που παρέχει και το λογισμικό. Ωστόσο, αυτή η Άδεια δεν περιορίζεται στα εγχειρίδια λογισμικού· μπορεί να χρησιμοποιηθεί για οποιοδήποτε έργο κειμένου, ανεξάρτητα από το θέμα του ή από το αν εκδίδεται σε έντυπη μορφή. Συνιστούμε αυτή την Άδεια, κυρίως, για διδακτικό υλικό ή έργα αναφοράς.</para>
   </sect1>
@@ -1212,9 +1377,9 @@ EXTRA_DIST += meep.xml
     
     <para id="fdl-cover-texts">Τα <quote>Κείμενα Εξωφύλλου</quote> είναι σύντομα αποσπάσματα κειμένου που αναφέρονται ρητώς ως Κείμενα Εμπροσθοφύλλου ή Κείμενα Οπισθοφύλλου στην ένδειξη όπου αναφέρεται ότι το <link linkend="fdl-document">Έγγραφο</link> δημοσιεύεται υπό τους όρους αυτής της Άδειας.</para>
 	
-    <para id="fdl-transparent">Ως <quote>Διαφανές</quote> αντίγραφο του <link linkend="fdl-document">Εγγράφου</link> θεωρείται κάθε αντίγραφο σε μορφή αναγνώσιμη από μηχανή, όταν συντρέχουν οι εξής προϋποθέσεις: Οι τεχνικές προδιαγραφές τις μορφής αυτής είναι διαθέσιμες για δημόσια χρήση· τα περιεχόμενα του αντιγράφου μπορούν να προβληθούν και να τύχουν επεξεργασίας άμεσα και απλά, με χρήση γενόσημων επεξεργαστών κειμένου ή ( για εικόνες αποτελούμενες από εικονοστοιχεία) γενόσημων προγραμμάτων ζωγραφικής ή (για σχέδια) ευρέως διαθέσιμων επεξεργαστών σχεδίων· το αντίγραφο είναι κατάλληλο για είσοδο σε μορφοποιητές κειμένου ή για αυτόματη μετάφραση σε ποικίλες μορφές κατάλληλες για είσοδο σε μορφοποιητές κειμένου. Δεν θεωρείται Διαφανές ένα αντίγραφο σε Διαφανή, κατά τα λοιπά, μορφή αρχείου, του οποίου η σήμανση έχει σχεδιαστεί κατά τρόπο που να αποτρέπει ή να αποθαρρύνει τη μελλοντική τροποποίηση του αντιγράφου από τους αναγνώστες. Το αντίγραφο που δεν είναι <quote>Διαφανές</quote> ονομάζεται <quote>Αδιαφανές</quote>.</para>
+    <para id="fdl-transparent">Ως <quote>Διαφανές</quote> αντίγραφο του <link linkend="fdl-document">Εγγράφου</link> θεωρείται κάθε αντίγραφο σε μορφή αναγνώσιμη από μηχανή, όταν συντρέχουν οι εξής προϋποθέσεις: Οι τεχνικές προδιαγραφές τις μορφής αυτής είναι διαθέσιμες για δημόσια χρήση· τα περιεχόμενα του αντιγράφου μπορούν να προβληθούν και να τύχουν επεξεργασίας άμεσα και απλά, με χρήση γενόσημων επεξεργαστών κειμένου ή ( για εικόνες αποτελούμενες από εικονοστοιχεία) γενόσημων προγραμμάτων ζωγραφικής ή (για σχέδια) ευρέως διαθέσιμων επεξεργαστών σχεδίων· το αντίγραφο είναι κατάλληλο για είσοδο σε μορφοποιητές κειμένου ή για αυτόματη μετάφραση σε ποικίλες μορφές κατάλληλες για είσοδο σε μορφοποιητές κειμένου. Δεν θεωρείται Διαφανές ένα αντίγραφο σε Διαφανή, κατά τα λοιπά, μορφή αρχείου, του οποίου η επισήμανση έχει σχεδιαστεί κατά τρόπο που να αποτρέπει ή να αποθαρρύνει τη μελλοντική τροποποίηση του αντιγράφου από τους αναγνώστες. Το αντίγραφο που δεν είναι <quote>Διαφανές</quote> ονομάζεται <quote>Αδιαφανές</quote>.</para>
     
-    <para>Παραδείγματα μορφών κατάλληλων για τη δημιουργία Διαφανών αντιγράφων είναι η απλή ASCII χωρίς σήμανση, η μορφή εισόδου Texinfo, η μορφή εισόδου LaTeX, η SGML ή XML που χρησιμοποιούν δημοσίως διαθέσιμη DTD, και η HTML που συμμορφώνεται με πρότυπα και έχει σχεδιαστεί για τροποποίηση από τον άνθρωπο. Στις Αδιαφανείς μορφές συμπεριλαμβάνονται η PostScript, η PDF, οι ιδιοταγείς μορφές που αναγιγνώσκονται μόνο από ιδιοταγείς επεξεργαστές κειμένου, η SGML ή XML των οποίων η DTD και/ή τα εργαλεία επεξεργασίας δεν είναι δημοσίως διαθέσιμα, και η HTML με αποκλειστικό προορισμό την έξοδο που παράγουν μηχανοκίνητα ορισμένοι επεξεργαστές κειμένου.</para>
+    <para>Παραδείγματα μορφών κατάλληλων για τη δημιουργία Διαφανών αντιγράφων είναι η απλή ASCII χωρίς επισήμανση, η μορφή εισόδου Texinfo, η μορφή εισόδου LaTeX, η SGML ή XML που χρησιμοποιούν δημοσίως διαθέσιμη DTD, και η HTML που συμμορφώνεται με πρότυπα και έχει σχεδιαστεί για τροποποίηση από τον άνθρωπο. Στις Αδιαφανείς μορφές συμπεριλαμβάνονται η PostScript, η PDF, οι ιδιοταγείς μορφές που αναγιγνώσκονται μόνο από ιδιοταγείς επεξεργαστές κειμένου, η SGML ή XML των οποίων η DTD και/ή τα εργαλεία επεξεργασίας δεν είναι δημοσίως διαθέσιμα, και η HTML με αποκλειστικό προορισμό την έξοδο που παράγουν μηχανοκίνητα ορισμένοι επεξεργαστές κειμένου.</para>
     
     <para id="fdl-title-page">Ως <quote>Σελίδα Τίτλου</quote> θεωρείται, για τα έντυπα βιβλία, η σελίδα τίτλου αυτή καθαυτή, καθώς και τυχόν επόμενες σελίδες που απαιτούνται για την ευανάγνωστη συμπερίληψη του υλικού που οφείλει να εμφανίζεται στη σελίδα τίτλου σύμφωνα με την παρούσα Άδεια. Για τα έργα σε μορφές που δεν περιλαμβάνουν σελίδα τίτλου αυτή καθαυτή, ως <quote>Σελίδα Τίτλου</quote> θεωρείται το κείμενο που βρίσκεται κοντά στην εμφανέστερη εμφάνιση του τίτλου του έργου και το οποίο προηγείται του σώματος του κειμένου.</para>
   </sect1>
@@ -1336,7 +1501,7 @@ EXTRA_DIST += meep.xml
       <listitem>
 	<formalpara>
 	  <title>ΙΔ</title>
-	  <para>Μη μετατρέπετε τον τίτλο καμίας προϋπάρχουσας ενότητας στον τίτλο <quote>Έγκριση</quote> ή σε τίτλο που συγκρούεται με τον τίτλο <link linkend="fdl-invariant">Αμετάβλητης Ενότητας</link>.</para>
+	  <para>Μην αλλάζετε τον τίτλο καμίας προϋπάρχουσας ενότητα σε <quote>Έγκριση</quote> ή σε τίτλο που να συγκρούεται με τον τίτλο οποιασδήποτε <link linkend="fdl-invariant">Αμετάβλητης Ενότητας</link>.</para>
 	</formalpara>
       </listitem>
     </itemizedlist>

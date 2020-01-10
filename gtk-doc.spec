@@ -1,32 +1,30 @@
-Summary: API documentation generation tool for GTK+ and GNOME
+%global debug_package %{nil}
+
 Name: gtk-doc
-Version: 1.19
-Release: 3%{?dist}
+Version: 1.25
+Release: 1%{?dist}
+Summary: API documentation generation tool for GTK+ and GNOME
+
 License: GPLv2+ and GFDL
-Group: Development/Tools
-#VCS: git:git://git.gnome.org/gtk-doc
-Source: http://download.gnome.org/sources/gtk-doc/1.18/gtk-doc-%{version}.tar.xz
-
-# upstream fix
-Patch0: 0001-gtkdoc-mkdb-sort-entries-in-the-glossary.patch
-
-BuildArch: noarch
 URL: http://www.gtk.org/gtk-doc
+Source: http://download.gnome.org/sources/gtk-doc/1.25/gtk-doc-%{version}.tar.xz
 
 BuildRequires: docbook-utils
 BuildRequires: jade
-BuildRequires: libxslt
+BuildRequires: /usr/bin/xsltproc
 BuildRequires: docbook-style-xsl
+%if 0%{?fedora}
+BuildRequires: perl-generators
+%endif
+BuildRequires: perl-Test-Simple
 BuildRequires: python2-devel
 BuildRequires: gnome-doc-utils
 BuildRequires: gettext
 BuildRequires: source-highlight
 BuildRequires: yelp-tools
 
-BuildRequires: autoconf automake libtool
-
 # Following are not automatically installed
-Requires: docbook-utils openjade libxslt docbook-style-xsl
+Requires: docbook-utils openjade /usr/bin/xsltproc docbook-style-xsl
 # we are installing an automake macro
 Requires: automake
 # we are installing an sgml catalog
@@ -43,31 +41,44 @@ and GNOME.
 
 %prep
 %setup -q
-%patch0 -p1
+
+%if 0%{?rhel} == 7
+# Lower unnecessarily high perl requirement
+# https://bugzilla.gnome.org/show_bug.cgi?id=773151
+sed -i -e 's/require v5\.18\.0/require v5.16.0/' configure
+%endif
+
 # Move this doc file to avoid name collisions
 mv doc/README doc/README.docs
 
 %build
-#env NOCONFIGURE=1 ./autogen.sh
 %configure
 make %{?_smp_mflags}
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
+%make_install
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/gtk-doc/html
 
+%check
+make check
+
 %files
-%defattr(-, root, root,-)
-%doc AUTHORS README doc/* examples COPYING COPYING-DOCS
+%license COPYING COPYING-DOCS
+%doc AUTHORS README doc/* examples
 %{_bindir}/*
 %{_datadir}/aclocal/gtk-doc.m4
 %{_datadir}/gtk-doc/
 %{_datadir}/sgml/gtk-doc/
 %{_datadir}/pkgconfig/gtk-doc.pc
 %{_datadir}/help/*/gtk-doc-manual/
+%{_libdir}/cmake/
 
 %changelog
+* Tue Mar 22 2016 Kalev Lember <klember@redhat.com> - 1.25-1
+- Update to 1.25
+- Resolves: #1386981
+
 * Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.19-3
 - Mass rebuild 2013-12-27
 

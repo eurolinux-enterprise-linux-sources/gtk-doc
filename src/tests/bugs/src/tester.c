@@ -77,7 +77,7 @@ int bug_380824 (int arg) {
  *
  * Returns: result
  */
-struct bug *
+struct bug_411739_rettype *
 bug_411739 (void) {
   return NULL;
 }
@@ -355,6 +355,8 @@ void bug_000000_va1 (gchar name, ...)
  * bug_624001a:
  *
  * http://bugzilla.gnome.org/show_bug.cgi?id=624001
+ *
+ * Deprecated: Use main() instead.
  */
 void bug_624001a(void)
 {
@@ -364,6 +366,8 @@ void bug_624001a(void)
  * bug_624001b:
  *
  * http://bugzilla.gnome.org/show_bug.cgi?id=624001
+ *
+ * Deprecated: Use main() instead.
  */
 void bug_624001b(void)
 {
@@ -373,6 +377,8 @@ void bug_624001b(void)
  * bug_624001c:
  *
  * http://bugzilla.gnome.org/show_bug.cgi?id=624001
+ *
+ * Deprecated: Use main() instead.
  */
 void bug_624001c(void)
 {
@@ -382,6 +388,8 @@ void bug_624001c(void)
  * bug_624001d:
  *
  * http://bugzilla.gnome.org/show_bug.cgi?id=624001
+ *
+ * Deprecated: Use main() instead.
  */
 void bug_624001d(void)
 {
@@ -391,8 +399,73 @@ void bug_624001d(void)
  * bug_624001e:
  *
  * http://bugzilla.gnome.org/show_bug.cgi?id=624001
+ *
+ * Deprecated: Use main() instead.
  */
 void bug_624001e(void)
 {
 }
 
+/**
+ * bug_711598:
+ *
+ * http://bugzilla.gnome.org/show_bug.cgi?id=711598
+ */
+void bug_711598(void)
+{
+}
+
+/**
+ * deprecation_notice:
+ *
+ * Foo.
+ *
+ * Deprecated: 3.10: Use named icon "bar" instead.
+ */
+void deprecation_notice(void)
+{
+}
+
+/**
+ * bug_741941:
+ * @object: the object
+ * @par: parameter
+ *
+ * http://bugzilla.gnome.org/show_bug.cgi?id=741941
+ */
+void bug_741941(void *object, void *par)
+{
+}
+
+/**
+ * bug_732689:
+ * @spec: the string specifying the color.
+ *
+ * Parses a textual specification of a color and fill in the
+ * <structfield>red</structfield>, <structfield>green</structfield>,
+ * and <structfield>blue</structfield> fields of a color.
+ **/
+void
+bug_732689 (const gchar *spec)
+{
+}
+
+/**
+ * bug_749142:
+ *
+ * The message's structure contains one field:
+ * <itemizedlist>
+ * <listitem><para>int timeout: the timeout.</para></listitem>
+ * </itemizedlist>
+ *
+ * <refsect3>
+ * <title>Example usage</title>
+ * |[
+ * echo "Hello" | foo
+ * ]|
+ * </refsect3>
+ **/
+void
+bug_749142 (void)
+{
+}

@@ -1,6 +1,7 @@
 #!/bin/sh
 
-dir=`dirname $0`
+dir=$BUILDDIR
+#`dirname $0`
 suite="sanity"
 
 failed=0
@@ -10,13 +11,9 @@ echo "Running suite(s): gtk-doc-$suite";
 
 # check the presence and non-emptyness of certain files
 nok=0
-for path in $dir/*/docs*/html; do
+for path in $dir/*/docs/html; do
   if test ! -s $path/index.html ; then
     echo 1>&2 "no or empty $path/index.html"
-    nok=`expr $nok + 1`; break;
-  fi
-  if test ! -s $path/index.sgml ; then
-    echo 1>&2 "no or empty $path/index.sgml"
     nok=`expr $nok + 1`; break;
   fi
   if test ! -s $path/home.png ; then
@@ -32,28 +29,24 @@ done
 if test $nok -gt 0 ; then failed=`expr $failed + 1`; fi
 tested=`expr $tested + 1`
 
-
-# check online/anchor tags
+# TODO: if we have pdf support check for ./tests/*/docs/tester.pdf
 nok=0
-for file in $dir/*/docs*/html/index.sgml; do
-  grep >/dev/null "<ONLINE href=" $file
-  if test $? = 1 ; then
-    echo 1>&2 "missing ONLINE reference in $file"
-    nok=`expr $nok + 1`; break;
-  fi
-  grep >/dev/null "<ANCHOR id=" $file
-  if test $? = 1 ; then
-    echo 1>&2 "missing ANCHOR reference in $file"
-    nok=`expr $nok + 1`; break;
+for path in $dir/*/docs; do
+  if test ! -s $path/tester.pdf ; then
+    if test -s $path/gtkdoc-mkpdf.log; then
+      if ! grep >/dev/null 2>&1 "must be installed to use gtkdoc-mkpdf" $path/gtkdoc-mkpdf.log; then
+        echo 1>&2 "no or empty $path/tester.pdf"
+        nok=`expr $nok + 1`; break;
+      fi
+    fi
   fi
 done
 if test $nok -gt 0 ; then failed=`expr $failed + 1`; fi
 tested=`expr $tested + 1`
 
-
 # check validity of generated xml files
 nok=0
-for file in $dir/*/docs*/xml/*.xml; do
+for file in $dir/*/docs/xml/*.xml; do
   xmllint --noout --noent $file
   if test $? != 0 ; then
     echo 1>&2 "xml validity check failed for $file"
@@ -66,11 +59,45 @@ tested=`expr $tested + 1`
 
 # check validity of generated sgml files
 nok=0
-for file in $dir/*/docs*/xml/*.sgml; do
+for file in $dir/*/docs/xml/*.sgml; do
   xmllint --noout --noent $file
   if test $? != 0 ; then
     echo 1>&2 "sgml validity check failed for $file"
     nok=`expr $nok + 1`;
+  fi
+done
+if test $nok -gt 0 ; then failed=`expr $failed + 1`; fi
+tested=`expr $tested + 1`
+
+# check validity of devhelp2 files
+nok=0
+for file in $dir/*/docs/html/*.devhelp2; do
+  xmllint --noout --nonet --schema $ABS_TOP_SRCDIR/devhelp2.xsd $file
+  if test $? != 0 ; then
+    echo 1>&2 "devhelp2 xml validity check failed for $file"
+    nok=`expr $nok + 1`;
+  fi
+done
+if test $nok -gt 0 ; then failed=`expr $failed + 1`; fi
+tested=`expr $tested + 1`
+
+
+# check stability of generated xml/html
+nok=0
+for path in $dir/*/docs*; do
+  if test -d $path/xml.ref; then
+    diff -u $path/xml.ref $path/xml
+    if test $? = 1 ; then
+      echo 1>&2 "difference in generated xml for $path"
+      nok=`expr $nok + 1`;
+    fi
+  fi
+  if test -d $path/html.ref; then
+    diff -u $path/html.ref $path/html
+    if test $? = 1 ; then
+      echo 1>&2 "difference in generated html for $path"
+      nok=`expr $nok + 1`;
+    fi
   fi
 done
 if test $nok -gt 0 ; then failed=`expr $failed + 1`; fi

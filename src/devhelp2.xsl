@@ -21,6 +21,7 @@
       <xsl:with-param name="method" select="'xml'"/>
       <xsl:with-param name="indent" select="'yes'"/>
       <xsl:with-param name="encoding" select="'utf-8'"/>
+      <xsl:with-param name="doctype-public"/>
       <xsl:with-param name="content">
         <xsl:call-template name="devhelp2"/>
       </xsl:with-param>
@@ -42,22 +43,30 @@
                              select="articleinfo|bookinfo"/>
       </xsl:if>
     </xsl:variable>
+    <xsl:variable name="online">
+      <xsl:value-of select="/book/bookinfo/releaseinfo/ulink[@role='online-location']/@url"/>
+    </xsl:variable>
     <xsl:variable name="toc.nodes" select="part|reference|preface|chapter|
                                            appendix|article|bibliography|
                                            glossary|index|refentry|
                                            bridgehead|sect1"/>
 
     <book title="{$title}" link="{$link}" author="{$author}" name="{$gtkdoc.bookname}" version="2" language="c">
+      <xsl:if test="$online != ''">
+        <xsl:attribute name="online"><xsl:value-of select="$online"/></xsl:attribute>
+      </xsl:if>
       <xsl:if test="$toc.nodes">
-        <chapters>
+        <chapters>                                    
           <xsl:apply-templates select="$toc.nodes"
                                mode="generate.devhelp2.toc.mode"/>
         </chapters>
       </xsl:if>
       <functions>
-        <xsl:apply-templates select="$gtkdoc.refsect2"
+        <xsl:apply-templates select="$gtkdoc.refsect2[@role]"
                              mode="generate.devhelp2.index.mode"/>
-        <xsl:apply-templates select="$gtkdoc.refsect2/variablelist[@role='enum']/varlistentry"
+        <xsl:apply-templates select="$gtkdoc.refsect2/refsect3[@role='enum_members']/informaltable/tgroup/tbody/row[@role='constant']"
+                             mode="generate.devhelp2.index.mode"/>
+        <xsl:apply-templates select="$gtkdoc.refsect2/refsect3[@role='struct_members']/informaltable/tgroup/tbody/row[@role='member']"
                              mode="generate.devhelp2.index.mode"/>
       </functions>
     </book>
@@ -90,8 +99,13 @@
   </xsl:template>
 
   <xsl:template match="*" mode="generate.devhelp2.index.mode">
-    <xsl:variable name="title" select="title|term/literal"/>
-    <xsl:variable name="anchor" select="title/anchor"/>
+    <xsl:variable name="title" select="title|
+                                       term/literal|
+                                       entry[@role='enum_member_name']/para|
+                                       entry[@role='struct_member_name']/para/structfield/@id"/>
+    <xsl:variable name="anchor" select="title/anchor|
+                                        entry[@role='enum_member_name']/para|
+                                        entry[@role='struct_member_name']/para/structfield"/>
     <xsl:variable name="type" select="@role"/>
     <xsl:variable name="condition" select="@condition"/>
     <xsl:variable name="target">

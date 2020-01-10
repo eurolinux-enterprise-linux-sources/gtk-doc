@@ -5,7 +5,7 @@ dnl Use a simple 2-digit version number for a while, since our old example
 dnl Makefile can only cope with that, i.e. use 1.1, 1.2, 1.3 ... 9.9.
 dnl FIXME: I can't see anything failing (1.14.1), lets try to use a three digit
 dnl number for the development version
-m4_define(gtk_doc_version, 1.19)
+m4_define(gtk_doc_version, 1.25)
 
 AC_INIT([gtk-doc],[gtk_doc_version],[http://bugzilla.gnome.org/enter_bug.cgi?product=gtk-doc],[gtk-doc])
 
@@ -39,12 +39,12 @@ if test -z "$PERL"; then
 	AC_MSG_ERROR([perl not found])
 fi
 
-AC_MSG_CHECKING([if Perl version >= 5.6.0])
-if "$PERL" -e "require v5.6.0"; then
+AC_MSG_CHECKING([if Perl version >= 5.18.0])
+if "$PERL" -e "require v5.18.0"; then
 	AC_MSG_RESULT([yes])
 else
 	AC_MSG_RESULT([no])
-	AC_MSG_ERROR([perl >= 5.6.0 is required for gtk-doc])
+	AC_MSG_ERROR([perl >= 5.18.0 is required for gtk-doc])
 fi
 
 dnl
@@ -52,24 +52,6 @@ dnl Check for Python.
 dnl
 AM_PATH_PYTHON([2.3],,[:])
 AM_CONDITIONAL([HAVE_PYTHON], [test "$PYTHON" != :])
-
-dnl
-dnl Check for jade or openjade.
-dnl
-dnl We prefer to use openjade with the '-t sgml-raw' option, since '-t sgml'
-dnl adds a newline before the closing '>' of HTML tags. lynx can't parse
-dnl that, which is bad for accessibility.
-dnl
-SGML_FORMAT_TYPE=sgml-raw
-AC_PATH_PROG([JADE], [openjade])
-if test -z "$JADE"; then
-	SGML_FORMAT_TYPE=sgml
-	AC_PATH_PROG([JADE], [jade])
-	if test -z "$JADE"; then
-		AC_MSG_WARN([Could not find openjade or jade, so SGML is not supported])
-	fi
-fi
-AC_SUBST([SGML_FORMAT_TYPE])
 
 dnl
 dnl Check for xsltproc
@@ -110,11 +92,11 @@ HIGHLIGHT_OPTIONS=""
 if test "$with_highlight" = "auto"; then
 	AC_PATH_PROG([HIGHLIGHT], [source-highlight])
 	if test -n "$HIGHLIGHT"; then
-		HIGHLIGHT_OPTIONS="-t4 -sc -cstyle.css --no-doc -i"
+		HIGHLIGHT_OPTIONS="-t4 -s\$SRC_LANG -cstyle.css --no-doc -i"
 	else
 		AC_PATH_PROG([HIGHLIGHT], [highlight])
 		if test -n "$HIGHLIGHT"; then
-			HIGHLIGHT_OPTIONS="--out-format=xhtml -f --class-name=gtkdoc "
+			HIGHLIGHT_OPTIONS="--syntax=\$SRC_LANG --out-format=xhtml -f --class-name=gtkdoc "
 		else
 			AC_PATH_PROG([HIGHLIGHT], [vim])
 			if test -n "$HIGHLIGHT"; then
@@ -135,8 +117,8 @@ else
 	fi
 
 	case $with_highlight in
-		source-highlight) HIGHLIGHT_OPTIONS="-t4 -sc -cstyle.css --no-doc -i";;
-		highlight) HIGHLIGHT_OPTIONS="--out-format=xhtml -f --class-name=gtkdoc ";;
+		source-highlight) HIGHLIGHT_OPTIONS="-t4 -s\$SRC_LANG -cstyle.css --no-doc -i";;
+		highlight) HIGHLIGHT_OPTIONS="--syntax=\$SRC_LANG --out-format=xhtml -f --class-name=gtkdoc ";;
 		vim)
 			AC_MSG_CHECKING([whether vim has +syntax feature])
 			if $HIGHLIGHT --version | grep '+syntax' >/dev/null; then
@@ -210,22 +192,46 @@ fi
 AC_SUBST(TRACE)
 
 dnl check what date format we can use for the makefile tracing in tests
-date +%s.%N | grep -q "%N"
-if test "$?" == "1"; then
+dnl this is mostly to detect the date command on macosx that is quite cripled
+dnl  and broken too
+AC_MSG_CHECKING(whether date can output nanoseconds)
+date +%s.%N | grep -q 'N'
+if test "$?" = "1"; then
   TS_FMT="+%s.%N"
+  ELAPSED_FMT="+%H:%M:%S.%N"
+  AC_MSG_RESULT(yes)
 else
   TS_FMT="+%s.0"
+  ELAPSED_FMT="+%H:%M:%S"
+  AC_MSG_RESULT(no)
 fi
 AC_SUBST(TS_FMT)
+AC_SUBST(ELAPSED_FMT)
+
+AC_MSG_CHECKING(whether date can format dates)
+date >/dev/null 2>&1 --utc --date @1.1 $ELAPSED_FMT
+if test "$?" = "0"; then
+  DATE_FMT_CMD="date --utc $ELAPSED_FMT --date @0"
+  AC_MSG_RESULT(yes)
+else
+  DATE_FMT_CMD="echo "
+  AC_MSG_RESULT(no)
+fi
+AC_SUBST(DATE_FMT_CMD)
 
 dnl
 dnl Documentation
 dnl
+AC_MSG_CHECKING([for yelp-tools])
 have_yelp_tools=no
 m4_ifdef([YELP_HELP_INIT],[
+AC_MSG_RESULT([yes])
 YELP_HELP_INIT
 have_yelp_tools=yes
 ])
+if test "x$have_yelp_tools" != "xyes"; then
+  AC_MSG_RESULT([no])
+fi
 AM_CONDITIONAL([HAVE_YELP_TOOLS],[test x$have_yelp_tools = xyes])
 
 AC_CONFIG_FILES([Makefile
@@ -234,13 +240,15 @@ gtk-doc.dsl
 gtk-doc.spec
 gtk-doc.cat
 gtkdoc-common.pl
+cmake/Makefile
+cmake/GtkDocConfig.cmake
+cmake/GtkDocConfigVersion.cmake
 help/Makefile
 help/manual/Makefile
 tests/Makefile
 tests/gobject/Makefile
 tests/gobject/src/Makefile
 tests/gobject/docs/Makefile
-tests/gobject/docs-tmpl/Makefile
 tests/bugs/Makefile
 tests/bugs/src/Makefile
 tests/bugs/docs/Makefile
@@ -269,7 +277,6 @@ AC_CONFIG_FILES([gtkdoc-mktmpl],   [chmod +x gtkdoc-mktmpl])
 AC_CONFIG_FILES([gtkdoc-rebase],   [chmod +x gtkdoc-rebase])
 AC_CONFIG_FILES([gtkdoc-scan],     [chmod +x gtkdoc-scan])
 AC_CONFIG_FILES([gtkdoc-scangobj], [chmod +x gtkdoc-scangobj])
-AC_CONFIG_FILES([gtkdoc-scanobj],  [chmod +x gtkdoc-scanobj])
 AC_CONFIG_FILES([gtkdocize],       [chmod +x gtkdocize])
 AC_CONFIG_FILES([tests/tools.sh],  [chmod +x tests/tools.sh])
 AC_OUTPUT
@@ -281,9 +288,6 @@ gtk-doc was configured with the following options:
 test "$PYTHON" != : \
     && AC_MSG_NOTICE([** Python based tools enabled, using $PYTHON]) \
     || AC_MSG_NOTICE([   Python based tools disabled])
-test -n "$JADE" \
-    && AC_MSG_NOTICE([** SGML support enabled, using $JADE]) \
-    || AC_MSG_NOTICE([   SGML support disabled, no jade processor available])
 test -n "$DBLATEX$FOP" \
     && AC_MSG_NOTICE([** XML PDF support enabled, using $DBLATEX$FOP]) \
     || AC_MSG_NOTICE([   XML PDF support disabled, no dblatex or fop available])
@@ -293,9 +297,6 @@ test -n "$HIGHLIGHT" \
 test "x$build_tests" != "xno" \
     && AC_MSG_NOTICE([** Building regression tests]) \
     || AC_MSG_NOTICE([   Skipping regression tests])
-test "x$enable_debug" != "xno" \
-    && AC_MSG_NOTICE([** Debug tracing enabled]) \
-    || AC_MSG_NOTICE([   Debug tracing disabled])
 test "x$enable_debug" != "xno" \
     && AC_MSG_NOTICE([** Debug tracing enabled]) \
     || AC_MSG_NOTICE([   Debug tracing disabled])

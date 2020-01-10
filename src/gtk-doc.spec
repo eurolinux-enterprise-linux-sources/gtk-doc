@@ -2,7 +2,7 @@
 
 Summary: 	GTK+ DocBook Documentation Generator
 Name: 		gtk-doc
-Version: 	1.19
+Version: 	1.25
 Release: 	1
 License: 	GPL
 Group: 		Utilities/Text

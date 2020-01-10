@@ -459,7 +459,13 @@
       documents in all other respects.
     </para>
     
-    <para>Du äger lyfta ut ett dokument från en sådan samling, och sprida det enskilt under GNU Free Documentation License, förutsatt att du lägger till en kopia av denna licens [den engelska originalversionen] i det utlyfta dokumentet, och följer villkoren för ordagrann kopiering i denna licens för det utlyfta dokumentet i alla andra avseenden.</para>
+    <para>
+      You may extract a single document from such a collection, and
+      distribute it individually under this License, provided you
+      insert a copy of this License into the extracted document, and
+      follow this License in all other respects regarding verbatim
+      copying of that document.
+    </para>
     </sect1>
     
   <sect1 id="fdl-section7">

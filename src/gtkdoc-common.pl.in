@@ -54,7 +54,7 @@ sub UpdateFileIfChanged {
     if (-e $old_file) {
         `cmp -s "$old_file" "$new_file"`;
         $exit_code = $? >> 8;
-        #@TRACE@("   cmp exit code: $exit_code ($?)";
+        #@TRACE@("   cmp exit code: $exit_code ($?)");
     }
 
     if ($exit_code > 1) {
@@ -119,6 +119,9 @@ sub ParseStructDeclaration {
     $declaration =~ s@/\*([^*]+|\*(?!/))*\*/@ @g;
     $declaration =~ s@\n\s*//.*?\n@\n@msg;
     $declaration =~ s@//.*@@g;
+
+    # Remove g_iface, parent_instance and parent_class if they are first member
+    $declaration =~ s/(\{)\s*(\w)+\s+(g_iface|parent_instance|parent_class)\s*;/$1/g;
 
     my @result = ();
 
@@ -276,6 +279,12 @@ sub ParseEnumDeclaration {
     # doesn't handle nested parentheses correctly.
 
     $declaration =~ s/\([^)\n]+\)//g;
+
+    # Remove apostrophed characters (e.g. '}' or ',') values to avoid getting
+    # confused with end of enumeration.
+    # See https://bugzilla.gnome.org/show_bug.cgi?id=741305
+
+    $declaration =~ s/\'.\'//g;
 
     # Remove comma from comma - possible whitespace - closing brace sequence
     # since it is legal in GNU C and C99 to have a trailing comma but doesn't

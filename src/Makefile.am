@@ -1,7 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 ACLOCAL_AMFLAGS=-I m4 ${ACLOCAL_FLAGS}
 
-SUBDIRS = help tests
+SUBDIRS = cmake help tests
 
 bin_SCRIPTS = \
 	gtkdoc-check    \
@@ -14,7 +14,6 @@ bin_SCRIPTS = \
 	gtkdoc-rebase   \
 	gtkdoc-scan     \
 	gtkdoc-scangobj \
-	gtkdoc-scanobj  \
 	gtkdocize
 
 if HAVE_PYTHON
@@ -29,16 +28,20 @@ gtkdocdata_DATA = \
 	gtk-doc.dcl		\
 	gtk-doc.xsl		\
 	version-greater-or-equal.xsl \
+	devhelp2.xsd		\
 	devhelp2.xsl		\
 	gtk-doc.make		\
 	gtk-doc.notmpl.make	\
 	gtk-doc.flat.make	\
 	gtk-doc.notmpl-flat.make	\
-	home.png			\
-	left.png			\
-	right.png		\
-	up.png			\
-	style.css
+	style/home.png			\
+	style/left.png			\
+	style/left-insensitive.png		\
+	style/right.png		\
+	style/right-insensitive.png		\
+	style/up.png			\
+	style/up-insensitive.png		\
+	style/style.css
 
 pkgconfigdir = $(datadir)/pkgconfig
 pkgconfig_DATA = gtk-doc.pc
@@ -57,25 +60,14 @@ gtk-doc.notmpl-flat.make: gtk-doc.notmpl.make
 
 EXTRA_DIST = \
 	MAINTAINERS     \
+	$(gtkdocdata_DATA) \
 	gtk-doc.pc.in   \
 	gtk-doc.m4      \
-	gtk-doc.make    \
-	gtk-doc.notmpl.make \
-	gtk-doc.flat.make \
-	gtk-doc.notmpl-flat.make \
 	gtk-doc.doap \
 	gtk-doc.spec.in \
 	gtk-doc.spec    \
-	gtk-doc.dcl     \
-	gtk-doc.xsl     \
 	gtk-doc-fo.xsl     \
-	version-greater-or-equal.xsl \
-	devhelp2.xsl     \
 	gtk-doc.cat.in  \
-	home.png  \
-	left.png  \
-	right.png \
-	up.png    \
 	doc/README            \
 	doc/authors.txt       \
 	doc/gnome.txt         \
@@ -89,31 +81,42 @@ EXTRA_DIST = \
 	examples/Makefile.am  \
 	tools/docpercentages.pl \
 	tools/gtk-doc.el \
-	style.css \
 	COPYING-DOCS
 
-MAINTAINERCLEANFILES = \
-	$(srcdir)/INSTALL \
-	$(srcdir)/COPYING \
-	$(srcdir)/aclocal.m4 \
-	$(srcdir)/autoregen.sh \
-	$(srcdir)/compile \
-	$(srcdir)/config.guess \
-	$(srcdir)/config.h.in \
-	$(srcdir)/config.sub \
-	$(srcdir)/configure.scan \
-	$(srcdir)/depcomp \
-	$(srcdir)/install-sh \
-	$(srcdir)/ltmain.sh \
-	$(srcdir)/m4 \
-	$(srcdir)/missing \
-	$(srcdir)/mkinstalldirs \
-	$(srcdir)/gtk-doc-utils.make \
-	$(srcdir)/ChangeLog
+CLEANFILES = \
+  gtk-doc.flat.make \
+  gtk-doc.notmpl-flat.make \
+  gtkdoc-depscanc
+  
+DISTCLEANFILES = \
+  gtk-doc.cat \
+  gtkdoc-check \
+  gtkdoc-common.pl \
+  gtkdoc-depscan \
+  gtk-doc.dsl \
+  gtkdoc-fixxref \
+  gtkdocize \
+  gtkdoc-mkdb \
+  gtkdoc-mkhtml \
+  gtkdoc-mkman \
+  gtkdoc-mkpdf \
+  gtkdoc-mktmpl \
+  gtk-doc.pc \
+  gtkdoc-rebase \
+  gtkdoc-scangobj \
+  gtkdoc-scan \
+  gtk-doc.spec
 
-GITIGNOREFILES = \
+
+MAINTAINERCLEANFILES = \
+	$(GITIGNORE_MAINTAINERCLEANFILES_TOPLEVEL) \
+	$(GITIGNORE_MAINTAINERCLEANFILES_MAKEFILE_IN) \
+	$(GITIGNORE_MAINTAINERCLEANFILES_M4_LIBTOOL) \
+	INSTALL \
 	RELNOTES.txt \
-	ChangeLog-?.??
+	ChangeLog-?.?? \
+	gtk-doc-*.tar.xz \
+	build-aux
 
 -include $(top_srcdir)/git.mk
 
